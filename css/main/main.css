@@ -1,0 +1,79 @@
+@charset "utf-8";
+/*메인 슬라이드*/
+.sect {overflow:hidden;box-sizing:border-box;}
+#main_content_01 {position:relative;}
+.main_slide {overflow:hidden;position:relative;}
+.main_slide >div {height:200px;}
+.main_slide .main_slide_list {display:block;float:left;height:100%;width:100%;}
+.main_slide .main_slide_list p,
+.main_slide .main_slide_list span {display:block;width:100%;text-align:center;}
+.main_slide .slick-arrow {position:absolute;top:50%;z-index:200;}
+.main_slide .slick-next {right:0;}
+.main_slide .slick-prev {left:0;}
+
+/*익스 10이상 사용가능*/
+.main_slide .main_slide_list.slick-active p,
+.main_slide .main_slide_list.slick-active span {position:relative;-webkit-animation-name:titleActive;-webkit-animation-duration:1s;animation-name:titleActive;animation-duration:1s;}
+@keyframes titleActive {
+    0%   {opacity:0;bottom:-200px;}
+    100% {opacity:1;bottom:0px;}
+}
+
+
+.main_slide .slick-dots {position:absolute;bottom: 0;z-index:200;}
+.main_slide .slick-dots li {float:left;}
+
+.scroll {position:absolute;bottom:0;left:50%;z-index:300;}
+
+
+#main_content_02 {position:relative;padding:0 30px;}
+
+.about_box_list {position: absolute;width:200px;top:30px;left:30px;opacity:0.6;-webkit-transition:all 3s, -webkit-transform 3s;transition:all 3s, transform 3s;}
+.about_box_list.fixed {position:fixed;top:50%;opacity:1;}
+.about_box_list li.on a{color:red;}
+.about_box_content {float:left;/*padding:80px 0 0 0;*//*width:calc(100%-100px);*/}
+.about_box_con {padding-left:200px;opacity:0;padding-top:500px;}
+/*.about_box_con:nth-child(1) {background:red}
+.about_box_con:nth-child(2) {background:green}
+.about_box_con:nth-child(3) {background:blue}*/
+
+@media screen and (max-width:1342px) {
+	
+}
+
+@media screen and (max-width:1220px) {
+	
+}
+
+@media screen and (max-width:1217px) {
+	
+}
+
+@media screen and (max-width:1120px) {
+	
+}
+
+@media screen and (max-width:860px) {
+	
+}
+
+@media screen and (max-width:640px) {
+	
+}
+
+@media screen and (max-width:460px) {
+	
+
+}
+
+@media screen and (max-width:414px) {
+	
+}
+
+@media screen and (max-width:360px) {
+	
+}
+
+@media screen and (max-width:320px) {
+	
+}

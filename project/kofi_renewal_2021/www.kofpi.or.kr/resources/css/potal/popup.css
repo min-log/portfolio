@@ -1,0 +1,37 @@
+@charset "utf-8";
+@import url("common.css");
+
+#pop_wrap {}
+#pop_header {position:relative;height:52px;background:url('../../images/popup/bg_header.gif') no-repeat 0 0;}
+#pop_header h1 {height:32px;padding:20px 0 0 15px;background:#2a7cb3;font-size:14px;color:#fff;font-weight:bold;}
+.pop_contents {padding:15px;color:#888;}
+.pop_tit01 {color:#735016;font-weight:bold;font-size:15px;margin-bottom:5px;}
+.pop_box01 {padding:15px 20px;background:#fbfbfb;border:1px solid #d9d9d9;}
+
+.pop_login {width:480px;height:71px;margin:0 auto;padding:10px 0;position:relative;}
+.pop_login .inputbox {display:block;height:38px;font-size:15px;}
+.pop_login .inputbox label {display:inline-block;width:77px;}
+.pop_login .inputbox input.ttype {width:248px;height:21px;padding:5px;border:1px solid #c8c8c8;}
+.pop_login .btn_login {position:absolute;top:10px;right:0;}
+.pop_phonelog {padding:10px;text-align:center;} 
+
+.sendmail {margin-bottom:15px;}
+.sendmail table {width:100%;table-layout:fixed;}
+.sendmail table tr:first-child th, .sendmail table tr:first-child td {border-top:2px solid #2b8ed1;}
+.sendmail table th, .sendmail table td {border-bottom:1px solid #d9d9d9;}
+.sendmail table tr.last th, .sendmail table tr.last td {border-bottom:1px solid #2b8ed1;}
+.sendmail table th {height:23px;padding:3px 0 0 20px;background:#ebf1f4;border-right:1px solid #d9d9d9;color:#333;text-align:left;}
+.sendmail table td {padding:8px 10px;}
+
+.btn_close {position:absolute;top:15px;right:15px;}
+.btn_close img {width:15px;height:15px;}
+
+.btns01 {text-align:right;}
+
+a.btn_g01 {display:inline-block;padding:3px 20px 2px;background:#7b7472;color:#fff;}
+
+.prevnext_pop {width:100%;height:70px;margin-bottom:20px;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;}
+.prevnext_pop dt {float:left;width:105px;height:22px;padding-top:12px;background:#f0feff;color:#1fc1c8;text-align:center;}
+.prevnext_pop dd {float:left;width:490px;height:22px;padding:12px 10px 0;}
+.prevnext_pop dd.prev {border-bottom:1px solid #d9d9d9;}
+.prevnext_pop dd a {width:100%;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
