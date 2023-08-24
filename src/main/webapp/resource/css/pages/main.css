@@ -197,13 +197,13 @@ transform: translate(-20%, -50%);}
 /* ===============================================
 3. section-group-3
 ===============================================*/
-.section-group-3 {margin-top:200px; z-index:9;position:relative;}
+.section-group-3 {margin-top:200px; z-index:9;position:relative;overflow:hidden}
 .section-group-3 .section {padding:var(--padding-init);box-sizing:border-box;position:relative;display:flex;flex-direction: column;align-items: center;}
 .section-group-3 .section .line_move {transition:var(--trans-init);}
 /*main_about_wrap*/
 .main_about_wrap .profile_info {font-size:50px;text-transform:uppercase;font-family:'IbarraRealNova';font-weight:800;color:var(--color-main);text-align:center;width: 80%;max-width:800px;margin-top: 100px;position:relative;}
 .main_about_wrap .profile_info .icon_arrow {position:absolute;bottom:0;left:0;transform: rotate(90deg) translate(100%,100%);}
-.main_about_wrap .line {display:block;position:absolute;bottom: -200px;left: 0;width: 100%;height: calc(50% + 38px);transition: 1s all;}
+.main_about_wrap .line {display:block;position:absolute;bottom: -200px;left: 0;width: 100%;height: calc(50% + 38px);transition: 1s all;z-index:0}
 .main_about_wrap .line:before {width: 100%;margin-left: 38px;height: 100%;border-left: 3px solid #000;border-bottom-left-radius: 51px;content:'';display:block;overflow: hidden;transform: rotateY(-180deg) translateX(100%);}
 .main_about_wrap .line:after {width: 280px;height: 444px;content:'';display:block;overflow: hidden;position: absolute;left: 0;top: 5px;margin-left: 0;background:url('../../images/main/main_bg_line.png') bottom center no-repeat;background-size:100% auto;transform: translate(-24%,-100%) rotate(14deg);}
 
@@ -245,21 +245,6 @@ transform: translate(-20%, -50%);}
 
 .main_contact_wrap {padding:var(--padding-init);}
 .main_contact_wrap ,sec_tit {margin-top:100px;}
-.main_contact_wrap .contact_wrap {max-width:900px;padding:38px;border:1px solid var(--color-main);background:#fff;border-top-left-radius:15px;border-bottom-right-radius:15px;margin:100px auto 0;}
-.main_contact_wrap .contact_wrap table {width:100%;margin-top:-20px;}
-.main_contact_wrap .contact_wrap table tr {border-bottom:1px solid var(--color-main);}
-.main_contact_wrap .contact_wrap table tr:last-child {border:0}
-.main_contact_wrap .contact_wrap table tr th,
-.main_contact_wrap .contact_wrap table tr td {padding:20px;vertical-align:top;}
-.main_contact_wrap .contact_wrap table tr th label {line-height:50px;display:block;text-align:left;}
-.main_contact_wrap .contact_wrap table tr input,
-.main_contact_wrap .contact_wrap table tr textarea,
-.main_contact_wrap .contact_wrap table tr select {padding:10px;width:100%;resize:none;border:1px solid #000;box-sizing:border-box;}
-.main_contact_wrap .contact_wrap table tr textarea {height:200px;}
-.main_contact_wrap .contact_wrap [class*="btn-"] {display:block;margin:38px auto 0;width:200px;transition:all 0.8s;}
-.main_contact_wrap .contact_wrap [class*="btn-"] [class*="xi-"] {transition:all 0.8s;vertical-align: middle;}
-.main_contact_wrap .contact_wrap [class*="btn-"]:hover {background:var(--color-sub);text-indent:30px;}
-.main_contact_wrap .contact_wrap [class*="btn-"]:hover [class*="xi-"]{transform: translate(60px,-21px) scale(0) rotate(-45deg);}
 
 .phone_con {width:100%;overflow:hidden;}
 .phone_con * {float:left;}

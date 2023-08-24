@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn"  uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 
@@ -317,10 +318,11 @@
   </div>
   <!-- end: section-group-3 -->
   <div class="section-group-4 section-group" >
-    <section class="main_co_work_wrap section">
+    <section id="coWork" class="main_co_work_wrap section">
+      <a id="setCo" href="#coWork" hidden="">위치 이동시킬 버튼</a>
       <h2 class="sec_tit">Co-work</h2>
       <p class="sec_subtxt">나와 함께 했던 사람들의 이야기</p>
-      <a href="javascript:void(0);" class="btn-green">메시지 남기기 <em class="xi-send ml5"></em></a>
+      <a href="/coWork/form" class="btn-green">메시지 남기기 <em class="xi-send ml5"></em></a>
       <ul class="co_work">
         <li>
           <p class="tit">이*영 대리 <span>팀</span></p>
@@ -373,7 +375,7 @@
             <tr>
               <th><label for="inquiry_email" >이메일</label></th>
               <td>
-                  <input id="inquiry_email" name="inquiry_email" type="email">
+                  <input path="inquiry_email" id="inquiry_email" name="inquiry_email" type="email" />
               </td>
             </tr>
             <tr>
@@ -395,6 +397,15 @@
 <script src="${contextPath}/resource/js/jquery/gsap.min.js"></script>
 <script src="${contextPath}/resource/js/jquery/ScrollTrigger.min.js"></script>
 <script src="${contextPath}/resource/js/pages/main.js"></script>
+
+<script type="text/javascript">
+  window.onload = function(){
+    if(msgPop  != ""){
+      document.getElementById("setCo").click()
+    }
+  }
+</script>
+
 <script type="text/javascript">
 
 

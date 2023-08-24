@@ -2,7 +2,18 @@
 /*==========================================================================
 subpage
 ==========================================================================*/
-
+.subpage {padding-bottom:100px;background: var(--main-bg);}
+.subpage_header {padding:40px 0 0;}
+.subpage_header .tit {
+    font-size: 50px;
+    line-height: 1;
+    display: block;
+    text-align: center;
+    font-family: 'IbarraRealNova';
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-main);}
+.subpage_header .tit_sub_txt {font-size: 24px;color: #555;text-align: center;}
 @media screen and (max-width:1600px) {
 	
 }
