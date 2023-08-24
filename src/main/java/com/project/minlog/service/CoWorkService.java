@@ -8,5 +8,7 @@ import java.util.List;
 public interface CoWorkService {
     void register(CoWorkDTO dto);
     List<CoWorkDTO> getList();
+    CoWorkDTO getOne(Long no);
+    boolean getPasswordCk(Long no,String pw);
 
 }

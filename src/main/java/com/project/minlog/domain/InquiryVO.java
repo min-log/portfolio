@@ -1,20 +1,25 @@
 package com.project.minlog.domain;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @ToString
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Builder
 public class InquiryVO {
-    private Long inquiry_id;
-    private LocalDateTime create_date;
-    private String inquiry_title;
-    private String inquiry_content;
-    private String inquiry_tel;
-    private String inquiry_email;
-    private String inquiry_name;
+
+    private Long inquiryId;
+    private LocalDateTime createDate;
+    private String inquiryTitle;
+    private String inquiryContent;
+    private String inquiryTel;
+    private String inquiryEmail;
+    private String inquiryName;
 }

@@ -29,10 +29,24 @@ public class CoWorkServiceImpl implements CoWorkService{
 
     @Override
     public List<CoWorkDTO> getList() {
+        log.info("co work list ---------------------------");
         List<CoWorkVO> voList = coWorkMapper.selectAll();
         List<CoWorkDTO> dtoList = voList.stream().map(vo -> modelMapper.map(vo, CoWorkDTO.class)).collect(Collectors.toList());
-        log.info("dtoList : {}",dtoList );
-
         return dtoList;
+    }
+
+    @Override
+    public CoWorkDTO getOne(Long no) {
+        log.info("co work getOne ---------------------------");
+        CoWorkVO vo = coWorkMapper.getOne(no);
+        CoWorkDTO dto = modelMapper.map(vo, CoWorkDTO.class);
+        return dto;
+    }
+
+    @Override
+    public boolean getPasswordCk(Long no, String pw) {
+        CoWorkVO vo = coWorkMapper.getPassword(no, pw);
+        if(vo == null) return false;
+        return true;
     }
 }

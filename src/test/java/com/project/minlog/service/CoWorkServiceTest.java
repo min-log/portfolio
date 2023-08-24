@@ -20,13 +20,12 @@ class CoWorkServiceTest {
     @DisplayName("저장")
     public void insert(){
         CoWorkDTO dto = CoWorkDTO.builder()
-                .co_name("테스트")
-                .co_content("테스트")
-                .co_department("테스트")
-                .co_position("테스트")
-                .co_company("테스트")
-                .co_password("12345")
-                .co_name("테스트")
+                .coContent("테스트1")
+                .coDepartment("테스트1")
+                .coPosition("테스트1")
+                .coCompany("테스트1")
+                .coPassword("123451")
+                .coName("테스트1")
                 .build();
         coWorkService.register(dto);
     }
@@ -35,6 +34,14 @@ class CoWorkServiceTest {
     @Test
     void getList() {
         List<CoWorkDTO> list = coWorkService.getList();
+        for(CoWorkDTO dto : list){
+            System.out.println(dto);
+        }
+    }
 
+    @Test
+    void getOne() {
+        CoWorkDTO one = coWorkService.getOne(2L);
+        System.out.println(one);
     }
 }

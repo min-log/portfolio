@@ -31,7 +31,7 @@
 
 	if(msgPop  != ""){
 		document.getElementById("ModalMsg").classList.remove("fade");
-		document.querySelector(".modal-msg").text = msgPop
+		document.querySelector(".modal-msg").innerHTML = msgPop;
 	}
 
 

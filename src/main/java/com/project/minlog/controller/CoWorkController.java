@@ -5,7 +5,9 @@ import com.project.minlog.service.CoWorkService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,5 +53,23 @@ public class CoWorkController {
 
         return "redirect:/";
 
+    }
+
+    @GetMapping("/modify")
+    public String coWorkModify(@Param(value = "no") Long no, Model model){
+        log.info("modify ----------------------");
+        CoWorkDTO dto = coWorkService.getOne(no);
+        model.addAttribute("type","modify");
+        model.addAttribute("dto",dto);
+
+        return "co_work";
+    }
+
+    @GetMapping("/remove")
+    public String coWorkRemove(@Param(value = "no") Long no, Model model){
+        log.info("remove ----------------------");
+
+
+        return "redirect:/";
     }
 }

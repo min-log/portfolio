@@ -237,8 +237,9 @@ transform: translate(-20%, -50%);}
 ===============================================*/
 .section-group-4 {z-index:10;}
 .section-group-4 .section {height:auto !important;}
-.co_work {padding:var(--padding-init);box-sizing:border-box;overflow:hidden;display: flex;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;flex-direction: row;}
-.co_work li {max-width:800px;background:#fff;border-radius:5px;padding:38px;box-sizing:border-box;float:left;min-width: calc(40% - 40px);max-width: calc(60% - 40px);flex: 1 1 auto;margin: 100px 10px 10px;}
+#coWork {}
+.co_work {padding:var(--padding-init);box-sizing:border-box;overflow:hidden;display: inline-block;}
+.co_work li {max-width:800px;background:#fff;border-radius:5px;padding:38px;box-sizing:border-box;float:left;min-width: calc(40% - 40px);max-width: calc(60% - 40px);}
 .co_work li:nth-child(2n) {float:right;margin-top: 200px;}
 .co_work li .tit {font-size:16px;margin-bottom:20px;}
 .co_work li .con {font-size:24px;}

@@ -20,11 +20,11 @@ class InquiryServiceImplTest {
     @DisplayName("test")
     public void insert(){
         InquiryDTO dto = InquiryDTO.builder()
-                .inquiry_title("test")
-                .inquiry_content("test")
-                .inquiry_tel("test")
-                .inquiry_email("test")
-                .inquiry_name("test")
+                .inquiryTitle("test")
+                .inquiryContent("test")
+                .inquiryTel("test")
+                .inquiryEmail("test")
+                .inquiryName("test")
                 .build();
         inquiryService.register(dto);
     }

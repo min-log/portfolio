@@ -322,15 +322,37 @@
       <a id="setCo" href="#coWork" hidden="">위치 이동시킬 버튼</a>
       <h2 class="sec_tit">Co-work</h2>
       <p class="sec_subtxt">나와 함께 했던 사람들의 이야기</p>
-      <a href="/coWork/form" class="btn-green">메시지 남기기 <em class="xi-send ml5"></em></a>
-      <ul class="co_work">
-        <li>
-          <p class="tit">이*영 대리 <span>팀</span></p>
-          <p>오상테크놀로지</p>
-          <div class="con">
-            테스트
-          </div>
-        </li>
+      <div class="text_center mt40">
+        <a href="/coWork/form" class="btn-green">메시지 남기기 <em class="xi-send ml5"></em></a>
+      </div>
+      <ul class="co_work mt40">
+        <c:forEach var="item" items="${list}" varStatus="status" >
+          <li>
+            <p class="tit">${item.coName} <span class="co_work_position">${item.coPosition}</span> <span class="co_work_department">${item.coDepartment}팀</span></p>
+            <p class="co_work_company">${item.coCompany}</p>
+            <div class="con">
+                ${item.coContent}
+            </div>
+            <div class="btn_wrap">
+              <a href="javascript:coAction('modify',${item.coId})" title="수정">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>
+              </a>
+              <a href="javascript:coAction('remove', ${item.coId})" title="삭제">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                </svg>
+              </a>
+              <p class="pw_wrap pw_wrap_${item.coId}" style="display: none">
+                <input type="password">
+                <a href="#">확인</a>
+              </p>
+            </div>
+          </li>
+        </c:forEach>
       </ul>
     </section>
     <section class="main_contact_wrap section section-10">
@@ -348,40 +370,40 @@
             </colgroup>
             <tbody>
             <tr>
-              <th><label for="inquiry_title">제목</label></th>
-              <td><input id="inquiry_title" name="inquiry_title" type="text"></td>
+              <th><label for="inquiryTitle">제목</label></th>
+              <td><input id="inquiryTitle" name="inquiryTitle" type="text"></td>
             </tr>
             <tr>
-              <th><label for="inquiry_name">이름</label></th>
-              <td><input id="inquiry_name" name="inquiry_name" type="text"></td>
+              <th><label for="inquiryName">이름</label></th>
+              <td><input id="inquiryName" name="inquiryName" type="text"></td>
             </tr>
             <tr>
               <th><label >연락처</label></th>
               <td>
                 <div class="phone_con">
-                  <select id="inquiry_tel_1" name="inquiry_tel_1">
+                  <select id="inquiryTel_1" name="inquiryTel_1">
                     <option value="010">010</option>
                     <option value="011">011</option>
                     <option value="031">031</option>
                     <option value="031">031</option>
                   </select>
                   <span>-</span>
-                  <input id="inquiry_tel_2" name="inquiry_tel_2" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="4" >
+                  <input id="inquiryTel_2" name="inquiryTel_2" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="4" >
                   <span>-</span>
-                  <input id="inquiry_tel_3" name="inquiry_tel_3"  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="4" >
+                  <input id="inquiryTel_3" name="inquiryTel_3"  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="4" >
                 </div>
               </td>
             </tr>
             <tr>
-              <th><label for="inquiry_email" >이메일</label></th>
+              <th><label for="inquiryEmail" >이메일</label></th>
               <td>
-                  <input path="inquiry_email" id="inquiry_email" name="inquiry_email" type="email" />
+                  <input path="inquiryEmail" id="inquiryEmail" name="inquiryEmail" type="email" />
               </td>
             </tr>
             <tr>
-              <th><label for="inquiry_content">내용</label></th>
+              <th><label for="inquiryContent">내용</label></th>
               <td>
-                <textarea name="inquiry_content" id="inquiry_content" cols="30" rows="10"></textarea>
+                <textarea name="inquiryContent" id="inquiryContent" cols="30" rows="10"></textarea>
                 <p>500글자 내외로 내용을 입력하세요.</p>
               </td>
             </tr>
@@ -397,7 +419,58 @@
 <script src="${contextPath}/resource/js/jquery/gsap.min.js"></script>
 <script src="${contextPath}/resource/js/jquery/ScrollTrigger.min.js"></script>
 <script src="${contextPath}/resource/js/pages/main.js"></script>
+<script type="text/javascript">
+  function coAction(type,e){
+    let pw = ".pw_wrap_" + e;
+    $(pw).css({display: "block"});
 
+    if(type == "modify"){
+      $(pw).find("a").attr("href","javascript:coPw('"+type+"',"+e+")");
+    }else{
+      $(pw).find("a").attr("href","javascript:coPw('"+type+"',"+e+")");
+    }
+  }
+
+  function coPw(type,e){
+
+    let pw = ".pw_wrap_" + e;
+    let pwVal = $(pw).find("input").val();
+    console.log(pwVal);
+
+    let data =JSON.stringify({
+      coId : e,
+      coPassword : pwVal
+    });
+
+    console.log(data);
+    $.ajax({
+      url:'/APIcoWork/password',
+      type:"POST",
+      data: data,
+      dataType: 'json',
+      contentType: 'application/json; charset=utf-8',
+      cache: false,
+      success: function (data){
+        if (data){
+          console.log(data);
+          location.href = "/coWork/" + type + "?no=" + e;
+        }else{
+          console.log(data);
+          document.getElementById("ModalMsg").classList.remove("fade");
+          document.querySelector(".modal-msg").innerText = "비밀번호가 틀렸습니다.";
+        }
+
+      },
+      error:function (data){
+        document.getElementById("ModalMsg").classList.remove("fade");
+        document.querySelector(".modal-msg").innerText = "비밀번호를 입력해주세요.";
+        console.log(data);
+      }
+    })
+  }
+
+
+</script>
 <script type="text/javascript">
   window.onload = function(){
     if(msgPop  != ""){
@@ -408,15 +481,12 @@
 
 <script type="text/javascript">
 
-
-
-
   function inquirySave(){
-    const inquiryTitle = $('#inquiry_title').val();
-    const inquiryContent = $('#inquiry_content').val();
-    const inquiryTel = $('#inquiry_tel_1').val()+"-"+$('#inquiry_tel_2').val()+"-"+$('#inquiry_tel_3').val();
-    const inquiryEmail = $('#inquiry_email').val();
-    const inquiryName = $('#inquiry_name').val();
+    const inquiryTitle = $('#inquiryTitle').val();
+    const inquiryContent = $('#inquiryContent').val();
+    const inquiryTel = $('#inquiryTel_1').val()+"-"+$('#inquiryTel_2').val()+"-"+$('#inquiryTel_3').val();
+    const inquiryEmail = $('#inquiryEmail').val();
+    const inquiryName = $('#inquiryName').val();
     if (inquiryTitle === ""){
       alert("타이틀을 입력해주세요.");
       return false;
@@ -429,17 +499,17 @@
     }else if(inquiryEmail === ""){
       alert("이메일을 입력해주세요.");
       return false;
-    }else if($("#inquiry_tel_1").val() === "" || $("#inquiry_tel_2").val() === "" || $("#inquiry_tel_3").val() === ""){
+    }else if($("#inquiryTel_1").val() === "" || $("#inquiryTel_2").val() === "" || $("#inquiryTel_3").val() === ""){
       alert("연락처를 올바르게 입력해주세요.");
       return false;
     }
 
     let obj=JSON.stringify({
-        inquiry_title : inquiryTitle,
-        inquiry_content : inquiryContent,
-        inquiry_tel : inquiryTel,
-        inquiry_email : inquiryEmail,
-        inquiry_name : inquiryName
+        inquiryTitle : inquiryTitle,
+        inquiryContent : inquiryContent,
+        inquiryTel : inquiryTel,
+        inquiryEmail : inquiryEmail,
+        inquiryName : inquiryName
     });
     console.log("클릭" + obj);
     $.ajax({

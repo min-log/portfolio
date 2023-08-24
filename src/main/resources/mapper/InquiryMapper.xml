@@ -5,6 +5,6 @@
 <mapper namespace="com.project.minlog.mapper.InquiryMapper">
     <insert id="oneInsert" parameterType="com.project.minlog.domain.InquiryVO">
         insert into inquiry(inquiry_title, inquiry_content, inquiry_tel, inquiry_email, inquiry_name)
-         values (#{inquiry_title},#{inquiry_content},#{inquiry_tel},#{inquiry_email},#{inquiry_name})
+         values (#{inquiryTitle},#{inquiryContent},#{inquiryTel},#{inquiryEmail},#{inquiryName})
     </insert>
 </mapper>

@@ -8,28 +8,28 @@ import org.springframework.validation.annotation.Validated;
 
 import java.time.LocalDateTime;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Setter
 @Getter
-@ToString
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Builder
 @Validated
 public class InquiryDTO {
 
-    private Long inquiry_id;
-    private LocalDateTime create_date;
+    private Long inquiryId;
+    private LocalDateTime createDate;
     @NotNull(message = "제목을 입력해주세요.")
     @Max(value = 100,message = "제목을 100글자 이내로 입력해주세요.")
-    private String inquiry_title;
+    private String inquiryTitle;
     @NotNull(message = "내용을 입력해주세요.")
     @Max(value = 500,message = "내용을 500글자 이내로 입력해주세요.")
-    private String inquiry_content;
+    private String inquiryContent;
     @NotNull(message = "연락처를 입력해주세요.")
-    private String inquiry_tel;
+    private String inquiryTel;
     @NotNull(message = "이메일을 입력해주세요.")
     @Email(message = "올바른 이메일 형식을 입력해주세요.")
-    private String inquiry_email;
+    private String inquiryEmail;
     @NotNull(message = "이름을 입력해주세요.")
-    private String inquiry_name;
+    private String inquiryName;
 }

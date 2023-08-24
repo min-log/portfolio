@@ -1,7 +1,6 @@
 package com.project.minlog.mapper;
 
 import com.project.minlog.domain.CoWorkVO;
-import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -10,4 +9,7 @@ import java.util.List;
 public interface CoWorkMapper {
     void oneInsert(CoWorkVO vo);
     List<CoWorkVO> selectAll();
+    CoWorkVO getOne(Long no);
+    CoWorkVO getPassword(Long no,String pw);
+
 }

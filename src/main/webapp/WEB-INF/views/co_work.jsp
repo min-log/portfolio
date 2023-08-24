@@ -25,13 +25,13 @@
         </colgroup>
         <tbody>
         <tr>
-          <th><label for="co_name">이름</label></th>
-          <td><input id="co_name" name="co_name" type="text" data-txt="이름"></td>
+          <th><label for="coName">이름</label></th>
+          <td><input id="coName" name="coName" type="text" data-txt="이름" placeholder="이름을 적어주세요." value="${dto.coName}"></td>
         </tr>
         <tr>
-          <th><label for="co_company">회사 / 기타</label></th>
+          <th><label for="coCompany">회사 / 기타</label></th>
           <td>
-            <select name="co_company" id="co_company" data-txt="회사">
+            <select name="coCompany" id="coCompany" data-txt="회사">
               <option>회사/기타 선택해주세요.</option>
               <option>CMA</option>
               <option>CMA</option>
@@ -41,42 +41,50 @@
           </td>
         </tr>
         <tr>
-          <th><label for="co_department" >부서</label></th>
+          <th><label for="coDepartment" >부서</label></th>
           <td>
-            <input name="co_department" id="co_department" type="text" data-txt="부서" />
+            <input name="coDepartment" id="coDepartment" type="text" data-txt="부서" placeholder="부서를 적어주세요. ex) 개발, 디자인" value="${dto.coDepartment}"/>
           </td>
         </tr>
         <tr>
-          <th><label for="co_position" >직위</label></th>
+          <th><label for="coPosition" >직책</label></th>
           <td>
-            <input name="co_position" id="co_position" type="text" data-txt="직위" />
+            <input name="coPosition" id="coPosition" type="text" data-txt="직책" placeholder="직책을 적어주세요. ex) 과장" value="${dto.coPosition}"/>
           </td>
         </tr>
         <tr>
-          <th><label for="co_content">하고싶은 말</label></th>
+          <th><label for="coContent">하고싶은 말</label></th>
           <td>
-            <textarea name="co_content" id="co_content" data-txt="하고싶은 말" ></textarea>
+            <textarea name="coContent" id="coContent" data-txt="하고싶은 말" placeholder="함께 일하며 알게된 지민은 ?">${dto.coContent}</textarea>
             <p>500글자 내외로 내용을 입력하세요.</p>
           </td>
         </tr>
         <tr>
-          <th><label for="co_password">비밀번호</label></th>
+          <th><label for="coPassword">비밀번호</label></th>
           <td>
-            <input id="co_password" name="co_password" type="password" placeholder="비밀번호 4자리 이상 적어주세요." data-txt="비밀번호">
+            <input id="coPassword" name="coPassword" type="password" placeholder="비밀번호 4자리 이상 적어주세요." data-txt="비밀번호">
             <p>수정 및 삭제 시 필요해요.</p>
           </td>
         </tr>
         <tr>
-          <th><label for="co_lock">암호</label></th>
+          <th><label for="coLock">암호</label></th>
           <td>
             <p>게시글을 작성하시려면 암호를 맞춰주세요.</p>
             <p>지민님의 핸드폰 번호는? (- 빼고 적어주세요.)</p>
-            <input id="co_lock" name="co_lock" type="password" placeholder="010********"  data-txt="암호">
+            <input id="coLock" name="coLock" type="password" placeholder="010********"  data-txt="암호">
           </td>
         </tr>
         </tbody>
       </table>
-      <button type="button" onclick="coWorkForm()" class="btn-green">보내기 <em class="xi-send ml5"></em></button>
+      <c:choose>
+          <c:when test="${dto  != null}">
+            <button type="button" onclick="coWorkForm()" class="btn-green">수정하기 <em class="xi-send ml5"></em></button>
+          </c:when>
+          <c:otherwise>
+            <button type="button" onclick="coWorkForm()" class="btn-green">보내기 <em class="xi-send ml5"></em></button>
+          </c:otherwise>
+      </c:choose>
+
     </form>
   </div>
   <script type="text/javascript">
