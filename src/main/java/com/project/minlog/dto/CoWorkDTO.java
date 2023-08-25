@@ -2,6 +2,7 @@ package com.project.minlog.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
@@ -32,4 +33,10 @@ public class CoWorkDTO {
     @NotNull(message = "비밀번호를 입력해주세요.")
     @Min(value = 4 , message = "4자리 이상 비밀번호를 입력해주세요.")
     private String coPassword;
+
+    @NotNull(message = "암호를 입력하세요")
+    @Pattern(regexp = "01038967340", message = "올바른 암호를 입력하세요.")
+    private String coLock;
+
 }
+

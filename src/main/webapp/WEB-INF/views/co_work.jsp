@@ -15,6 +15,7 @@
   </div>
   <div class="contact_wrap">
     <form id="coForm" method="post" action="/coWork/register">
+      <input type="hidden" value="${dto.coId}" />
       <table>
         <caption>
           <p class="ally-hidden">전하고 싶은 이야기</p>
@@ -59,19 +60,24 @@
             <p>500글자 내외로 내용을 입력하세요.</p>
           </td>
         </tr>
-        <tr>
+        <tr <c:if test="${dto  != null}">style="display:none;"</c:if> >
           <th><label for="coPassword">비밀번호</label></th>
           <td>
-            <input id="coPassword" name="coPassword" type="password" placeholder="비밀번호 4자리 이상 적어주세요." data-txt="비밀번호">
+            <input id="coPassword" name="coPassword" type="password"
+              <c:if test="${dto  != null}"> value="${dto.coPassword}" readonly </c:if>
+              placeholder="비밀번호 4자리 이상 적어주세요." data-txt="비밀번호" >
+
             <p>수정 및 삭제 시 필요해요.</p>
           </td>
         </tr>
-        <tr>
+        <tr <c:if test="${dto  != null}"> style="display:none;" </c:if>>
           <th><label for="coLock">암호</label></th>
           <td>
             <p>게시글을 작성하시려면 암호를 맞춰주세요.</p>
-            <p>지민님의 핸드폰 번호는? (- 빼고 적어주세요.)</p>
-            <input id="coLock" name="coLock" type="password" placeholder="010********"  data-txt="암호">
+            <p>지민님의 핸드폰 번호는? (- 빼고 적어주세요.) </p>
+            <input id="coLock" name="coLock" type="password" placeholder="010********"
+                    <c:if test="${dto  != null}"> value="01038967340" </c:if>
+                   data-txt="암호" />
           </td>
         </tr>
         </tbody>

@@ -44,6 +44,8 @@ dependencies {
     implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.1'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.1.2'
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.9'
 
 }
 

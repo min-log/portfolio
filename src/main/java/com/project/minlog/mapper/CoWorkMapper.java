@@ -7,9 +7,12 @@ import java.util.List;
 
 @Mapper
 public interface CoWorkMapper {
-    void oneInsert(CoWorkVO vo);
+    void insertOne(CoWorkVO vo);
     List<CoWorkVO> selectAll();
     CoWorkVO getOne(Long no);
     CoWorkVO getPassword(Long no,String pw);
+    void modify(CoWorkVO vo);
+
+    void deleteOne(Long no);
 
 }

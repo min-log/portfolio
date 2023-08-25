@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.project.minlog.mapper.CoWorkMapper">
-    <insert id="oneInsert">
+    <insert id="insertOne">
         insert into co_work(co_name, co_position, co_company, co_department, co_password, co_content)
             values (#{coName},#{coPosition},#{coCompany},#{coDepartment},#{coPassword},#{coContent})
     </insert>
@@ -11,13 +11,24 @@
         select co_id,co_name,co_company,co_department,co_position,co_content from  co_work;
     </select>
     <select id="getOne" resultType="com.project.minlog.domain.CoWorkVO">
-        select co_id,co_name,co_company,co_department,co_position,co_content from  co_work
+        select co_id,co_name,co_company,co_department,co_position,co_content,co_password from  co_work
             where co_id = #{no};
     </select>
     <select id="getPassword" resultType="com.project.minlog.domain.CoWorkVO">
         select co_id,co_name,co_company,co_department,co_position,co_content from  co_work
         where co_id = #{no} and co_password = #{pw};
     </select>
+    <update id="modify">
+        update co_work set co_company = #{coContet},
+                           co_department = #{coContet},
+                           co_position = #{coPosition},
+                           co_name  = #{coName},
+                           co_content = #{coContet}
+                       where co_id = #{coId}
+    </update>
+    <delete id="deleteOne">
+        delete from co_work where co_id = #{no}
+    </delete>
 
 
 </mapper>

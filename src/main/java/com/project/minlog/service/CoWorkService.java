@@ -10,5 +10,8 @@ public interface CoWorkService {
     List<CoWorkDTO> getList();
     CoWorkDTO getOne(Long no);
     boolean getPasswordCk(Long no,String pw);
+    void modify(CoWorkDTO dto);
+
+    void removeOne(Long no);
 
 }
