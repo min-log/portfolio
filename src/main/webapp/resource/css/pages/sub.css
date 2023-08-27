@@ -2,7 +2,7 @@
 /*==========================================================================
 subpage
 ==========================================================================*/
-.subpage {padding-bottom:100px;background: var(--main-bg);}
+.subpage {padding-bottom:100px;background: var(--main-bg);min-height: 100vh;}
 .subpage_header {padding:40px 0 0;}
 .subpage_header .tit {
     font-size: 50px;

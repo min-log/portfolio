@@ -56,8 +56,11 @@
         <tr>
           <th><label for="coContent">하고싶은 말</label></th>
           <td>
-            <textarea name="coContent" id="coContent" data-txt="하고싶은 말" placeholder="함께 일하며 알게된 지민은 ?">${dto.coContent}</textarea>
-            <p>500글자 내외로 내용을 입력하세요.</p>
+            <textarea class="textBox" name="coContent" id="coContent" data-txt="하고싶은 말" placeholder="함께 일하며 알게된 지민은 어떤 사람인가요?">${dto.coContent}</textarea>
+            <p class="mt10">
+              100자 이상 200자 내외로 내용을 입력하세요.
+              <span style="float:right"><b id="textCount" class="color_main">0</b> 글자 수</span>
+            </p>
           </td>
         </tr>
         <tr <c:if test="${dto  != null}">style="display:none;"</c:if> >
@@ -67,7 +70,7 @@
               <c:if test="${dto  != null}"> value="${dto.coPassword}" readonly </c:if>
               placeholder="비밀번호 4자리 이상 적어주세요." data-txt="비밀번호" >
 
-            <p>수정 및 삭제 시 필요해요.</p>
+            <p class="mt10">수정 및 삭제 시 필요해요.</p>
           </td>
         </tr>
         <tr <c:if test="${dto  != null}"> style="display:none;" </c:if>>
@@ -75,7 +78,7 @@
           <td>
             <p>게시글을 작성하시려면 암호를 맞춰주세요.</p>
             <p>지민님의 핸드폰 번호는? (- 빼고 적어주세요.) </p>
-            <input id="coLock" name="coLock" type="password" placeholder="010********"
+            <input id="coLock" name="coLock"  class="mt10" type="password" placeholder="010********"
                     <c:if test="${dto  != null}"> value="01038967340" </c:if>
                    data-txt="암호" />
           </td>
@@ -93,7 +96,12 @@
 
     </form>
   </div>
+
+
   <script type="text/javascript">
+    textBoxContLimit(200);
+
+
     function coWorkForm(){
 
       let is_empty = false;

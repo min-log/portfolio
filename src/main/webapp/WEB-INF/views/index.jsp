@@ -8,8 +8,15 @@
 
 <c:import url="inc/headerScript.jsp"/>
 <c:import url="inc/header.jsp"/>
+
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/main.css">
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/main_media.css">
+
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
 <!-- #container -->
 <em class="fullbg"></em>
@@ -22,7 +29,8 @@
       <div class="circle">
         <div class="con">
           <em class="leaf_img"><img src="resource/images/main/leaf_bg.png" alt="나뭇잎 이미지"></em>
-          <div class="txt">web publisher / ui & markup developer / marketer /</div>
+          <div class="txt">Web Developer / ui & markup developer / marketer /
+          </div>
           <div class="img"></div>
         </div>
       </div>
@@ -51,6 +59,51 @@
     </section>
     <section class="main_introduction_wrap section">
       <ul class="Introduction">
+        <li class="last">
+          <h3 class="tit">Skills <em class="wave_line"></em></h3>
+          <div class="con">
+            <h4>Back End : Tech Stack</h4>
+            <p>
+              java, spring(spring boot), MySQL,MariaDB,Oracle,
+            </p>
+            <h4>Front End : UI(User Interface) / UX(User Experience)</h4>
+            <p>
+              <em class="xi-html5">
+                <b class="ally-hidden">html</b>
+              </em>
+              <em class="xi-css3">
+                <b class="ally-hidden">css</b>
+              </em>
+              <em class="xi-javascript">
+                <b class="ally-hidden">javascript</b>
+              </em>
+              <em class="xi-plus-square">
+                <b class="ally-hidden">jqury</b>
+              </em>
+              <em class="xi-photoshop">
+                <b class="ally-hidden">포토샵</b>
+              </em>
+              <em class="xi-illustrator">
+                <b class="ally-hidden">일러스트</b>
+              </em>
+            </p>
+            <p>ui animation 및 인터렉션에 관심이 많고 더 낳은 코드와 시각적인 모션을 보여주기위해 배우며 적용합니다.
+            </p>
+            <h4>개발환경</h4>
+            <p>
+              Configuration Management Tool (svn / git)
+              <br/>
+              idea : eclipse, IntelliJ
+            </p>
+
+            <h4>Hosting</h4>
+            <p>
+              AWS (EC2)<br />
+              빌더 쇼핑몰 활용한 작업이 가능: 카페24 , 고도몰, 닷홈
+            </p>
+
+          </div>
+        </li>
         <li>
           <h3 class="tit">UI Development <em class="wave_line"></em></h3>
           <div  class="con">
@@ -68,56 +121,13 @@
             </p>
           </div>
         </li>
-        <li class="last">
-          <h3 class="tit">Skills <em class="wave_line"></em></h3>
+        <li>
+          <h3 class="tit">Content Marketing <em class="wave_line"></em></h3>
           <div class="con">
-            <h4>UI(User Interface)</h4>
-            <p>
-              <em class="xi-html5">
-                <b class="ally-hidden">html</b>
-              </em>
-              <em class="xi-css3">
-                <b class="ally-hidden">css</b>
-              </em>
-              <em class="xi-javascript">
-                <b class="ally-hidden">javascript</b>
-              </em>
-              <em class="xi-plus-square">
-                <b class="ally-hidden">jqury</b>
-              </em>
-            </p>
-            <p>ui animation 및 인터렉션에 관심이 많고 더 낳은 코드와 시각적인 모션을 보여주기위해 배우며 적용합니다.
-            </p>
-            <h4>개발환경</h4>
-            <p>
-              Configuration Management Tool (svn / git)
-              eclipse
-            </p>
-
-            <h4>Hosting</h4>
-            <p>
-              빌더 쇼핑몰 활용한 작업이 가능합니다. <br />카페24 , 고도몰, 닷홈 등 운영 경험이 있습니다.
-            </p>
-
-            <h4>UX(User Experience)</h4>
-            <p>
-              <em class="xi-photoshop">
-                <b class="ally-hidden">포토샵</b>
-              </em>
-              <em class="xi-illustrator">
-                <b class="ally-hidden">일러스트</b>
-              </em>
-            </p>
-            <p>
-              포스터, 카드뉴스, 현수막, 명함 등 디자인 경험이 있으며, <br />웹퍼블리셔 과정을 진행하며 홈페이지 디자인도 배웠습니다.
-            </p>
-
-            <h4>Content Marketing</h4>
             <p>SNS체널 운영, 언론보도 작성 및 배포가 가능합니다.<br />
-              카드뉴스 &middot; 블로그 &middot; 영상 콘텐츠 &middot; 이벤트의 기획 및 제작, 행사 모집 및 운영 경험이 있습니다.</p>
+            카드뉴스 &middot; 블로그 &middot; 영상 콘텐츠 &middot; 이벤트의 기획 및 제작, 행사 모집 및 운영 경험이 있습니다.</p>
           </div>
         </li>
-
       </ul>
     </section>
   </div>
@@ -126,7 +136,11 @@
     <section class="main_prosect_wrap section">
       <h2 class="sec_tit">
         <span>Recent <em class="icon_arrow"></em></span>
-        <span>Project</span>
+        <span class="round">Project</span>
+        <span>
+            BackAnd
+            <a href="#" class="btn_more">+ More</a>
+        </span>
       </h2>
       <p class="img"><img src="" alt=""></p>
     </section>
@@ -135,21 +149,14 @@
 
   <div class="section-group-2-1 section-group" >
     <section class="main_project_back section">
-      <div class="project_wrap">
-        <h2 class="sec_tit">BackAnd</h2>
-        <p class="sec_subtxt">Pick ! <br>Web Project
-          <img src="resource/images/main/emoticon_hand.png" alt="">
-        </p>
-        <ul>
-          <li>
+      <img src="resource/images/common/modul_pc.png" alt="">
+      <h2>Travel Road</h2>
+      <p>개인 프로젝트</p>
+      <p>작업 기간</p>
+      <p>사용 기술 </p>
 
-            <p></p>
-            <p></p>
-            <p></p>
-          </li>
-        </ul>
 
-      </div>
+
     </section>
   </div>
 
@@ -323,13 +330,14 @@
       <h2 class="sec_tit">Co-work</h2>
       <p class="sec_subtxt">나와 함께 했던 사람들의 이야기</p>
       <div class="text_center mt40">
-        <a href="/coWork/form" class="btn-green">메시지 남기기 <em class="xi-send ml5"></em></a>
+        <a href="${contextPath}/coWork/form" class="btn-green btn-active mg_auto">메시지 남기기 <em class="xi-send ml5"></em></a>
       </div>
-      <ul class="co_work mt40">
+      <p class="mt40"></p>
+      <ul class="co_work">
         <c:forEach var="item" items="${list}" varStatus="status" >
-          <li>
-            <p class="tit">${item.coName} <span class="co_work_position">${item.coPosition}</span> <span class="co_work_department">${item.coDepartment}팀</span></p>
+          <li class="item">
             <p class="co_work_company">${item.coCompany}</p>
+            <p class="tit">${item.coName} <span class="co_work_position">${item.coPosition}</span> <span class="co_work_department">${item.coDepartment}팀</span></p>
             <div class="con">
                 ${item.coContent}
             </div>
@@ -347,7 +355,7 @@
                 </svg>
               </a>
               <p class="pw_wrap pw_wrap_${item.coId}" style="display: none">
-                <input type="password">
+                <input type="password" placeholder="비밀번호">
                 <a href="#">확인</a>
               </p>
             </div>
@@ -403,13 +411,15 @@
             <tr>
               <th><label for="inquiryContent">내용</label></th>
               <td>
-                <textarea name="inquiryContent" id="inquiryContent" cols="30" rows="10"></textarea>
-                <p>500글자 내외로 내용을 입력하세요.</p>
+                <textarea class="textBox" name="inquiryContent" id="inquiryContent" cols="30" rows="10"></textarea>
+                <p> 500글자 내외로 내용을 입력하세요.
+                  <span style="float:right"><b id="textCount" class="color_main">0</b> 글자 수</span>
+                </p>
               </td>
             </tr>
             </tbody>
           </table>
-          <a href="javascript:inquirySave();" class="btn-green">보내기 <em class="xi-send ml5"></em></a>
+          <a href="javascript:inquirySave();" class="btn-green btn-active mg_auto mt30" style="display:block">보내기 <em class="xi-send ml5"></em></a>
         </div>
       </form>
     </section>
@@ -419,10 +429,24 @@
 <script src="${contextPath}/resource/js/jquery/gsap.min.js"></script>
 <script src="${contextPath}/resource/js/jquery/ScrollTrigger.min.js"></script>
 <script src="${contextPath}/resource/js/pages/main.js"></script>
+
+<script type="text/javascript">
+
+  textBoxContLimit(500);
+
+  $('.co_work').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    //vertical: true,
+    autoplay: true,
+    verticalSwiping: true,
+    autoplaySpeed: 2000,
+  });
+</script>
 <script type="text/javascript">
   function coAction(type,e){
     let pw = ".pw_wrap_" + e;
-    $(pw).css({display: "block"});
+    $(pw).css({display: "inline-block"});
 
     if(type == "modify"){
       $(pw).find("a").attr("href","javascript:coPw('"+type+"',"+e+")");

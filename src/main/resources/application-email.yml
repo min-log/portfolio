@@ -1,0 +1,26 @@
+## Email Settings
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: minlog.0430@gmail.com
+    password: altkekqsrdgrwgke
+    smtp:
+      socketFactory:
+        class: javax.net.ssl.SSLSocketFactory
+        port: 587
+        fallback: false
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable=true: true
+            trust: smtp.gmail.com
+          starttls:
+            starttls: true
+      transport:
+        protocol: smtp
+      smtp:
+        auth: true
+        timeout: 5000
+        debug: true

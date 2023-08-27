@@ -95,7 +95,7 @@ html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}
 .main_greetings_wrap .sec_tit {z-index:1;transform-origin:right;width:100%;padding:var(--padding-init);margin-bottom:20px;box-sizing:border-box;transition: var(--trans-init);}
 .main_greetings_wrap .circle {margin: 0 auto;width:400px;height:400px;position:relative;z-index:100;display:flex;}
 .main_greetings_wrap .circle .con {display:block;width:100%;height:100%;}
-.main_greetings_wrap .circle .img {width:calc(100% - 100px);height:calc(100% - 100px);margin:50px;background:url('../../images/main/main_greetings_img.jpg') center no-repeat;background-size:100% auto;border-radius:50%;overflow:hidden;display:block;position:relative;}
+.main_greetings_wrap .circle .img {width:300px;height:300px;margin:50px;background:url('../../images/main/main_greetings_img.jpg') center no-repeat;background-size:100% auto;border-radius:50%;overflow:hidden;display:block;position:relative;}
 .main_greetings_wrap .circle .txt {position:absolute;width:100%;height:100%;left:0;top:0;animation: anicicle 10s linear infinite;z-index:-1}
 .main_greetings_wrap .circle .txt span {display:inline-block;font-size: 33px;font-family: Helvetica Neue, sans-serif;font-weight: 300;text-transform:uppercase;color:var(--color-main);position:absolute;left:50%;transform-origin:0 200px;font-family:'IbarraRealNova';font-weight:100;}
 .leaf_img {position:absolute;top: 59%;left: 82%;z-index: 0;max-width: 100px;width: 20%;height:auto;transform: rotate(145deg);transition:var(--trans-init);}
@@ -151,14 +151,14 @@ html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}
 /* main_prosect_wrap */
 .main_prosect_wrap {padding:var(--padding-init);display:flex;flex-direction: row-reverse;flex-wrap: wrap;align-items: flex-end;justify-content: flex-end;position:relative;
 	margin-left:calc(100vw - 200px);transition: var(--trans-init)}
-.main_prosect_wrap .img {background:#ccc;width:50%;height: 90%;transform: translateY(-10%);}
+.main_prosect_wrap .img {background:#ccc;width:50%;height: 90%;transform: translateY(-10%);z-index:-1;}
 .main_prosect_wrap .sec_tit {text-align:left;position:absolute;bottom:0;left:60%;width:500px;}
 .main_prosect_wrap .sec_tit span {line-height:90px;display:block;border-bottom:1px solid #333;position:relative;}
-.main_prosect_wrap .sec_tit span + span {text-align:right;}
-.main_prosect_wrap .sec_tit span + span:after,
-.main_prosect_wrap .sec_tit span + span:before {content:'';display:block;height:100%;width:60px;border:1px solid #333;border-radius:50%;position:absolute;left:20px;bottom:0;transform: rotate(348deg);}
-.main_prosect_wrap .sec_tit span + span:before {left:40px;}
-
+.main_prosect_wrap .sec_tit span.round {text-align:right;}
+.main_prosect_wrap .sec_tit span.round:after,
+.main_prosect_wrap .sec_tit span.round:before {content:'';display:block;height:100%;width:60px;border:1px solid #333;border-radius:50%;position:absolute;left:20px;bottom:0;transform: rotate(348deg);}
+.main_prosect_wrap .sec_tit span.round:before {left:40px;}
+.main_prosect_wrap .sec_tit span:last-child {border-bottom:0;}
 .main_project_back {margin-left:calc(100vw - 200px);z-index:5;left:0 ;bottom: 0 !important;left:0 !important;/*margin-top:200px*/transform:translateX(60%);transition: var(--trans-init)}
 
 
@@ -192,6 +192,24 @@ transform: translate(-20%, -50%);}
 .main_prosect_list .wheel__card {position: absolute;top: 0;left: 0;width: 10%;max-width: 300px;aspect-ratio: 1 / 1;cursor: pointer;}
 .main_prosect_list .wheel__card img {transition:var(--trans-init);}
 .main_prosect_list .wheel__card.active img{transform:translateY(-100%);opacity:0}
+
+
+.section-group-2 .btn_more {display: inline-block;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	background: var(--color-sub);
+	padding: 0 10px;
+	position: absolute;
+	bottom: 0;
+	border-radius: 5px;
+	color: #fff;
+	right: -10%;
+	top: 50%;
+	transform: translate(0, -50%);}
+
+
+.section-group-2-1 {height:auto;max-height:inherit;padding-bottom:50vh;}
 
 
 /* ===============================================
@@ -238,12 +256,28 @@ transform: translate(-20%, -50%);}
 .section-group-4 {z-index:10;}
 .section-group-4 .section {height:auto !important;}
 #coWork {}
-.co_work {padding:var(--padding-init);box-sizing:border-box;overflow:hidden;display: inline-block;}
-.co_work li {max-width:800px;background:#fff;border-radius:5px;padding:38px;box-sizing:border-box;float:left;min-width: calc(40% - 40px);max-width: calc(60% - 40px);}
-.co_work li:nth-child(2n) {float:right;margin-top: 200px;}
-.co_work li .tit {font-size:16px;margin-bottom:20px;}
-.co_work li .con {font-size:24px;}
-
+.co_work {max-width: 900px;padding:0;margin:0 auto;box-sizing:border-box;overflow:hidden;display: inline-block;}
+.co_work li.item {background:#fff;border-radius:5px;padding:20px 30px;margin:5px; box-sizing:border-box}
+.co_work li.item .tit {font-size:16px;font-weight:bold;margin-bottom: 10px;}
+.co_work li.item .tit span {color: #555555;font-size:12px;font-weight:normal;}
+.co_work li.item .co_work_company {font-size:12px;color:#045a12;font-weight:bold;}
+.co_work li.item .con {font-size:16px;margin-bottom:10px;}
+.co_work .pw_wrap {margin-left:10px;display:inline-block;width:80%;}
+.co_work .pw_wrap input[type=password] {width:50%;height:20px;line-height:20px;padding-bottom:0;padding-top: 0;border-radius: 2px;box-sizing: border-box;}
+.co_work .pw_wrap a {margin-left:5px;background:#000;color:#fff;font-size: 12px;border-radius: 2px;height: 20px;line-height: 20px;display: inline-block;padding: 0 5px;}
+.co_work .slick-dots {text-align:center;}
+.co_work .slick-dots li {display:inline-block;margin:0 2px;}
+.co_work .slick-dots li button {border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	display: block;
+	border: 2px solid var(--color-main);
+	text-indent: -1000000000000000000px;}
+.co_work .slick-dots li.slick-active button {background:var(--color-main)}
+.co_work .slick-arrow {background:var(--color-main);}
+.co_work .slick-prev {}
+.co_work .slick-next {}
+.co_work .slick-track {padding:0;margin:0;}
 .main_contact_wrap {padding:var(--padding-init);}
 .main_contact_wrap ,sec_tit {margin-top:100px;}
 

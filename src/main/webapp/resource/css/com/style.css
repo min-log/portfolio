@@ -61,6 +61,7 @@ iframe {border:none !important;}
 }
 
 /* margin + padding */
+.mg_auto {margin:0 auto !important;}
 .mt0 {margin-top:0px !important;}   .mb0 {margin-bottom:0 !important;}
 .mt5 {margin-top:5px !important;}   .mb5 {margin-bottom:5px !important;}
 .mt10 {margin-top:10px !important;}	.mb10 {margin-bottom:10px !important;}	.mtm10 {margin-top:-10px !important;}
@@ -163,6 +164,13 @@ custom style
 [class*="xi-"] {display:inline-block;}
 [class*="btn-"]{display:inline-block;width:auto;min-width:100px;padding:20px;background:#000;min-height:50px;padding:10px 10px;line-height:30px;box-sizing:border-box;color:#fff;border-radius:5px;text-align:center;}
 .btn-green {background:var(--color-main);}
+.btn-sm {padding: 10px !important;
+	min-width: auto;
+	line-height: 20px !important;
+	min-height: auto;
+	min-width: auto;
+	width: auto !important;
+	display: inline-block;}
 /*list style*/
  
 /*icon style**/

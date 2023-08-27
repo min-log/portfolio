@@ -165,7 +165,7 @@
                 scrub:true,
                 pin :true,
                 ease:'easeOutQuart',
-                duration:3
+                duration:3,
               }
             });
 
@@ -181,125 +181,149 @@
             },1.5);
 
 
-//        let $group2top = $('.main_prosect_wrap');
-//        let group2Start = gsap.timeline({
-//          scrollTrigger: {
-//            trigger: $group2top,
-//            start:"top bottom",
-//            //	end:"bottom bottom",
-//            scrub:true,
-//            pin :false,
-//            duration:1,
-//            ease:'easeOutQuart',
-//            markers:true,
-//            //repeatDelay:1,
-//            //delaty:0.2,
-//          }
-//        });
-//
-//        group2Start.to($group2top,{
-//          x:'-60%'
-//        },1.5).to($sec03,{
-//          x:'0'
-//        },1.5).to($fullBg,{
-//          x:'-60%',
-//          y:-100 * ($section.length - 1),
-//        },1.5);
-//
-//
-//        //wheel position
-//        let $radius = $sec03wheel.offsetWidth / 2;
-//        let $center = $sec03wheel.offsetWidth / 2;
-//        let $total = $sec03images.length;
-//        let $totalNum = $sec03images.length / 4 ;
-//        let slice = (2 * Math.PI) / $total;
-//
-//        // group and section height
-//        let $group2Height= $windowHeight * $total / 6;
-//        $group2.height($group2Height+  $windowHeight + "px"); //section 2 개
-//        $sec03.height($group2Height + "px");
-//
-//        $sec03images.forEach((item, i) => {
-//          let angle = i * slice;
-//          let x = $center + $radius * Math.sin(angle);
-//          let y = $center - $radius * Math.cos(angle);
-//
-//          gsap.set(item, {
-//            rotation: angle + "_rad",
-//            xPercent: -50,
-//            yPercent: -50,
-//            x: x,
-//            y: y
-//          });
-//        });
-//        console.log($section.length)
-//        //section content fixed center
-//
-//        let group2Move = gsap.timeline({
-//          scrollTrigger: {
-//            trigger: $sec03,
-//            start:"top top",
-//            end:"bottom bottom",
-//            scrub:true,
-//            ease:'easeOutQuart',
-//            pin:true,
-//            //markers:true,
-//            //onLeave: self => section3Leave()
-//          }
-//        });
-//        let $pickshow =$sec03.find('.sec_subtxt');
-//        group2Move.from($pickshow,{
-//          opacity:'0'
-//        },0.2).to($sec03Con,{},2)
-//
-//
-//
-//
-//
-//        //section content wheel move
-//        gsap.to($sec03wheel, {
-//          rotate: () => -360,
-//          duration: $totalNum,
-//          scrollTrigger: {
-//            trigger: $sec03,
-//            start:"top +=500",
-//            end:"bottom bottom",
-//            scrub:true,
-//            ease:'easeOutQuart',
-//            //markers:true,
-//            pin:false,
-//            scrub: 1,
-//            snap: 1 / $totalNum,
-//            invalidateOnRefresh: true,
-//            //repeatDelay:2,
-//            //delay:2
-//
-//          }
-//        },1.5)
-//
-//
-//
-//
-//        //section content wheel action
-//        $('.wheel__card').on('click',function(){
-//          let wheelImg = $(this).find('img').attr('src');
-//          $('.wheel__card').removeClass('active');
-//          $(this).addClass('active');
-//          console.log(wheelImg)
-//          setTimeout(function(){
-//            $('.modul_tablet .img , .modul_phone .img').attr('style', 'background-image:url("'+ wheelImg+ '")')
-//
-//          },400);
-//
-//
-//        });
-
 
       }
 
+      if($group.hasClass('section-group-2-1')){
+        let section2Pro1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: $('.section-group-2-1'),
+            start:"top 20%",
+            end:"top bottom",
+            scrub:true,
+            pin :true,
+            ease:'easeOutQuart',
+            duration:3,
+            markers: true
+          }
+        });
+
+
+        section2Pro1.to($('.main_project_back'),{
+          x:'0',
+        },1.5).to($('.main_prosect_wrap'),{
+          x:'-60vw'
+        },1.5)
+
+      }
+
+      if($group.hasClass('section-group-2-2')){
+       let $group2top = $('.main_prosect_wrap');
+       let group2Start = gsap.timeline({
+         scrollTrigger: {
+           trigger: $group2top,
+           start:"top bottom",
+           //	end:"bottom bottom",
+           scrub:true,
+           pin :false,
+           duration:1,
+           ease:'easeOutQuart',
+           markers:true,
+           //repeatDelay:1,
+           //delaty:0.2,
+         }
+       });
+
+       group2Start.to($group2top,{
+         x:'-60%'
+       },1.5).to($sec03,{
+         x:'0'
+       },1.5).to($fullBg,{
+         x:'-60%',
+         y:-100 * ($section.length - 1),
+       },1.5);
+
+
+       //wheel position
+       let $radius = $sec03wheel.offsetWidth / 2;
+       let $center = $sec03wheel.offsetWidth / 2;
+       let $total = $sec03images.length;
+       let $totalNum = $sec03images.length / 4 ;
+       let slice = (2 * Math.PI) / $total;
+
+       // group and section height
+       let $group2Height= $windowHeight * $total / 6;
+       $group2.height($group2Height+  $windowHeight + "px"); //section 2 개
+       $sec03.height($group2Height + "px");
+
+       $sec03images.forEach((item, i) => {
+         let angle = i * slice;
+         let x = $center + $radius * Math.sin(angle);
+         let y = $center - $radius * Math.cos(angle);
+
+         gsap.set(item, {
+           rotation: angle + "_rad",
+           xPercent: -50,
+           yPercent: -50,
+           x: x,
+           y: y
+         });
+       });
+       console.log($section.length)
+       //section content fixed center
+
+       let group2Move = gsap.timeline({
+         scrollTrigger: {
+           trigger: $sec03,
+           start:"top top",
+           end:"bottom bottom",
+           scrub:true,
+           ease:'easeOutQuart',
+           pin:true,
+           //markers:true,
+           //onLeave: self => section3Leave()
+         }
+       });
+       let $pickshow =$sec03.find('.sec_subtxt');
+       group2Move.from($pickshow,{
+         opacity:'0'
+       },0.2).to($sec03Con,{},2)
 
 
 
+
+
+       //section content wheel move
+       gsap.to($sec03wheel, {
+         rotate: () => -360,
+         duration: $totalNum,
+         scrollTrigger: {
+           trigger: $sec03,
+           start:"top +=500",
+           end:"bottom bottom",
+           scrub:true,
+           ease:'easeOutQuart',
+           //markers:true,
+           pin:false,
+           scrub: 1,
+           snap: 1 / $totalNum,
+           invalidateOnRefresh: true,
+           //repeatDelay:2,
+           //delay:2
+
+         }
+       },1.5)
+
+
+
+
+       //section content wheel action
+       $('.wheel__card').on('click',function(){
+         let wheelImg = $(this).find('img').attr('src');
+         $('.wheel__card').removeClass('active');
+         $(this).addClass('active');
+         console.log(wheelImg)
+         setTimeout(function(){
+           $('.modul_tablet .img , .modul_phone .img').attr('style', 'background-image:url("'+ wheelImg+ '")')
+
+         },400);
+
+
+       });
+
+
+
+      }
 
       /*===================================================
         section project 1
@@ -326,39 +350,39 @@
       section group 03
       ===================================================*/
 
-//      if($group.hasClass('section-group-3')){
-//            //section position
-//            $group3.height($groupHeight);
-//            $group3.find('.section').each(function(index){
-//              let $group03Mtop = 'margin-top:' + $windowHeight * index + 'px; height:'+$windowHeight + 'px';
-//              $(this).attr('style',$group03Mtop )
-//            });
-//
-//            //section move right
-//            let sectionRight = gsap.timeline({
-//              scrollTrigger: {
-//                trigger: $group3,
-//                start:"top top",
-//                end:"+=" + ($section.length - 1) + "00%",
-//                scrub:true,
-//                duration:1,
-//                ease:"easeOutQuart",
-//              }
-//            });
-//            sectionRight.to($section, {
-//              xPercent: 100 * ($section.length - 1),
-//
-//            },0.5).to($fullBg,{
-//              x:-100 * ($section.length - 1),
-//              y:'0',
-//            },0.5)
-//
-//
-//
-//
-//        ///end
-//
-//      }
+     if($group.hasClass('section-group-3')){
+           //section position
+           $group3.height($groupHeight);
+           $group3.find('.section').each(function(index){
+             let $group03Mtop = 'margin-top:' + $windowHeight * index + 'px; height:'+$windowHeight + 'px';
+             $(this).attr('style',$group03Mtop )
+           });
+
+           //section move right
+           let sectionRight = gsap.timeline({
+             scrollTrigger: {
+               trigger: $group3,
+               start:"top top",
+               end:"+=" + ($section.length - 1) + "00%",
+               scrub:true,
+               duration:1,
+               ease:"easeOutQuart",
+             }
+           });
+           sectionRight.to($section, {
+             xPercent: 100 * ($section.length - 1),
+
+           },0.5).to($fullBg,{
+             x:-100 * ($section.length - 1),
+             y:'0',
+           },0.5)
+
+
+
+
+       ///end
+
+     }
     });
 
 
