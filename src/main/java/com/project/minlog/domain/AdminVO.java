@@ -2,16 +2,12 @@ package com.project.minlog.domain;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @ToString
 @Builder
-public class adminVO {
+public class AdminVO {
     private long adminNo;
     private String adminId;
     private String adminPw;

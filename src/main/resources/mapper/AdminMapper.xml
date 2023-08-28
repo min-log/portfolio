@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.minlog.mapper.AdminMapper">
+    <insert id="insertOne">
+        insert into admin(admin_id, admin_pw, admin_name)
+        values (#{adminId},#{adminPw},#{adminName})
+    </insert>
+    <select id="selectOne" resultType="com.project.minlog.domain.AdminVO">
+        select admin_id, admin_name, admin_no from admin where admin_id = #{adminId} and admin_pw = #{adminPw}
+    </select>
+</mapper>

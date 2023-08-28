@@ -497,7 +497,9 @@
 </script>
 <script type="text/javascript">
   window.onload = function(){
-    if(msgPop  != ""){
+    let secPosition = "";
+    secPosition +=  '<c:out value="${position}" />';
+    if(secPosition  != ""){
       document.getElementById("setCo").click()
     }
   }

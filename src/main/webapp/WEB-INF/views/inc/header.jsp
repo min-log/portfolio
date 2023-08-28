@@ -44,6 +44,15 @@
 				<a href="">Git </a>
 				<a href=""></a>
 				<a href="">카카오톡</a>
+				<c:choose>
+					<c:when test="${sessionScope.admin eq null}">
+						<a href="/admin">관리자 로그인</a>
+					</c:when>
+					<c:otherwise>
+						<a href="/admin/boardWrite">게시판 작성</a>
+						<a href="/admin/logout">로그아웃</a>
+					</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</div>

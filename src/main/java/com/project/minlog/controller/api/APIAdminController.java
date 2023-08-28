@@ -26,6 +26,6 @@ public class APIAdminController {
         String userCheck = mailService.sendEmail("userCheck");// 인증 번호
         log.info("이메일 인증 번호 : " + userCheck);
 
-        return null;
+        return userCheck;
     }
 }

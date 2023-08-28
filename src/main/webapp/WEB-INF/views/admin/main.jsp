@@ -16,7 +16,7 @@
   </div>
 
   <div class="contact_wrap">
-    <form active="/admin/login" method="post">
+    <form action="/admin/login" method="post">
       <table>
         <colgroup>
           <col style="width:100px"/>
@@ -34,8 +34,8 @@
         </tbody>
       </table>
       <div class="mt30 text_center">
-        <a href="" class="btn btn-green ">로그인</a>
-        <a href="/admin/join" class="btn btn-gray ml10">회원가입</a>
+        <button type="submit" class="btn btn-green ">로그인</button>
+        <a href="/admin/joinFrom" class="btn btn-gray ml10">회원가입</a>
       </div>
 
     </form>
