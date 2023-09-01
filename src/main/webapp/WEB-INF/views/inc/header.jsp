@@ -28,7 +28,7 @@
 				</li>
 				<li style="--i:1.0s;">
 					<a href="./pages/port.jsp">
-						02. Pront And SIte
+						02. Front And SIte
 					</a>
 					<p></p>
 				</li>
@@ -39,10 +39,9 @@
 					<p></p>
 				</li>
 			</ul>
-			<div class="f_center">
+			<div class="bottom" style="--i:1.4s;">
 				<a href="">Blog </a>
 				<a href="">Git </a>
-				<a href=""></a>
 				<a href="">카카오톡</a>
 				<c:choose>
 					<c:when test="${sessionScope.admin eq null}">

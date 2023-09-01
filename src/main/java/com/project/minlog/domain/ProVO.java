@@ -15,21 +15,26 @@ public class ProVO {
     private long proId;
     private String proTitle;
     private LocalDateTime createDate;
+    private LocalDateTime dateStart;
+    private LocalDateTime dateEnd;
 
     private String proLink;
     private String proGit;
     private String proImg;
 
 
-    //stack
-    private Set<ProStack> stackSet = new HashSet<>();
-    public void stackAdd(ProStack stack){
-        stackSet.add(stack);
-    }
     //type
-    private Set<ProType> typeSet = new HashSet<>();
-    public void typeAdd(ProType type){
+    private Set<String> typeSet = new HashSet<>();
+    public void typeAdd(String type){
         typeSet.add(type);
     }
+
+
+    //stack
+    private Set<String> stackSet = new HashSet<>();
+    public void stackAdd(String stack){
+        stackSet.add(stack);
+    }
+
 
 }

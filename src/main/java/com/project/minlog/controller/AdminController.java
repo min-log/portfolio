@@ -1,20 +1,22 @@
 package com.project.minlog.controller;
 
-import com.project.minlog.domain.ProStack;
+import com.project.minlog.domain.ProStackBack;
+import com.project.minlog.domain.ProStackDB;
+import com.project.minlog.domain.ProStackFront;
+import com.project.minlog.domain.ProType;
 import com.project.minlog.dto.AdminDTO;
 import com.project.minlog.dto.ProDTO;
 import com.project.minlog.service.admin.AdminService;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +32,7 @@ import java.util.List;
 public class AdminController {
 
     private final AdminService adminService;
-
+    private final ModelMapper modelMapper;
     @GetMapping("")
     public String adminMain(HttpServletRequest request,
                             RedirectAttributes redirectAttributes){
@@ -116,8 +118,28 @@ public class AdminController {
     public String boardForm(Model model){
         log.info("게시판 작성 --------------------------");
         ProDTO pro = ProDTO.builder().build();
+
+        ProType[] types = ProType.values();
+        ProStackBack[] stacksBack = ProStackBack.values();
+        ProStackDB[] stacksDb = ProStackDB.values();
+        ProStackFront[] stackFront = ProStackFront.values();
+
+
         model.addAttribute("pro",pro);
+        model.addAttribute("types",types);
+        model.addAttribute("stacksBack",stacksBack);
+        model.addAttribute("stacksDb",stacksDb);
+        model.addAttribute("stackFront",stackFront);
 
         return "admin/boardWrite";
     }
+
+    @PostMapping("/boardRegister")
+    public String boardRegister(@ModelAttribute("pro") ProDTO proDTO, Model model){
+        log.info("게시글 저장 -----------");
+        log.info("proDTO: {}",proDTO);
+        return "admin/boardView";
+    }
+
+
 }
