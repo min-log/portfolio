@@ -3,7 +3,6 @@ package com.project.minlog.service.admin;
 import com.project.minlog.domain.AdminVO;
 import com.project.minlog.dto.AdminDTO;
 import com.project.minlog.mapper.AdminMapper;
-import com.project.minlog.service.SequriyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;

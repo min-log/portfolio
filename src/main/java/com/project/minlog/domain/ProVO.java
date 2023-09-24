@@ -21,6 +21,8 @@ public class ProVO {
     private String proLink;
     private String proGit;
     private String proImg;
+    private String proContent;
+    private String proInfo;
 
 
     //type

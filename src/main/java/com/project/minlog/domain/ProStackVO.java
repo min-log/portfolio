@@ -1,15 +1,16 @@
-package com.project.minlog.dto;
+package com.project.minlog.domain;
 
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
 @ToString
 @Builder
-public class ProStackDTO {
+public class ProStackVO {
     long proStackId;
     long proId;
     String proStackValue;

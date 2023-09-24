@@ -468,7 +468,7 @@
 
     console.log(data);
     $.ajax({
-      url:'/APIcoWork/password',
+      url:'/apiCoWork/password',
       type:"POST",
       data: data,
       dataType: 'json',

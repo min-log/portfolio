@@ -13,6 +13,12 @@ spring:
     url: jdbc:mariadb://localhost:3307/minlog_db
     username: minlog
     password: minlog1234
+  servlet:
+    multipart:
+      location: c:\\upload
+      maxFileSize: 200MB
+      maxRequestSize: 100MB
+
   config:
     import: classpath:application-email.yml
     profiles:

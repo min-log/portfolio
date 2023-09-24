@@ -1,4 +1,4 @@
-package com.project.minlog.dto;
+package com.project.minlog.domain;
 
 import lombok.*;
 
@@ -6,10 +6,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
 @ToString
 @Builder
-public class ProTypeDTO {
+public class ProTypeVO {
     long proTypeId;
     long proId;
     String proTypeValue;

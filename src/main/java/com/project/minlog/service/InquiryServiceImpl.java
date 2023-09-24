@@ -24,7 +24,7 @@ public class InquiryServiceImpl implements InquiryService {
         log.info(dto);
         InquiryVO vo = modelMapper.map(dto, InquiryVO.class);
         log.info(vo);
-        mapper.oneInsert(vo);
+        mapper.insertOne(vo);
     }
 
 

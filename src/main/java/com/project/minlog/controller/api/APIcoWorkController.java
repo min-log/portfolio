@@ -4,14 +4,12 @@ import com.project.minlog.dto.CoWorkDTO;
 import com.project.minlog.service.CoWorkService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Log4j2
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/APIcoWork")
+@RequestMapping("/apiCoWork")
 public class APIcoWorkController {
 
     private final CoWorkService coWorkService;

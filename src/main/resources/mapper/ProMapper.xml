@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.minlog.mapper.ProMapper">
+    <insert id="insertOne" parameterType="com.project.minlog.domain.ProVO" useGeneratedKeys="true"  keyColumn="pro_id" keyProperty="proId">
+        insert into pro (pro_title, date_start, date_end, pro_link, pro_git, pro_img, pro_content,pro_info)
+        values (#{proTitle},#{dateStart},#{dateEnd},#{proLink},#{proGit},#{proImg},#{proContent},#{proInfo})
+    </insert>
+    <select id="selectOne" resultType="com.project.minlog.domain.ProVO">
+        select pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content,pro_info
+        from pro
+        where pro_id = #{proId}
+    </select>
+</mapper>
