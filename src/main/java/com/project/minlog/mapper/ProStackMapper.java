@@ -9,4 +9,5 @@ import java.util.List;
 public interface ProStackMapper {
     int insertOne(ProStackVO vo);
     List<ProStackVO> selectOne(long proId);
+    void deleteOne(long proId);
 }

@@ -16,7 +16,7 @@
     </div>
     <div class="contact_wrap">
         <form:form action="/admin/boardRegister" method="post"  modelAttribute="pro" id="boardFrom">
-            <form:input path="proId" name="proId" id="proId" type="text" value="${pro.proId}"/>
+            <form:input path="proId" name="proId" id="proId" type="text" value="${pro.proId}" hidden="ture"/>
             <table>
                 <colgroup>
                     <col style="width:150px"/>
@@ -69,7 +69,7 @@
                             <div class="checkbox_wrap">
                                 <c:forEach var="stack" items="${stacks}" varStatus="status">
                                     <span class="mr10">
-                                        <input name="stack" id="stackB_${status.index}" type="checkbox" value="${stack}"
+                                        <input name="proStack" id="stackB_${status.index}" type="checkbox" value="${stack}"
                                             <c:forEach varStatus="index" var="proStack" items="${pro.proStack}">
                                                 <c:if test="${proStack eq stack}">
                                                     checked
@@ -228,7 +228,7 @@
 
                         // 게시판 저장
                         function submitPost(){
-                            let boardId = document.getElementById("proId");
+                            let boardId = document.getElementById("proId").value;
 
                             let proTitle = document.getElementById("proTitle").value;
                             let dateStart = document.getElementById("proDateStart").value;
@@ -257,8 +257,10 @@
                             };
 
                             if(boardId != 0){
+                                console.log("기존 게시판 수정");
+                                console.log("boardId : "+boardId);
                                 dataFrom = {
-                                    "boardId" : boardId,
+                                    "proId" : boardId,
                                     "proTitle" : proTitle,
                                     "proDateStart" : dateStart,
                                     "proDateEnd" : dateEnd,

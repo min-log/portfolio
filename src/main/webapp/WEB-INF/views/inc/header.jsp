@@ -21,19 +21,19 @@
 		<div class="inner">
 			<ul>
 				<li style="--i:0.8s;">
-					<a href="./pages/wep.jsp">
+					<a href="/board/list/BackEnd">
 						01.Back And Site
 					</a>
 					<p></p>
 				</li>
 				<li style="--i:1.0s;">
-					<a href="./pages/port.jsp">
+					<a  href="/board/list/FrontEnd">
 						02. Front And SIte
 					</a>
 					<p></p>
 				</li>
 				<li style="--i:1.2s;">
-					<a href="./pages/mak.jsp">
+					<a href="/board/marketing">
 						03. marketing
 					</a>
 					<p></p>

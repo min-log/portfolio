@@ -27,6 +27,7 @@ public class BoardServiceImpl implements BoardService {
         return result;
     }
 
+
     @Transactional
     @Override
     public long boardRegister(ProDTO proDTO, MultipartFile boardFile) {
@@ -60,6 +61,42 @@ public class BoardServiceImpl implements BoardService {
 
         if(proDTO.getProId() != 0) result = proService.register(proDTO); // 기존 데이터 업데이트
         result = proService.register(proDTO);
+        log.info("result :{}",result);
+        return result;
+    }
+
+    @Override
+    public long boardUpdate(ProDTO proDTO, MultipartFile boardFile) {
+        // 컨텐츠 파일 저장
+        String contentTxt = null;
+        String boardImgName = null;
+
+        if(! proDTO.getProContent().isEmpty()){
+            contentTxt = fileService.createContentTxt(proDTO.getProTitle(), proDTO.getProContent(), "contentTxt");
+            if(contentTxt == null)  return -1;
+        }
+
+        // 썸네일 저장
+        if(boardFile != null){
+            JsonObject contentThum = fileService.createImageThumbnail(boardFile, "contentThum");
+            if (contentThum == null) {
+                // 썸네일 저장 되지 않고 오류 생길 경우 --저장된 게시글도 제거
+                log.info("썸네일 이미지 저장 실패");
+                if(contentTxt != null) fileService.removeContentTxt(contentTxt);
+                return -1;
+            }
+            boardImgName = contentThum.get("fileName").getAsString();
+        }
+
+        // project 저장
+        proDTO.setProImg(boardImgName);
+        proDTO.setProContent(contentTxt);
+        proDTO.setDateEnd(dateType(proDTO.getProDateEnd()));
+        proDTO.setDateStart(dateType(proDTO.getProDateStart()));
+        long result;
+
+        if(proDTO.getProId() != 0) result = proService.upload(proDTO); // 기존 데이터 업데이트
+        result = proService.upload(proDTO);
         log.info("result :{}",result);
         return result;
     }

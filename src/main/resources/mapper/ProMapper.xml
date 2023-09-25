@@ -7,6 +7,19 @@
         insert into pro (pro_title, date_start, date_end, pro_link, pro_git, pro_img, pro_content,pro_info)
         values (#{proTitle},#{dateStart},#{dateEnd},#{proLink},#{proGit},#{proImg},#{proContent},#{proInfo})
     </insert>
+    <update id="uploadOne" parameterType="com.project.minlog.domain.ProVO" useGeneratedKeys="true"  keyColumn="pro_id" keyProperty="proId">
+        update pro
+            set pro_title = #{proTitle},
+                date_start = #{dateStart},
+                date_end = #{dateEnd},
+                pro_link = #{proLink},
+                pro_git = #{proGit},
+                pro_img = #{proImg},
+                pro_content = #{proContent},
+                pro_info = #{proInfo}
+        where pro_id = #{proId}
+    </update>
+
     <select id="selectOne" resultType="com.project.minlog.domain.ProVO">
         select pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content,pro_info
         from pro

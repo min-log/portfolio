@@ -10,6 +10,15 @@
     <select id="selectOne" resultType="com.project.minlog.domain.ProTypeVO">
         select *
         from pro_type
-        where pro_id = ${proId}
+        where pro_id = #{proId}
     </select>
+    <select id="selectOneType" resultType="com.project.minlog.domain.ProTypeVO">
+        select *
+        from pro_type
+        where pro_type_value = #{proType}
+    </select>
+    <delete id="deleteOne">
+        delete from pro_type
+        where  pro_id = #{proId}
+    </delete>
 </mapper>

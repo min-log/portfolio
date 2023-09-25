@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public interface BoardService {
     String contentImgRegister(MultipartFile files);
     long boardRegister(ProDTO proDTO, MultipartFile boardFile);
+    long boardUpdate(ProDTO proDTO, MultipartFile boardFile);
 
     LocalDateTime dateType(String date);
 

@@ -68,6 +68,8 @@ public class APIBoardController {
             BindingResult bindingResult,
             @RequestPart(value = "proImg",required = false) MultipartFile proImg
     ){
+
+        log.info("# 게시판 저장");
         if(bindingResult.hasErrors()){
             log.info("저장 실패");
             List<String> list = new ArrayList<>();
@@ -96,7 +98,7 @@ public class APIBoardController {
             BindingResult bindingResult,
             @RequestPart(value = "proImg",required = false) MultipartFile proImg
     ){
-        log.info("수정 -----------");
+        log.info("# 게시판 수정");
         if(bindingResult.hasErrors()){
             log.info("저장 실패");
             List<String> list = new ArrayList<>();
@@ -109,9 +111,8 @@ public class APIBoardController {
         }
 
         // 프로젝트 저장 및 썸내일 이미지 저장
-        long result = boardService.boardRegister(proDTO,proImg);
+        long result = boardService.boardUpdate(proDTO,proImg);
         return ResponseEntity.status(HttpStatus.OK).body(result);
-
 
     }
 

@@ -12,4 +12,8 @@
         from pro_stack
         where pro_id = #{proId}
     </select>
+    <delete id="deleteOne">
+        delete from pro_stack
+        where  pro_id = #{proId}
+    </delete>
 </mapper>

@@ -18,7 +18,7 @@
             </div>
         </div>
         <c:if test="${sessionScope.admin ne null}">
-            <button class="btn btn- mb50">수정</button>
+            <a href="/user/boardWrite/${pro.proId}" class="btn btn- mb50">수정</a>
         </c:if>
         <p class="icon-stack-wrap-type">
             <c:forEach var="type" items="${pro.proType}" varStatus="status">

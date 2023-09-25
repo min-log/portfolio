@@ -9,4 +9,7 @@ import java.util.List;
 public interface ProTypeMapper {
     int insertOne(ProTypeVO vo);
     List<ProTypeVO> selectOne(long proId);
+    List<ProTypeVO> selectOneType(String proType);
+    void deleteOne(long proId);
+
 }
