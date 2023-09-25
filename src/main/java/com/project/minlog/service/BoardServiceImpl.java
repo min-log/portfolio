@@ -56,12 +56,12 @@ public class BoardServiceImpl implements BoardService {
         proDTO.setProContent(contentTxt);
         proDTO.setDateEnd(dateType(proDTO.getProDateEnd()));
         proDTO.setDateStart(dateType(proDTO.getProDateStart()));
-        long register = proService.register(proDTO);
-        log.info("register :{}",register);
+        long result;
 
-
-
-        return register;
+        if(proDTO.getProId() != 0) result = proService.register(proDTO); // 기존 데이터 업데이트
+        result = proService.register(proDTO);
+        log.info("result :{}",result);
+        return result;
     }
 
     @Override

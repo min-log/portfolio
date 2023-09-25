@@ -330,7 +330,7 @@
       <h2 class="sec_tit">Co-work</h2>
       <p class="sec_subtxt">나와 함께 했던 사람들의 이야기</p>
       <div class="text_center mt40">
-        <a href="${contextPath}/coWork/form" class="btn-green btn-active mg_auto">메시지 남기기 <em class="xi-send ml5"></em></a>
+        <a href="${contextPath}/coWork/form" class="btn btn-green btn-active mg_auto">메시지 남기기 <em class="xi-send ml5"></em></a>
       </div>
       <p class="mt40"></p>
       <ul class="co_work">
@@ -419,7 +419,7 @@
             </tr>
             </tbody>
           </table>
-          <a href="javascript:inquirySave();" class="btn-green btn-active mg_auto mt30" style="display:block">보내기 <em class="xi-send ml5"></em></a>
+          <a href="javascript:inquirySave();" class="btn btn-green btn-active mg_auto mt30" style="display:block">보내기 <em class="xi-send ml5"></em></a>
         </div>
       </form>
     </section>

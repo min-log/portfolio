@@ -87,4 +87,32 @@ public class APIBoardController {
 
     }
 
+
+
+
+    @PostMapping("/boardUpload")
+    public ResponseEntity<?> boardUpload(
+            @RequestPart(value = "dto") @Valid ProDTO proDTO,
+            BindingResult bindingResult,
+            @RequestPart(value = "proImg",required = false) MultipartFile proImg
+    ){
+        log.info("수정 -----------");
+        if(bindingResult.hasErrors()){
+            log.info("저장 실패");
+            List<String> list = new ArrayList<>();
+            List<ObjectError> allErrors = bindingResult.getAllErrors();
+            allErrors.forEach(item ->{
+                list.add(item.getDefaultMessage());
+            });
+
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(list);
+        }
+
+        // 프로젝트 저장 및 썸내일 이미지 저장
+        long result = boardService.boardRegister(proDTO,proImg);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+
+
+    }
+
 }

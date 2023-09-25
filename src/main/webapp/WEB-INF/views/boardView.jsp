@@ -11,38 +11,50 @@
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/sub.css" />
 <div class="subpage">
     <div class="subpage_header text_center">
-        <p>
+        <div id="proThumImg">
+            <img src="../../resource/images/common/modul_pc.png" alt="">
+            <div class="pro_img">
+                <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
+            </div>
+        </div>
+        <c:if test="${sessionScope.admin ne null}">
+            <button class="btn btn- mb50">수정</button>
+        </c:if>
+        <p class="icon-stack-wrap-type">
             <c:forEach var="type" items="${pro.proType}" varStatus="status">
-               <span class="mr10">
+               <span class="icon-stack">
                             ${type}
                 </span>
             </c:forEach>
         </p>
-        <p>
+        <p class="icon-stack-wrap">
 
             <c:forEach var="stack" items="${pro.proStack}" varStatus="status">
-                <span class="mr10">
+                <span class="icon-stack">
                         ${stack}
                 </span>
             </c:forEach>
         </p>
         <h2 class="tit">${pro.proTitle}</h2>
-        <p> ${pro.proDateStart} - ${pro.proDateEnd} </p>
-        <p>
-            설명
-            ${pro.proInfo}
-        </p>
-        <p>
-            운영링크 : <a href="${pro.proLink}" target="_blank">${pro.proLink}</a>
-        </p>
-        <p>
-            git : <a href="${pro.proGit}" target="_blank">${pro.proGit}</a>
-        </p>
+        <ul class="view-wrap">
+            <li class="view-date"> ${pro.proDateStart} - ${pro.proDateEnd} </li>
+            <li class="view-info">
+                설명
+                ${pro.proInfo}
+            </li>
+            <li class="view-link">
+                <i class="xi-link"></i>
+                <a href="${pro.proLink}" target="_blank">${pro.proLink}</a>
+            </li>
+            <li class="view-link">
+                <i class="xi-github"></i>
+                <a href="${pro.proGit}" target="_blank">${pro.proGit}</a>
+            </li>
+        </ul>
+
     </div>
     <div id="proView">
-        <div class="pro_img">
-            <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
-        </div>
+
         <div class="pro_content">
             ${pro.proContent}
         </div>

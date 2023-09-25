@@ -16,6 +16,7 @@
     </div>
     <div class="contact_wrap">
         <form:form action="/admin/boardRegister" method="post"  modelAttribute="pro" id="boardFrom">
+            <form:input path="proId" name="proId" id="proId" type="text" value="${pro.proId}"/>
             <table>
                 <colgroup>
                     <col style="width:150px"/>
@@ -27,10 +28,16 @@
                         <td>
                             <c:forEach var="type" items="${types}" varStatus="status">
                                <span class="mr10">
-                                    <input name="proType" id="proType_${status.index}" type="checkbox" value="${type}" />
-                                    <label for="proType_${status.index}">
-                                            ${type}
-                                    </label>
+                                   <input name="proType" id="proType_${status.index}" type="checkbox" value="${type}"
+                                       <c:forEach varStatus="index" var="proType" items="${pro.proType}">
+                                               <c:if test="${proType eq type}">
+                                                   checked
+                                               </c:if>
+                                       </c:forEach>
+                                   />
+                                   <label for="proType_${status.index}">
+                                           ${type}
+                                   </label>
                                 </span>
                             </c:forEach>
                         </td>
@@ -59,46 +66,22 @@
                     <tr>
                         <th>기술</th>
                         <td>
-                            <div>
-                                <p class="mr10">Back</p>
-                                <div class="checkbox_wrap">
-                                    <c:forEach var="stack" items="${stacksBack}" varStatus="status">
-                                        <span class="mr10">
-                                            <input name="proStack" id="stackB_${status.index}" type="checkbox" value="${stack}" />
-                                            <label for="stackB_${status.index}">
-                                                ${stack}
-                                            </label>
-                                        </span>
-                                    </c:forEach>
-                                </div>
+                            <div class="checkbox_wrap">
+                                <c:forEach var="stack" items="${stacks}" varStatus="status">
+                                    <span class="mr10">
+                                        <input name="stack" id="stackB_${status.index}" type="checkbox" value="${stack}"
+                                            <c:forEach varStatus="index" var="proStack" items="${pro.proStack}">
+                                                <c:if test="${proStack eq stack}">
+                                                    checked
+                                                </c:if>
+                                            </c:forEach>
+                                        />
+                                        <label for="stackB_${status.index}">
+                                            ${stack}
+                                        </label>
+                                    </span>
+                                </c:forEach>
                             </div>
-                            <div class="mt10">
-                                <p class="mr10">DataBase</p>
-                                <div class="checkbox_wrap">
-                                    <c:forEach var="stack" items="${stacksDb}" varStatus="status">
-                                        <span class="mr10">
-                                            <input name="proStack" id="stackD_${status.index}" type="checkbox" value="${stack}">
-                                            <label for="stackD_${status.index}">
-                                                    ${stack}
-                                            </label>
-                                        </span>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                            <div class="mt10">
-                                <p class="mr10">FrontEnd</p>
-                                <div class="checkbox_wrap">
-                                    <c:forEach var="stack" items="${stackFront}" varStatus="status">
-                                        <span class="mr10">
-                                            <input name="proStack" id="stackF_${status.index}" type="checkbox" value="${stack}">
-                                            <label for="stackF_${status.index}">
-                                                    ${stack}
-                                            </label>
-                                        </span>
-                                    </c:forEach>
-                                </div>
-                            </div>
-
                         </td>
                     </tr>
                     <tr>
@@ -118,7 +101,7 @@
                     <tr>
                         <th style="vertical-align:middle">썸네일</th>
                         <td>
-                            <img id="preview" alt="썸네일 이미지" />
+                            <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
                             <form:input path="proImg" id="proImg" name="proImg" type="file" accept="image/*" multiple="multiple" />
                         </td>
                     </tr>
@@ -126,7 +109,7 @@
             </table>
 
             <div>
-                <textarea id="summernote" name=""></textarea>
+                <textarea id="summernote" name="">${pro.proContent}</textarea>
 
                 <!-- include summernote css/js-->
                 <script src="${contextPath}/resource/summernote/summernote-lite.js"></script>
@@ -135,8 +118,6 @@
                 <link rel="stylesheet" href="${contextPath}/resource/summernote/summernote-lite.css">
 
                 <script type="text/javascript">
-
-
                         let file = document.querySelector('#proImg');
                         let fileList = null;
 
@@ -154,6 +135,8 @@
 
 
                         $(document).ready(function() {
+
+
                             //여기 아래 부분
                             $('#summernote').summernote({
                                 height: 300,
@@ -177,6 +160,7 @@
                                     },
                                 }
                             });
+
 
 
                             function summernoteImageFile(file, el, caption) {
@@ -244,6 +228,7 @@
 
                         // 게시판 저장
                         function submitPost(){
+                            let boardId = document.getElementById("proId");
 
                             let proTitle = document.getElementById("proTitle").value;
                             let dateStart = document.getElementById("proDateStart").value;
@@ -254,6 +239,7 @@
                             let content = $('#summernote').summernote('code');
                             let proStack = null;
                             let proType = null;
+                            let url =  "/apiBoard/boardRegister";
                             if(getProStackValue().length != 0) proStack = getProStackValue();
                             if(getProTypeValue().length != 0) proType = getProTypeValue();
 
@@ -270,6 +256,23 @@
                                 "proInfo" :proInfo
                             };
 
+                            if(boardId != 0){
+                                dataFrom = {
+                                    "boardId" : boardId,
+                                    "proTitle" : proTitle,
+                                    "proDateStart" : dateStart,
+                                    "proDateEnd" : dateEnd,
+                                    "proLink" : proLink,
+                                    "proGit" : proGit,
+                                    "proType" :proType,
+                                    "proStack" : proStack,
+                                    "proContent" : content,
+                                    "proInfo" :proInfo
+                                };
+
+                                url =  "/apiBoard/boardUpload";
+                            }
+
                             //json 형태 데이터 전달
                             let formData = new FormData;
                             formData.append("dto", new Blob([JSON.stringify(dataFrom)] , {type: "application/json"}));
@@ -279,7 +282,7 @@
                             $.ajax({
                                 type: 'post',
                                 data: formData,
-                                url: "/apiBoard/boardRegister",
+                                url: url,
                                 dataType: 'json',
                                 contentType: false,
                                 enctype: 'multipart/form-data',

@@ -14,6 +14,28 @@ subpage
     text-transform: uppercase;
     color: var(--color-main);}
 .subpage_header .tit_sub_txt {font-size: 24px;color: #555;text-align: center;}
+
+[class*="icon-stack-wrap"] + .tit {margin-top:20px}
+#proThumImg {position: relative;max-width:1000px;margin:0 auto}
+#proThumImg .pro_img {position: absolute;
+    z-index: 1;top:8%;left:20%;width:60%;height:66%;overflow:hidden;border-radius: 3px;background: #555555}
+#proThumImg .pro_img img {width:100%;}
+#proThumImg .pro_img:before {
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .1);
+    position: absolute;top:0px;width:100%;height: 100%;
+    display: block;
+    content: '';
+}
+.view-wrap {margin-top: 10px;}
+.view-wrap li {color: #555;line-height:30px;font-family: 'IbarraRealNova';font-weight:bold}
+.view-wrap .view-date {}
+.view-wrap .view-info {}
+.view-wrap .view-link {display:flex;justify-content: center;align-items:center;}
+.view-wrap i:before {color: var(--color-main);font-size: 22px;margin-right:10px;}
+#proView {margin-top:100px;}
+#proView .pro_img {}
+#proView .pro_content {text-align:center}
+
 @media screen and (max-width:1600px) {
 	
 }

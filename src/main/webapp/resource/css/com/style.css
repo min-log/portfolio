@@ -164,7 +164,7 @@ custom style
 [class*="icon-"],
 [class*="xi-"] {display:inline-block;}
 .btn[class*="btn-"]{display:inline-block;width:auto;min-width:100px;padding:20px;background:#000;min-height:50px;padding:10px 10px;line-height:30px;box-sizing:border-box;color:#fff;border-radius:5px;text-align:center;}
-.btn-green {background:var(--color-main);}
+.btn.btn-green {background:var(--color-main);}
 .btn-sm {padding: 10px !important;
 	min-width: auto;
 	line-height: 20px !important;
