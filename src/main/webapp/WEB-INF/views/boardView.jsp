@@ -11,23 +11,32 @@
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/sub.css" />
 <div class="subpage">
     <div class="subpage_header text_center">
-        <div id="proThumImg">
-            <img src="../../resource/images/common/modul_pc.png" alt="">
-            <div class="pro_img">
-                <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
-            </div>
-        </div>
-        <c:if test="${sessionScope.admin ne null}">
-            <a href="/user/boardWrite/${pro.proId}" class="btn btn- mb50">수정</a>
-        </c:if>
-        <p class="icon-stack-wrap-type">
+        <h2 class="tit">${pro.proTitle}</h2>
+        <ul class="view-wrap mt50">
+            <li class="view-info">
+                ${pro.proInfo}
+            </li>
+            <li class="view-date">
+                ${pro.proDateStart} - ${pro.proDateEnd}
+            </li>
+            <li class="view-link">
+                <i class="xi-github"></i>
+                <a href="${pro.proGit}" target="_blank">${pro.proGit}</a>
+            </li>
+            <li class="view-link">
+                <i class="xi-link"></i>
+                <a href="${pro.proLink}" target="_blank">${pro.proLink}</a>
+            </li>
+        </ul>
+
+        <p class="icon-stack-wrap-type mt50">
             <c:forEach var="type" items="${pro.proType}" varStatus="status">
                <span class="icon-stack">
-                            ${type}
-                </span>
+                       ${type}
+               </span>
             </c:forEach>
         </p>
-        <p class="icon-stack-wrap">
+        <p class="icon-stack-wrap mt10">
 
             <c:forEach var="stack" items="${pro.proStack}" varStatus="status">
                 <span class="icon-stack">
@@ -35,26 +44,20 @@
                 </span>
             </c:forEach>
         </p>
-        <h2 class="tit">${pro.proTitle}</h2>
-        <ul class="view-wrap">
-            <li class="view-date"> ${pro.proDateStart} - ${pro.proDateEnd} </li>
-            <li class="view-info">
-                설명
-                ${pro.proInfo}
-            </li>
-            <li class="view-link">
-                <i class="xi-link"></i>
-                <a href="${pro.proLink}" target="_blank">${pro.proLink}</a>
-            </li>
-            <li class="view-link">
-                <i class="xi-github"></i>
-                <a href="${pro.proGit}" target="_blank">${pro.proGit}</a>
-            </li>
-        </ul>
+
 
     </div>
-    <div id="proView">
+    <c:if test="${sessionScope.admin ne null}">
+        <a href="/user/boardWrite/${pro.proId}" class="btn btn- mb50">수정</a>
+    </c:if>
 
+    <div id="proThumImg" class="mt50">
+        <img src="../../resource/images/common/modul_pc.png" alt="">
+        <div class="pro_img">
+            <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
+        </div>
+    </div>
+    <div id="proView">
         <div class="pro_content">
             ${pro.proContent}
         </div>

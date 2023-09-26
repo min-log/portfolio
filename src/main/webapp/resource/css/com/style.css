@@ -5,7 +5,7 @@
 Base styles: opinionated defaults
 ========================================================================== */
 html,body {width:100%;}
-html,body, button, input, select, table, textarea {font-family:"Noto Sans KR", "Arial", Arial, Dotum; font-size: 16px;line-height:1.4;font-weight:normal;color: #101010;letter-spacing:-0.5px;}
+html,body, button, input, select, table, textarea {font-family:"NEXON Lv1 Gothic OTF", "Arial", Arial, Dotum; font-size: 16px;line-height:1.8;font-weight:normal;color: #101010;letter-spacing:-0.5px;}
 html ,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td,button, input, select, textarea {
 margin:0;padding:0;border:0;-webkit-appearance: none;-webkit-border-radius: 0;
     word-wrap: break-word;

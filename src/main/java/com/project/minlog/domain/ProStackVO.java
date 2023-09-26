@@ -13,6 +13,6 @@ import java.time.LocalDateTime;
 public class ProStackVO {
     long proStackId;
     long proId;
-    String proStackValue;
+    String proValue;
 
 }

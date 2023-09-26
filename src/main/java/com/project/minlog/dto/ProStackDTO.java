@@ -12,6 +12,6 @@ import lombok.*;
 public class ProStackDTO {
     long proStackId;
     long proId;
-    String proStackValue;
+    String proValue;
 
 }

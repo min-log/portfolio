@@ -122,6 +122,6 @@ input[type=checkbox]:checked  + label:before {background:var(--color-main)}
 .note-editable {background:#fff;}
 .note-editor.note-frame.fullscreen, .note-editor.note-airframe.fullscreen {z-index:999999 !important}
 
-[class*="icon-stack-wrap"] {display:block}
-.icon-stack {border:1px solid #000;background:var(--color-sub);color: #fff;margin:5px;border-radius: 5px;padding:2px 10px;font-size:14px;display:inline-block;font-family: 'IbarraRealNova'}
-.icon-stack-wrap-type .icon-stack {background:var(--color-main)}
+[class*="icon-stack-wrap"] {display:block;display: flex;flex-wrap: wrap;justify-content: center;}
+.icon-stack {border:1px solid #000;margin:5px;border-radius: 5px;padding:2px 10px;font-size:14px;display:inline-block;}
+.icon-stack-wrap-type .icon-stack {background:var(--color-main);color: #fff;}

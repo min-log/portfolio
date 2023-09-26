@@ -63,29 +63,16 @@
           <h3 class="tit">Skills <em class="wave_line"></em></h3>
           <div class="con">
             <h4>Back End : Tech Stack</h4>
-            <p>
-              java, spring(spring boot), MySQL,MariaDB,Oracle,
+            <p class="icon-stack-wrap">
+              <c:forEach items="${stackBack}" var="stack">
+                <span class="icon-stack">${stack}</span>
+              </c:forEach>
             </p>
             <h4>Front End : UI(User Interface) / UX(User Experience)</h4>
-            <p>
-              <em class="xi-html5">
-                <b class="ally-hidden">html</b>
-              </em>
-              <em class="xi-css3">
-                <b class="ally-hidden">css</b>
-              </em>
-              <em class="xi-javascript">
-                <b class="ally-hidden">javascript</b>
-              </em>
-              <em class="xi-plus-square">
-                <b class="ally-hidden">jqury</b>
-              </em>
-              <em class="xi-photoshop">
-                <b class="ally-hidden">포토샵</b>
-              </em>
-              <em class="xi-illustrator">
-                <b class="ally-hidden">일러스트</b>
-              </em>
+            <p class="icon-stack-wrap">
+              <c:forEach items="${stackFront}" var="stack">
+                <span class="icon-stack">${stack}</span>
+              </c:forEach>
             </p>
             <p>ui animation 및 인터렉션에 관심이 많고 더 낳은 코드와 시각적인 모션을 보여주기위해 배우며 적용합니다.
             </p>

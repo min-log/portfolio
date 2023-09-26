@@ -12,6 +12,6 @@ import lombok.*;
 public class ProTypeDTO {
     long proTypeId;
     long proId;
-    String proTypeValue;
+    String proValue;
 
 }

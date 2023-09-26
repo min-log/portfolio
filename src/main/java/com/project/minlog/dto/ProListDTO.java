@@ -17,21 +17,14 @@ import java.util.List;
 @Builder
 public class ProListDTO {
     private long proId;
-    private List<String> proType;
     private String proTitle;
-    private LocalDateTime createDate;
-
-    private String proLink;
-    private String proGit;
     private String proImg;
 
-
+    private List<String> proType;
     private List<String> proStack;
 
     private String proDateStart;
     private String proDateEnd;
-    private String proInfo;
-
     private LocalDateTime dateStart;
     private LocalDateTime dateEnd;
 }

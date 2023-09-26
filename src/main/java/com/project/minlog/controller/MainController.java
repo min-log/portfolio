@@ -1,5 +1,8 @@
 package com.project.minlog.controller;
 
+import com.project.minlog.domain.ProStackBack;
+import com.project.minlog.domain.ProStackDB;
+import com.project.minlog.domain.ProStackFront;
 import com.project.minlog.dto.CoWorkDTO;
 import com.project.minlog.service.CoWorkService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,8 +32,27 @@ public class MainController {
     public String main(HttpServletRequest request, Model model){
         log.info("main page ------------------");
 
+
+        // 스텍
+        List<String> stackBack = new ArrayList<>();
+        for (ProStackBack value : ProStackBack.values()) {
+            stackBack.add(String.valueOf(value));
+        }
+        for (ProStackDB value : ProStackDB.values()) {
+            stackBack.add(String.valueOf(value));
+        }
+        model.addAttribute("stackBack",stackBack);
+
+        List<String> stackFront = new ArrayList<>();
+        for (ProStackFront value : ProStackFront.values()) {
+            stackFront.add(String.valueOf(value));
+        }
+        model.addAttribute("stackFront",stackFront);
+
+        // 일한 사람들 후기
         List<CoWorkDTO> coList = coWorkService.getList();
         model.addAttribute("list",coList);
+
 
         Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request); // redirect 에러메시지
         if(flashMap!=null) {

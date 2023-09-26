@@ -4,8 +4,8 @@
 
 <mapper namespace="com.project.minlog.mapper.ProTypeMapper">
     <insert id="insertOne" parameterType="com.project.minlog.domain.ProTypeVO">
-        insert into pro_type (pro_id, pro_type_value)
-        values (#{proId},#{proTypeValue})
+        insert into pro_type (pro_id, pro_value)
+        values (#{proId},#{proValue})
     </insert>
     <select id="selectOne" resultType="com.project.minlog.domain.ProTypeVO">
         select *
@@ -15,7 +15,7 @@
     <select id="selectOneType" resultType="com.project.minlog.domain.ProTypeVO">
         select *
         from pro_type
-        where pro_type_value = #{proType}
+        where pro_value = #{proType}
     </select>
     <delete id="deleteOne">
         delete from pro_type

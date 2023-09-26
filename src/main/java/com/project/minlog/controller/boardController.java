@@ -1,7 +1,11 @@
 package com.project.minlog.controller;
 
+import com.project.minlog.domain.ProStackBack;
+import com.project.minlog.domain.ProStackDB;
+import com.project.minlog.domain.ProStackFront;
 import com.project.minlog.domain.ProType;
 import com.project.minlog.dto.ProDTO;
+import com.project.minlog.dto.ProListDTO;
 import com.project.minlog.service.ProService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Log4j2
@@ -28,18 +33,33 @@ public class boardController {
         switch (boardPath){
             case BackEnd -> {
                 model.addAttribute("tit","Back And Site");
-                model.addAttribute("titSub","Back");
+
+                List<String> stack = new ArrayList<>();
+                for (ProStackBack value : ProStackBack.values()) {
+                    stack.add(String.valueOf(value));
+                }
+                for (ProStackDB value : ProStackDB.values()) {
+                    stack.add(String.valueOf(value));
+                }
+                model.addAttribute("titSub",stack);
                 break;
             }
             case FrontEnd -> {
                 model.addAttribute("tit","Front And Site");
-                model.addAttribute("titSub","Front");
+
+                List<String> stack = new ArrayList<>();
+                for (ProStackFront value : ProStackFront.values()) {
+                    stack.add(String.valueOf(value));
+                }
+                for (ProStackDB value : ProStackDB.values()) {
+                    stack.add(String.valueOf(value));
+                }
+                model.addAttribute("titSub",stack);
                 break;
             }
         }
-
-        List<ProDTO> proDTOS = proService.selectList(boardPath);
-
+        List<ProListDTO> proList = proService.selectList(boardPath);
+        model.addAttribute("proList",proList);
 
         return "boardList";
     }

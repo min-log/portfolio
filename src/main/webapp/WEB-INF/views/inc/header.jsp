@@ -13,7 +13,7 @@
 		<a href="#header">글로벌 네비게이션 바로가기</a>
 	</div>
 	<header id="header">
-		<a href="javascript:void(0);" class="logo"><img src="${contextPath}/resource/images/common/logo.png" alt="minlog site"><span class="ally-hidden">메인페이지 이동</span></a>
+		<a href="/" class="logo"><img src="${contextPath}/resource/images/common/logo.png" alt="minlog site"><span class="ally-hidden">메인페이지 이동</span></a>
 		<a href="javascript:(0);" onclick="btnMenu()" class="btn_menu"><em></em><span class="ally-hidden">메뉴 열기</span></a>
 	</header>
 	<!--header-->

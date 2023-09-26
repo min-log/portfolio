@@ -4,8 +4,8 @@
 
 <mapper namespace="com.project.minlog.mapper.ProStackMapper">
     <insert id="insertOne" parameterType="com.project.minlog.domain.ProStackVO">
-        insert into pro_stack (pro_id, pro_stack_value)
-        values (#{proId},#{proStackValue})
+        insert into pro_stack (pro_id, pro_value)
+        values (#{proId},#{proValue})
     </insert>
     <select id="selectOne" resultType="com.project.minlog.domain.ProStackVO">
         select *
