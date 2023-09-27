@@ -25,4 +25,25 @@
         from pro
         where pro_id = #{proId}
     </select>
+
+    <select id="selectList" parameterType="com.project.minlog.domain.ProListSizeVO" resultType="com.project.minlog.domain.ProListVO">
+        SELECT pro.pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content, pro_info, pro_value
+        from pro
+                 JOIN (select pro_id, pro_value
+                       from pro_type
+                       where pro_value = #{proType}
+        ) type
+                      ON pro.pro_id = type.pro_id
+        ORDER BY date_start DESC
+        limit  #{pageStart},#{pageEnd};
+    </select>
+    <select id="selectAllNumber" resultType="integer">
+        SELECT count(*)
+        from pro
+                 JOIN (select pro_id, pro_value
+                       from pro_type
+                       where pro_value = #{proType}
+        ) type
+      ON pro.pro_id = type.pro_id
+    </select>
 </mapper>

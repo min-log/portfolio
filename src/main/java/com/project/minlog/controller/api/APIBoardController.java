@@ -1,7 +1,13 @@
 package com.project.minlog.controller.api;
 
+import com.project.minlog.domain.ProListSizeVO;
+import com.project.minlog.domain.ProType;
 import com.project.minlog.dto.ProDTO;
+import com.project.minlog.dto.ProListDTO;
+import com.project.minlog.dto.ProListResponseDTO;
+import com.project.minlog.dto.ProListSizeDTO;
 import com.project.minlog.service.BoardService;
+import com.project.minlog.service.ProService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -33,6 +39,7 @@ public class APIBoardController {
     @Value("${spring.servlet.multipart.location}")
     private String uploadPath;
     private final BoardService boardService;
+    private final ProService proService;
 
 
     @GetMapping("/getImg")
@@ -91,7 +98,6 @@ public class APIBoardController {
 
 
 
-
     @PostMapping("/boardUpload")
     public ResponseEntity<?> boardUpload(
             @RequestPart(value = "dto") @Valid ProDTO proDTO,
@@ -114,6 +120,19 @@ public class APIBoardController {
         long result = boardService.boardUpdate(proDTO,proImg);
         return ResponseEntity.status(HttpStatus.OK).body(result);
 
+    }
+
+    @PostMapping("/boardPageing")
+    public ResponseEntity<?> boardPageing(@RequestBody ProListSizeDTO sizeDTO){
+        log.info("# 페이지 더 보기 ");
+        ProType type = ProType.BackEnd;
+        for(ProType item : ProType.values()){
+            if(sizeDTO.getProType().equals(String.valueOf(item))) type = item;
+        }
+        ProListResponseDTO proListResponseDTO = proService.selectList(type, sizeDTO.getPageStart());
+
+
+        return ResponseEntity.status(HttpStatus.OK).body(proListResponseDTO);
     }
 
 }

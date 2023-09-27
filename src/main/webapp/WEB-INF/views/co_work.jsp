@@ -85,15 +85,16 @@
         </tr>
         </tbody>
       </table>
+      <div class="btn-wrap mt10">
       <c:choose>
           <c:when test="${dto  != null}">
-            <button type="button" onclick="coWorkForm()" class="btn-green">수정하기 <em class="xi-send ml5"></em></button>
+            <button type="button" onclick="coWorkForm()" class="btn btn-green">수정하기 <em class="xi-send ml5"></em></button>
           </c:when>
           <c:otherwise>
-            <button type="button" onclick="coWorkForm()" class="btn-green">보내기 <em class="xi-send ml5"></em></button>
+            <button type="button" onclick="coWorkForm()" class="btn btn-green">보내기 <em class="xi-send ml5"></em></button>
           </c:otherwise>
       </c:choose>
-
+      </div>
     </form>
   </div>
 

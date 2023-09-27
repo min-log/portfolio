@@ -51,10 +51,13 @@
   스크롤 트리거 플러그인 활성화
   ==========================================================================*/
 
-  gsap.registerPlugin(ScrollTrigger);
+
 
 
   function SectionGroup__init(){
+
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener("resize", ScrollTrigger.update);
     console.log('strat')
     let $fullBg = $('.fullbg');
     let $leafImg = $('.leaf_img');

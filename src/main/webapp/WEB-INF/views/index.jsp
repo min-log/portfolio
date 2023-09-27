@@ -20,7 +20,6 @@
 
 <!-- #container -->
 <em class="fullbg"></em>
-<em class="scroll"><b class="icon"></b><b class="arrow">scroll down</b></em>
 
 <div class="main">
   <div class="section-group-1 section-group section-group-horizontal-left">

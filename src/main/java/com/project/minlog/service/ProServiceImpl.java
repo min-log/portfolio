@@ -3,6 +3,7 @@ package com.project.minlog.service;
 import com.project.minlog.domain.*;
 import com.project.minlog.dto.ProDTO;
 import com.project.minlog.dto.ProListDTO;
+import com.project.minlog.dto.ProListResponseDTO;
 import com.project.minlog.mapper.ProMapper;
 import com.project.minlog.mapper.ProStackMapper;
 import com.project.minlog.mapper.ProTypeMapper;
@@ -115,35 +116,47 @@ public class ProServiceImpl implements ProService {
         return dto;
     }
 
+    @Override
+    public int selectListNumber(ProType proType) {
+        int number = proMapper.selectAllNumber(String.valueOf(proType));
+        return number;
+    }
+
     @Transactional
     @Override
-    public List<ProListDTO> selectList(ProType proType) {
+    public ProListResponseDTO selectList(ProType proType, int start) {
         log.info("# 게시판 리스트 가져오기");
-        //다른 방법 아이에 db에서 join 해서
-        List<ProTypeVO> proTypeVOS = proTypeMapper.selectOneType(String.valueOf(proType));
-        List<ProListDTO> proDTOList = proTypeVOS.stream().map(item -> {
-            ProListDTO dto = modelMapper.map(proMapper.selectOne(item.getProId()), ProListDTO.class);
-            List<ProTypeVO> proTypes = proTypeMapper.selectOne(item.getProId());
-            List<String> typeList = proTypes.stream().map(type -> {
+        int size = 6; // 6개씩 출력
+        int allSize = selectListNumber(ProType.BackEnd);
+        if(start == allSize) return null;
+        int end = start + size;
+        if(end > allSize){
+            end = allSize;
+        }
+
+        log.info("allSize : "+allSize);
+        log.info("start : "+ start);
+        log.info("end : "+ end);
+
+        List<ProListVO> proListVOS = proMapper.selectList(ProListSizeVO.builder().proType(String.valueOf(proType)).pageStart(start).pageEnd(size).build());
+        List<ProListDTO> proListDTOS = proListVOS.stream().map(item -> {
+            ProListDTO listItem = modelMapper.map(item, ProListDTO.class);
+            // 날짜
+            listItem.setProDateStart(item.getDateStart().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            listItem.setProDateEnd(item.getDateEnd().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+
+            List<String> typeList = proTypeMapper.selectOne(item.getProId()).stream().map(type -> {
                 return type.getProValue();
             }).collect(Collectors.toList());
-
-            List<ProStackVO> proStacks = proStackMapper.selectOne(item.getProId());
-            List<String> stackList = proStacks.stream().map(stack -> {
-                return stack.getProValue();
-            }).collect(Collectors.toList());
-            dto.setProType(typeList);
-            dto.setProStack(stackList);
-
-            // 날짜
-            dto.setProDateStart(dto.getDateStart().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-            dto.setProDateEnd(dto.getDateEnd().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-
-
-
-            return dto;
+            listItem.setProType(typeList);
+            return listItem;
         }).collect(Collectors.toList());
 
-        return proDTOList;
+        ProListResponseDTO result = ProListResponseDTO.builder().proList(proListDTOS)
+                .proType(String.valueOf(proType))
+                .proStart(start)
+                .proEnd(end)
+                .proAll(allSize).build();
+        return result;
     }
 }

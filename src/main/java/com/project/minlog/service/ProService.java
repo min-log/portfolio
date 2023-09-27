@@ -3,6 +3,7 @@ package com.project.minlog.service;
 import com.project.minlog.domain.ProType;
 import com.project.minlog.dto.ProDTO;
 import com.project.minlog.dto.ProListDTO;
+import com.project.minlog.dto.ProListResponseDTO;
 
 import java.util.List;
 
@@ -13,5 +14,7 @@ public interface ProService {
 
 
     ProDTO selectOne(long proId);
-    List<ProListDTO> selectList(ProType proType);
+
+    int selectListNumber(ProType proType);
+    ProListResponseDTO selectList(ProType proType, int start);
 }

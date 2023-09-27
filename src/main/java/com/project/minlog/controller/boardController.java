@@ -6,6 +6,7 @@ import com.project.minlog.domain.ProStackFront;
 import com.project.minlog.domain.ProType;
 import com.project.minlog.dto.ProDTO;
 import com.project.minlog.dto.ProListDTO;
+import com.project.minlog.dto.ProListResponseDTO;
 import com.project.minlog.service.ProService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -27,9 +28,10 @@ public class boardController {
 
     @GetMapping(value = {"/list","/list/{path}"})
     public String boardList(@PathVariable(value = "path",required = false) ProType boardPath, Model model){
-        log.info(boardPath);
+        // # 리스트 페이지
         ProType path = ProType.BackEnd;
         if(boardPath == null) boardPath = path;
+
         switch (boardPath){
             case BackEnd -> {
                 model.addAttribute("tit","Back And Site");
@@ -58,9 +60,10 @@ public class boardController {
                 break;
             }
         }
-        List<ProListDTO> proList = proService.selectList(boardPath);
-        model.addAttribute("proList",proList);
 
+        int start = 0;
+        ProListResponseDTO proListResponseDTO = proService.selectList(ProType.BackEnd, start);
+        model.addAttribute("proPage",proListResponseDTO);
         return "boardList";
     }
 
