@@ -137,6 +137,10 @@ input[type=checkbox]:checked  + label:before {background:var(--color-main)}
 .scroll .arrow {animation:scrollarrowani  2s linear infinite;position: absolute;bottom: 20px;/* left: calc(50% - 4px); */writing-mode: vertical-rl;width: max-content;width: max-content;height: max-content;display: flex;flex-direction: row;align-items: center;align-content: center;transform: translate(0,100%);text-transform:uppercase;font-family:'IbarraRealNova';font-weight:800;font-size:20px;}
 .scroll .arrow:after {content:'';display:block;border-left: 1px solid #333;border-bottom:1px solid #333;width: 8px;height: 8px;transform:rotate(-45deg);margin-top:10px;}
 
+
+
+
+
 @keyframes scrollani{
     0%{
         height:0

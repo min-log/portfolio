@@ -120,12 +120,12 @@
   <!-- end: section-group-1 -->
   <div class="section-group-2 section-group ">
     <section class="main_prosect_wrap section">
-      <h2 class="sec_tit">
-        <span>Recent <em class="icon_arrow"></em></span>
-        <span class="round">Project</span>
+      <h2 class="sec_tit on">
+        <span>Recent <em class="icon_arrow"></em></span><br/>
+        <span class="round">Project</span><br/>
         <span>
             BackAnd
-            <a href="#" class="btn_more">+ More</a>
+            <a href="/board/list/BackEnd" class="btn_more">+ More</a>
         </span>
       </h2>
       <p class="img"><img src="" alt=""></p>
@@ -134,12 +134,22 @@
   </div>
 
   <div class="section-group-2-1 section-group" >
-    <section class="main_project_back section">
-      <img src="resource/images/common/modul_pc.png" alt="">
-      <h2>Travel Road</h2>
-      <p>개인 프로젝트</p>
-      <p>작업 기간</p>
-      <p>사용 기술 </p>
+    <section class="main_project_back section mt50">
+      <p class="pro_img">
+        <img src="resource/images/common/modul_pc.png" alt="">
+      </p>
+      <ul class="project_wrap">
+        <li>
+          <p class="img">
+            <img src="" alt="">
+          </p>
+          <h3>Travel Road</h3>
+          <p>개인 프로젝트</p>
+          <p>작업 기간</p>
+          <p>사용 기술 </p>
+        </li>
+      </ul>
+
 
 
 
@@ -149,7 +159,13 @@
   <div class="section-group-2-2 section-group" >
     <section class="main_prosect_list section">
       <div class="project_wrap">
-        <h2 class="sec_tit">List 06</h2>
+        <h2 class="sec_tit on">
+          <span class="">Project</span><br/>
+          <span class="round">FRONTEND</span><br/>
+          <span>List 06
+            <a href="/board/list/FrontEnd" class="btn_more">+ More</a>
+          </span>
+        </h2>
         <p class="sec_subtxt">Pick ! <br>Web Project
           <img src="resource/images/main/emoticon_hand.png" alt="">
         </p>
@@ -160,7 +176,6 @@
           <div class="modul_phone">
             <p class="img" style='background-image:url("https://assets.codepen.io/756881/amys-1.jpg")'></p>
           </div>
-          <a class="btn_more" href="">+ More</a></p>
         </div>
         <ul  class=" wheel">
 
@@ -415,7 +430,6 @@
 <script src="${contextPath}/resource/js/jquery/gsap.min.js"></script>
 <script src="${contextPath}/resource/js/jquery/ScrollTrigger.min.js"></script>
 <script src="${contextPath}/resource/js/pages/main.js"></script>
-
 <script type="text/javascript">
 
   textBoxContLimit(500);

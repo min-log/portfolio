@@ -1,4 +1,30 @@
-  /* section 1  round hover */
+
+
+window.addEventListener("DOMContentLoaded", (event) => {
+
+
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  window.addEventListener("resize", reportWindowSize);
+
+  function reportWindowSize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    console.log(width);
+  }
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+  window.addEventListener("resize", () => {
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
+
+
+
+/* section 1  round hover */
   const circleWrap = document.querySelector('.main_greetings_wrap');
   const circleMove = document.querySelector('.con');
   const circleImg = document.querySelector('.img');
@@ -52,9 +78,6 @@
   ==========================================================================*/
 
 
-
-
-  function SectionGroup__init(){
 
     gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("resize", ScrollTrigger.update);
@@ -121,32 +144,34 @@
 
       if($group.hasClass('section-group-1')){
 
-
-
             //section move left
             let sectionLeft = gsap.timeline({
               scrollTrigger: {
                 trigger: $group1,
                 start:"top top",
                 end:"bottom top",
-                scrub:true,
                 pin :true,
                 ease:'easeOutQuart',
-                duration:1,
+                scrub:'0.2',
+                duration:'0.2',
+
               }
             });
 
-            sectionLeft.to($section, {
-              xPercent: -100 * ($section.length - 1),
-              ease:'easeOutQuart'
-            },0.1).to($sectit,{
-              x: '100%',	stagger:10
-            },0.1).to($circleP,{
+            sectionLeft.to($circleP,{
               scale:'2.5',
+              duration:'2.5',
               x: '-200%',
               opacity:0,
               stagger:10,
-
+            },0.5)
+            .to($section, {
+              xPercent: -100 * ($section.length - 1),
+              ease:'easeOutQuart',
+              stagger:10
+            },0.1).to($sectit,{
+              x: '100%',
+              stagger:10
             },0.1)
 
       }
@@ -159,29 +184,39 @@
 
       if($group.hasClass('section-group-2')){
 
-
             let section2Left = gsap.timeline({
               scrollTrigger: {
-                trigger: $('.section-group-2 '),
+                trigger: $('.section-group-2'),
                 start:"top top",
                 end:"top 100vh",
-                scrub:true,
+                scrub:'0.2',
+                duration:'0.2',
                 pin :true,
                 ease:'easeOutQuart',
-                duration:3,
               }
             });
 
-            section2Left.to($('.main_introduction_wrap'),{
-              x:'-100%',
-              marginLeft:'0'
-            },1.5)
-            .to($('.main_prosect_wrap ,.main_project_back'),{
-                marginLeft:'0'
-            },1.5).to($fullBg,{
+            section2Left.to($fullBg,{
               x:'-60%',
               y:-100 * ($section.length - 1),
-            },1.5);
+              stagger:1
+            }, '-=0.2')
+            .to($('.main_introduction_wrap'),{
+              x:'-100%',
+              marginLeft:'0',
+              duration: 0.2,
+              stagger:1
+            }, '-=0.2')
+            .to($('.main_prosect_wrap'),{
+              x:'0',
+              marginLeft:'0',
+              duration: 0.2,
+              stagger:1
+            }, '-=0.2').to($('.main_project_back'),{
+              marginLeft:'0',
+              duration: 0.2,
+              stagger:1
+            }, '-=0.2')
 
 
 
@@ -191,62 +226,41 @@
         let section2Pro1 = gsap.timeline({
           scrollTrigger: {
             trigger: $('.section-group-2-1'),
-            start:"top 20%",
-            end:"top bottom",
-            scrub:true,
+            start:"top 50%",
+            end:"top 52%",
             pin :true,
             ease:'easeOutQuart',
-            duration:3,
-            markers: true
+            scrub:'0.2',
+            duration:'0.2',
           }
         });
 
 
         section2Pro1.to($('.main_project_back'),{
           x:'0',
-        },1.5).to($('.main_prosect_wrap'),{
-          x:'-60vw'
-        },1.5)
+          duration: 0.2,
+          stagger:1
+        }, '-=0.2')
+            .to($('.section-group-2'),{
+              x: '-60%',
+              duration: 0.2,
+              stagger:1
+            }, '-=0.2')
 
       }
 
       if($group.hasClass('section-group-2-2')){
-       let $group2top = $('.main_prosect_wrap');
-       let group2Start = gsap.timeline({
-         scrollTrigger: {
-           trigger: $group2top,
-           start:"top bottom",
-           //	end:"bottom bottom",
-           scrub:true,
-           pin :false,
-           duration:1,
-           ease:'easeOutQuart',
-           markers:true,
-           //repeatDelay:1,
-           //delaty:0.2,
-         }
-       });
-
-       group2Start.to($group2top,{
-         x:'-60%'
-       },1.5).to($sec03,{
-         x:'0'
-       },1.5).to($fullBg,{
-         x:'-60%',
-         y:-100 * ($section.length - 1),
-       },1.5);
-
 
        //wheel position
        let $radius = $sec03wheel.offsetWidth / 2;
        let $center = $sec03wheel.offsetWidth / 2;
        let $total = $sec03images.length;
-       let $totalNum = $sec03images.length / 4 ;
+       let $totalNum = $total / 18 ;
        let slice = (2 * Math.PI) / $total;
 
        // group and section height
-       let $group2Height= $windowHeight * $total / 6;
-       $group2.height($group2Height+  $windowHeight + "px"); //section 2 개
+       let $group2Height= $windowHeight * $totalNum;
+      // $group2.height($group2Height+  $windowHeight + "px"); //section 2 개
        $sec03.height($group2Height + "px");
 
        $sec03images.forEach((item, i) => {
@@ -259,53 +273,29 @@
            xPercent: -50,
            yPercent: -50,
            x: x,
-           y: y
+           y: y,
+           stagger:1
          });
        });
-       console.log($section.length)
        //section content fixed center
-
-       let group2Move = gsap.timeline({
-         scrollTrigger: {
-           trigger: $sec03,
-           start:"top top",
-           end:"bottom bottom",
-           scrub:true,
-           ease:'easeOutQuart',
-           pin:true,
-           //markers:true,
-           //onLeave: self => section3Leave()
-         }
-       });
-       let $pickshow =$sec03.find('.sec_subtxt');
-       group2Move.from($pickshow,{
-         opacity:'0'
-       },0.2).to($sec03Con,{},2)
-
-
-
-
-
        //section content wheel move
-       gsap.to($sec03wheel, {
-         rotate: () => -360,
+       let group2Move = gsap.to($sec03wheel, {
+         rotate: () => -100,
          duration: $totalNum,
          scrollTrigger: {
            trigger: $sec03,
-           start:"top +=500",
-           end:"bottom bottom",
-           scrub:true,
+           start:"top top",
+           end:"bottom +=500",
            ease:'easeOutQuart',
            //markers:true,
-           pin:false,
-           scrub: 1,
-           snap: 1 / $totalNum,
+           pin:true,
+           snap: $totalNum,
            invalidateOnRefresh: true,
-           //repeatDelay:2,
-           //delay:2
-
+           scrub:true,
+           duration:true,
+           stagger:2
          }
-       },1.5)
+       })
 
 
 
@@ -318,7 +308,6 @@
          console.log(wheelImg)
          setTimeout(function(){
            $('.modul_tablet .img , .modul_phone .img').attr('style', 'background-image:url("'+ wheelImg+ '")')
-
          },400);
 
 
@@ -336,17 +325,21 @@
             let project1 = gsap.timeline({
               scrollTrigger: {
                 trigger: $('.section-group-2-1'),
-                start:"top center",
+                start:"top 80%",
                 end:"bottom bottom",
-                scrub:true,
                 ease:'easeOutQuart',
-                duration:3,
-                markers:true
+                scrub:'0.2',
+                duration:'0.2',
+
               }
             });
             project1.to($('.main_prosect_wrap , .main_project_back'),{
-                x:'0'
-            },0.5)
+                x:'0',
+              duration: 0.2,
+              stagger:1
+            }, '-=0.2')
+
+
         }
 
       /*===================================================
@@ -365,21 +358,26 @@
            let sectionRight = gsap.timeline({
              scrollTrigger: {
                trigger: $group3,
-               start:"top top",
-               end:"+=" + ($section.length - 1) + "00%",
+               start:"30% top",
+               end : "bottom bottom",
+               //end:"+=" + ($section.length - 1) + "00%",
                scrub:true,
-               duration:1,
+               scrub:'0.2',
+               duration:'0.2',
                ease:"easeOutQuart",
+               markers: true
              }
            });
            sectionRight.to($section, {
              xPercent: 100 * ($section.length - 1),
+             duration: 0.2,
 
-           },0.5).to($fullBg,{
+           }, '-=0.2')
+           .to($fullBg,{
              x:-100 * ($section.length - 1),
              y:'0',
-           },0.5)
-
+              duration: 0.2,
+           }, '-=0.2')
 
 
 
@@ -391,7 +389,6 @@
 
 
 
-  };
 
 
 
@@ -401,25 +398,9 @@
   /* END : 스크롤 트리거 플러그인 ========================================================*/
 
 
-  /*===========================================================================
-
-  /* END : 플루팅 및 리사이징 이벤트  =======================================================*/
-
-  $(document).ready(function () {
-    SectionGroup__init(); //gsap
 
 
-    // 윈도우창 너비 변화시 스크롤 이벤트 리셋 필요
-    //let re_size = window.outerHeight;
-    //$('section').css({'height':re_size})
-
-
-
-
-
-  });
-
-
+});
 
   //기기 확인
   function isMobile(){
@@ -444,7 +425,7 @@
     } else {
       // 모바일이 아니면 실행될 코드 들어가는 곳
       console.log('pc')
-      window.addEventListener("resize", SectionGroup__init);//gsap
+      //window.addEventListener("resize", SectionGroup__init);//gsap
     }
 
 

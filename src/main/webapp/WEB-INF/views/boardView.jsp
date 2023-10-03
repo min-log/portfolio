@@ -56,7 +56,7 @@
     </c:if>
 
     <div id="proThumImg" class="mt50">
-        <img src="../../resource/images/common/modul_pc.png" alt="">
+        <img src="../../resource/images/common/project_pc.png" alt="">
         <div class="pro_img">
             <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
         </div>
