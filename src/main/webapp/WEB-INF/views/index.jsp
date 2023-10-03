@@ -77,9 +77,9 @@
             </p>
             <h4>개발환경</h4>
             <p>
-              Configuration Management Tool : svn, git
+              Configuration Management Tool : SVN, FTP, GIT
               <br/>
-              idea : eclipse, IntelliJ, VS code
+              Idea : Eclipse, IntelliJ, Visual Studio Code
             </p>
 
             <h4>Hosting</h4>
@@ -353,7 +353,7 @@
       <h2 class="sec_tit">inquiry</h2>
       <p class="sec_subtxt">궁금한점을 남겨주세요!</p>
       <form id="inquiryForm" method="post">
-        <div class="contact_wrap">
+        <div class="contact_wrap mt50">
           <table>
             <caption>
               <p class="ally-hidden">문의 내용 입력 테이블</p>
@@ -404,6 +404,7 @@
             </tr>
             </tbody>
           </table>
+          <p class="text_center">지민님의 이메일로 문의 내용이 전송됩니다, 답변은 잠시 기다려주세요.</p>
           <a href="javascript:inquirySave();" class="btn btn-green btn-active mg_auto mt30" style="display:block">보내기 <em class="xi-send ml5"></em></a>
         </div>
       </form>

@@ -33,7 +33,7 @@
 					<p></p>
 				</li>
 				<li style="--i:1.2s;">
-					<a href="/board/marketing">
+					<a href="/board/list/Marketing">
 						03. marketing
 					</a>
 					<p></p>

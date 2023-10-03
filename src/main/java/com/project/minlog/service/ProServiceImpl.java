@@ -31,9 +31,11 @@ public class ProServiceImpl implements ProService {
     @Override
     public void registerType(long proId, List<String> proStackList,List<String> proTypeList){
         // 프로젝트에 포함되는 타입 저장
-        proStackList.forEach(item->{
-            proStackMapper.insertOne(ProStackVO.builder().proId(proId).proValue(item).build());
-        });
+        if(proStackList != null){
+            proStackList.forEach(item->{
+                proStackMapper.insertOne(ProStackVO.builder().proId(proId).proValue(item).build());
+            });
+        }
         // 프로젝트에 포함되는 사용된 기술 저장
         proTypeList.forEach(item->{
             proTypeMapper.insertOne(ProTypeVO.builder().proId(proId).proValue(item).build());

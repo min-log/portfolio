@@ -28,9 +28,9 @@ public class ProDTO {
     private String proLink;
     private String proGit;
     private String proImg;
+    private boolean proStatus;
 
 
-    @NotNull(message = "기술스텍")
     private List<String> proStack;
 
 

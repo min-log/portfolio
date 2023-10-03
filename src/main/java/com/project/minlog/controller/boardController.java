@@ -49,7 +49,15 @@ public class boardController {
                 for (ProStackFront value : ProStackFront.values()) {
                     stack.add(String.valueOf(value));
                 }
-
+                model.addAttribute("titSub",stack);
+                break;
+            }
+            case Marketing -> {
+                model.addAttribute("tit","Marketing");
+                stack.add("SNS 운영");
+                stack.add("언론보도");
+                stack.add("이벤트 기획");
+                stack.add("행사모집 · 운영");
                 model.addAttribute("titSub",stack);
                 break;
             }
@@ -69,4 +77,5 @@ public class boardController {
         model.addAttribute("pro",proDTO);
         return "boardView";
     }
+
 }

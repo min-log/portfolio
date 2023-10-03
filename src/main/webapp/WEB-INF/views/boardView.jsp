@@ -48,7 +48,11 @@
 
     </div>
     <c:if test="${sessionScope.admin ne null}">
-        <a href="/user/boardWrite/${pro.proId}" class="btn btn- mb50">수정</a>
+        <p class="btn-wrap text_center mb50 mt50">
+            <a href="/user/boardWrite/${pro.proId}" class="btn btn- " style="width:auto">수정</a>
+            <a href="/user/boardShowNone/${pro.proId}" class="btn btn- " style="width:auto">숨김</a>
+            <a href="/user/boardRemove/${pro.proId}" class="btn btn- " style="width:auto">삭제</a>
+        </p>
     </c:if>
 
     <div id="proThumImg" class="mt50">

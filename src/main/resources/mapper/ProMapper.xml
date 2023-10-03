@@ -16,7 +16,8 @@
                 pro_git = #{proGit},
                 pro_img = #{proImg},
                 pro_content = #{proContent},
-                pro_info = #{proInfo}
+                pro_info = #{proInfo},
+                pro_status = #{proStatus}
         where pro_id = #{proId}
     </update>
 

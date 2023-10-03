@@ -1,5 +1,7 @@
 package com.project.minlog.service;
 
+import com.project.minlog.domain.EmailType;
+import com.project.minlog.dto.InquiryDTO;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
@@ -28,8 +30,7 @@ public class MailService {
 
     // 전달할 이메일 내용
     String msgTit = "[minlog]";
-    String msgTxt;
-
+    String msgTxt = "";
 
 
 
@@ -60,7 +61,7 @@ public class MailService {
 
 
     //메일보내기
-    public String sendEmail(String type) throws Exception {
+    public String sendEmail(EmailType type, Object object) throws Exception {
         try {
             createPassword(); // 인증번호 생성
 
@@ -89,17 +90,26 @@ public class MailService {
 
 
             // 메일 제목 & 내용 설정
-            if(type.equals("userCheck")){
-                //아이디 체크 인증번호가 있을 시 인증 메일 내용 전달
-                msgEmailPw();
+            switch (type){
+                case userCheck -> {
+                    //아이디 체크 인증번호가 있을 시 인증 메일 내용 전달
+                    msgTit += " - 관리자 회원가입";
+                    msgTxt = msgEmailPw();
+                    break;
+                }
+                case inquiry ->{
+                    msgTit += " - 문의 글 등록 확인";
+                    msgTxt += msgInquiry((InquiryDTO)object);;
+                    break;
+                }
             }
+
 
             email.setSubject(msgTit); // 메일 제목
             email.setHtmlMsg(msgTxt); // 메일 내용
 
             // set the alternative message
             //email.setTextMsg("Your email client does not support HTML messages");
-
             email.send();
         } catch (EmailException e) {
             e.printStackTrace();
@@ -112,7 +122,7 @@ public class MailService {
 
 
     // 메일 제목 & 내용 설정
-    public void msgEmailPw(){
+    public String msgEmailPw(){
         msgTit = "[minlog] 이메일 인증번호 전달";
         //content
         StringBuffer strBuf = new StringBuffer();
@@ -135,9 +145,40 @@ public class MailService {
         strBuf.append("</body>");
         strBuf.append("</html>");
         msgTxt = strBuf.toString();
+        return msgTxt;
 
 
     }
+
+
+
+    public String msgInquiry(InquiryDTO dto){
+        msgTit = "[minlog] 포트폴리오 문의";
+        //content
+        StringBuffer strBuf = new StringBuffer();
+        strBuf.append("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"ko\">");
+        strBuf.append("<head>");
+        strBuf.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">");
+        strBuf.append("<meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\">");
+        strBuf.append("<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">");
+        strBuf.append("<title>[minlog] 문의가 왔습니다.</title>");
+        strBuf.append("</head>");
+        strBuf.append("<body style=\"margin:0;font-size:1em\">");
+        strBuf.append("<div>");
+        strBuf.append("<p>- 문의 - </p>");
+        strBuf.append("<h1 style='font-size:1.3em;margin-bottom:10px;'>"+dto.getInquiryTitle()+"</h1>");
+        strBuf.append("<p> name : "+ dto.getInquiryName()+"</p>");
+        strBuf.append("<p> email : "+ dto.getInquiryEmail() +"</p>");
+        strBuf.append("<p> date : "+ dto.getCreateDate() +"</p>");
+        strBuf.append("<p> tel : "+ dto.getInquiryTel() +"</p>");
+        strBuf.append("<p style='margin-top:20px;border:1px solid #000;padding:20px;'>"+ dto.getInquiryContent() +"</p>");
+        strBuf.append("</div>");
+        strBuf.append("</body>");
+        strBuf.append("</html>");
+        msgTxt = strBuf.toString();
+        return msgTxt;
+    }
+
 
 
 

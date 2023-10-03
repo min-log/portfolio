@@ -23,6 +23,8 @@ public class ProVO {
     private String proImg;
     private String proContent;
     private String proInfo;
+    private boolean proStatus;
+
 
 
     //type

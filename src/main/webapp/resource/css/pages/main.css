@@ -121,7 +121,7 @@ html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}
 .section-group-2 {margin-top:-60vh;z-index: 5;height:auto;position:relative;paddint-top:50px;}
 /* main_prosect_wrap */
 .main_prosect_wrap {padding:var(--padding-init);display:flex;flex-direction: row-reverse;flex-wrap: wrap;align-items: flex-end;justify-content: flex-end;position:relative;
-	margin-left:calc(100vw - 200px);transition: var(--trans-init)}
+	margin-left:calc(100vw - 8vw);transition: var(--trans-init)}
 .main_prosect_wrap .img {background:#ccc;width:50%;height: 90%;transform: translateY(-10%);z-index:-1;}
 .main_prosect_wrap .sec_tit {text-align:left;position:absolute;bottom:0;left:60%;width:500px;}
 .main_prosect_wrap .sec_tit span {line-height:90px;display:block;border-bottom:1px solid #333;position:relative;}

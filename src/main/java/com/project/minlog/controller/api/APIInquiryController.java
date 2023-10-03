@@ -1,7 +1,9 @@
 package com.project.minlog.controller.api;
 
+import com.project.minlog.domain.EmailType;
 import com.project.minlog.dto.InquiryDTO;
 import com.project.minlog.service.InquiryService;
+import com.project.minlog.service.MailService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -34,7 +36,11 @@ public class APIInquiryController {
             }
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(list);
         }
-        inquiryService.register(dto);
+        try {
+            inquiryService.register(dto);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         return ResponseEntity.ok(true);
     }

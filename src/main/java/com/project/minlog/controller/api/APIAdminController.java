@@ -1,6 +1,7 @@
 package com.project.minlog.controller.api;
 
 
+import com.project.minlog.domain.EmailType;
 import com.project.minlog.service.MailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -21,11 +22,9 @@ public class APIAdminController {
     @ResponseBody
     @GetMapping("/mailCheck")
     public String mailCheck() throws Exception { // 관리자가 암호 전달 필요
-        System.out.println("이메일 인증 요청");
-
-        String userCheck = mailService.sendEmail("userCheck");// 인증 번호
+        log.info("# 이메일 인증 요청");
+        String userCheck = mailService.sendEmail(EmailType.userCheck,null);// 인증 번호
         log.info("이메일 인증 번호 : " + userCheck);
-
         return userCheck;
     }
 }

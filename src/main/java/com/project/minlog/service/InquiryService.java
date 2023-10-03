@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface InquiryService {
 
-    void register(InquiryDTO dto);
+    void register(InquiryDTO dto) throws Exception;
 }
