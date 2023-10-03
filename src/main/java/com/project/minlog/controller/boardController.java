@@ -31,12 +31,10 @@ public class boardController {
         // # 리스트 페이지
         ProType path = ProType.BackEnd;
         if(boardPath == null) boardPath = path;
-
+        List<String> stack = new ArrayList<>();
         switch (boardPath){
             case BackEnd -> {
                 model.addAttribute("tit","Back And Site");
-
-                List<String> stack = new ArrayList<>();
                 for (ProStackBack value : ProStackBack.values()) {
                     stack.add(String.valueOf(value));
                 }
@@ -48,21 +46,17 @@ public class boardController {
             }
             case FrontEnd -> {
                 model.addAttribute("tit","Front And Site");
-
-                List<String> stack = new ArrayList<>();
                 for (ProStackFront value : ProStackFront.values()) {
                     stack.add(String.valueOf(value));
                 }
-                for (ProStackDB value : ProStackDB.values()) {
-                    stack.add(String.valueOf(value));
-                }
+
                 model.addAttribute("titSub",stack);
                 break;
             }
         }
 
         int start = 0;
-        ProListResponseDTO proListResponseDTO = proService.selectList(ProType.BackEnd, start);
+        ProListResponseDTO proListResponseDTO = proService.selectList(boardPath, start);
         model.addAttribute("proPage",proListResponseDTO);
         return "boardList";
     }

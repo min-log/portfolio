@@ -77,15 +77,15 @@
             </p>
             <h4>개발환경</h4>
             <p>
-              Configuration Management Tool (svn / git)
+              Configuration Management Tool : svn, git
               <br/>
-              idea : eclipse, IntelliJ
+              idea : eclipse, IntelliJ, VS code
             </p>
 
             <h4>Hosting</h4>
             <p>
-              AWS (EC2)<br />
-              빌더 쇼핑몰 활용한 작업이 가능: 카페24 , 고도몰, 닷홈
+              AWS (EC2) <br />
+              빌더 쇼핑몰 작업 가능: 카페24 , 고도몰, 닷홈
             </p>
 
           </div>
@@ -379,7 +379,6 @@
                     <option value="010">010</option>
                     <option value="011">011</option>
                     <option value="031">031</option>
-                    <option value="031">031</option>
                   </select>
                   <span>-</span>
                   <input id="inquiryTel_2" name="inquiryTel_2" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="4" >
@@ -398,7 +397,7 @@
               <th><label for="inquiryContent">내용</label></th>
               <td>
                 <textarea class="textBox" name="inquiryContent" id="inquiryContent" cols="30" rows="10"></textarea>
-                <p> 500글자 내외로 내용을 입력하세요.
+                <p> 100자 이상 500자 내외로 내용을 입력하세요.
                   <span style="float:right"><b id="textCount" class="color_main">0</b> 글자 수</span>
                 </p>
               </td>
@@ -523,7 +522,7 @@
         inquiryEmail : inquiryEmail,
         inquiryName : inquiryName
     });
-    console.log("클릭" + obj);
+
     $.ajax({
       type : 'POST',
       url : "/apiInquiry/register",
@@ -533,10 +532,21 @@
       contentType: 'application/json; charset=utf-8',
       success: function (data) {
         console.log(data);
+        let okMsg = "등록되었습니다.";
+        document.getElementById("ModalMsg").classList.remove("fade");
+        document.querySelector(".modal-msg").innerHTML = okMsg;
       },
       error: function (data) {
-
         console.log(data);
+        let errs = data.responseJSON;
+        let errMsg = '';
+        for(let i = 0; i < errs.length;i++){
+          errMsg += errs[i].defaultMessage;
+          errMsg += "<br />";
+        }
+        document.getElementById("ModalMsg").classList.remove("fade");
+        document.querySelector(".modal-msg").innerHTML = errMsg;
+
       }
 
     });

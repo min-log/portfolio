@@ -88,6 +88,7 @@ common - header / footer
 .contact_wrap table tr th label {line-height:50px;display:block;text-align:left;}
 .contact_wrap table tr input[type=password],
 .contact_wrap table tr input[type=text],
+.contact_wrap table tr input[type=email],
 .contact_wrap table tr textarea,
 .contact_wrap table tr select {padding:10px;width:100%;resize:none;border:1px solid #000;box-sizing:border-box;}
 .contact_wrap table tr textarea {height:200px;}
