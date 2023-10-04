@@ -1,8 +1,6 @@
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
-
-
   let width = window.innerWidth;
   let height = window.innerHeight;
   window.addEventListener("resize", reportWindowSize);
@@ -24,86 +22,105 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
 
-/* section 1  round hover */
-  const circleWrap = document.querySelector('.main_greetings_wrap');
-  const circleMove = document.querySelector('.con');
-  const circleImg = document.querySelector('.img');
-  const mouseCoords = circleWrap.getBoundingClientRect();
 
-  circleWrap.addEventListener('mousemove', function(e) {
-    const mouseX = e.pageX - circleWrap.offsetLeft;
-    const mouseY = e.pageY - circleWrap.offsetTop;
 
-    TweenMax.to(circleMove, 0.5, {
-      x: (mouseX - mouseCoords.width / 2) / mouseCoords.width * 50,
-      y: (mouseY - mouseCoords.height / 2) / mouseCoords.width * 50,
-      ease:"easeOutCirc",
-    })
-  });
 
-  circleWrap.addEventListener('mousemove', function(e) {
-    const mouseX = e.pageX - circleWrap.offsetLeft;
-    const mouseY = e.pageY - circleWrap.offsetTop;
 
-    TweenMax.to(circleImg, 0.3, {
-      x: (mouseX - mouseCoords.width / 2) / mouseCoords.width * 25,
-      y: (mouseY - mouseCoords.height / 2) / mouseCoords.width * 25,
-      ease:"easeOutCirc",
-    })
-  });
 
-  circleWrap.addEventListener('mouseenter', function(e) {
-    TweenMax.to(circleMove, 0.3, {
-      scale: 0.9
-    })
-  });
-
-  circleWrap.addEventListener('mouseleave', function(e) {
-    TweenMax.to(circleMove, 0.3, {
-      x: 0,
-      y: 0,
-      scale: 1
-    })
-    TweenMax.to(circleImg, 0.3, {
-      x: 0,
-      y: 0,
-      scale: 1
-    })
-
-  });
 
 
   /*==========================================================================
   스크롤 트리거 플러그인 활성화
   ==========================================================================*/
 
-
+  function scrollTriggerSet() {
 
     gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("resize", ScrollTrigger.update);
-    console.log('strat')
+
+    /* section 1  round hover */
+    const circleWrap = document.querySelector('.main_greetings_wrap');
+    const circleMove = document.querySelector('.con');
+    const circleImg = document.querySelector('.img');
+    const mouseCoords = circleWrap.getBoundingClientRect();
+
+    circleWrap.addEventListener('mousemove', function(e) {
+      const mouseX = e.pageX - circleWrap.offsetLeft;
+      const mouseY = e.pageY - circleWrap.offsetTop;
+
+      TweenMax.to(circleMove, 0.5, {
+        x: (mouseX - mouseCoords.width / 2) / mouseCoords.width * 50,
+        y: (mouseY - mouseCoords.height / 2) / mouseCoords.width * 50,
+        ease:"easeOutCirc",
+      })
+    });
+
+    circleWrap.addEventListener('mousemove', function(e) {
+      const mouseX = e.pageX - circleWrap.offsetLeft;
+      const mouseY = e.pageY - circleWrap.offsetTop;
+
+      TweenMax.to(circleImg, 0.3, {
+        x: (mouseX - mouseCoords.width / 2) / mouseCoords.width * 25,
+        y: (mouseY - mouseCoords.height / 2) / mouseCoords.width * 25,
+        ease:"easeOutCirc",
+      })
+    });
+
+    circleWrap.addEventListener('mouseenter', function(e) {
+      TweenMax.to(circleMove, 0.3, {
+        scale: 0.9
+      })
+    });
+
+    circleWrap.addEventListener('mouseleave', function(e) {
+      TweenMax.to(circleMove, 0.3, {
+        x: 0,
+        y: 0,
+        scale: 1
+      })
+      TweenMax.to(circleImg, 0.3, {
+        x: 0,
+        y: 0,
+        scale: 1
+      })
+
+    });
+
+    // 각 섹션 section active
+    let $allSection = gsap.utils.toArray(".section-group");
+    $allSection.forEach((title) => {
+      gsap.to(title, {
+        scrollTrigger: {
+          trigger: title,
+          start: "top top",
+          end: "bottom 0",
+          toggleClass:  "sec_active",
+        }
+      })
+    });
+
+
+
     let $fullBg = $('.fullbg');
     let $leafImg = $('.leaf_img');
     let $windowHeight = $(window).height();
 
 
 
-    $('.section-group').each(function(index, node) {
 
+
+
+    $('.section-group').each(function(index, node) {
       let $group = $(this);
       let $section = $group.find(' .section');
-      let $con = $group.find(' > .section > .con');
 
-      // 컨텐츠 전체 높이
-      let $sectionLeng =$section.length;
-      let $groupHeight =($sectionLeng * $windowHeight) + 'px';  // 그룹 높이 = 윈도우 창 높이 * 섹션 개수
+
 
       //group 1
       let $group1 = $('.section-group-1');
       let $sec01 =$('.main_greetings_wrap');
       let $sectit = $group1.find('.sec_tit');
       let $circleP = $('.circle');
-
       let $sec02 =$('.main_introduction_wrap');
 
 
@@ -119,20 +136,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       //group 3
       let $group3 = $('.section-group-3');
 
-      // 각 섹션 section active
-      let $allSection = gsap.utils.toArray(".section-group");
-      $allSection.forEach((title) => {
-        gsap.to(title, {
-          scrollTrigger: {
-            trigger: title,
-            start: "top top",
-            end: "bottom 0",
-            toggleClass:  "sec_active",
-          }
-        })
-      });
-
-
 
 
 
@@ -143,7 +146,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       ===================================================*/
 
       if($group.hasClass('section-group-1')){
-
             //section move left
             let sectionLeft = gsap.timeline({
               scrollTrigger: {
@@ -157,7 +159,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
               }
             });
-
             sectionLeft.to($circleP,{
               scale:'2.5',
               duration:'2.5',
@@ -300,7 +301,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
 
+
        //section content wheel action
+        let wheelImg = $("#wheelPro1 img").attr("src");
+       //console.log(wheelImg);
+        $(".prosect_info .img").attr("style",'background-image:url("' + wheelImg + '")');
+
        $('.wheel__card').on('click',function(){
          let wheelImg = $(this).find('img').attr('src');
          $('.wheel__card').removeClass('active');
@@ -317,30 +323,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       }
 
-      /*===================================================
-        section project 1
-      ===================================================*/
-
-        if($group.hasClass('.section-group-2-1')){
-            let project1 = gsap.timeline({
-              scrollTrigger: {
-                trigger: $('.section-group-2-1'),
-                start:"top 80%",
-                end:"bottom bottom",
-                ease:'easeOutQuart',
-                scrub:'0.2',
-                duration:'0.2',
-
-              }
-            });
-            project1.to($('.main_prosect_wrap , .main_project_back'),{
-                x:'0',
-              duration: 0.2,
-              stagger:1
-            }, '-=0.2')
-
-
-        }
 
       /*===================================================
       section group 03
@@ -348,7 +330,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
      if($group.hasClass('section-group-3')){
            //section position
-           $group3.height($groupHeight);
+
            $group3.find('.section').each(function(index){
              let $group03Mtop = 'margin-top:' + $windowHeight * index + 'px; height:'+$windowHeight + 'px';
              $(this).attr('style',$group03Mtop )
@@ -365,7 +347,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                scrub:'0.2',
                duration:'0.2',
                ease:"easeOutQuart",
-               markers: true
+               //markers: true
              }
            });
            sectionRight.to($section, {
@@ -385,10 +367,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
      }
     });
-
-
-
-
+  }
 
 
 
@@ -400,7 +379,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
 
-});
 
   //기기 확인
   function isMobile(){
@@ -415,9 +393,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   }
 
+  // ScrollTrigger.matchMedia({
+  //   "(min-width: 750px)": function() {
+  //
+  //
+  //   },
+  //   "(max-width: 749px)": function() {
+  //
+  //   },
+  //   "all": function() {
+  //
+  //
+  //   }
+  // });
 
 
-  $(function () {
 
     if (isMobile()) {
       // 모바일이면 실행될 코드 들어가는 곳
@@ -425,10 +415,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     } else {
       // 모바일이 아니면 실행될 코드 들어가는 곳
       console.log('pc')
-      //window.addEventListener("resize", SectionGroup__init);//gsap
+      scrollTriggerSet();
     }
 
 
-  });
+});
 
 

@@ -11,9 +11,14 @@ import java.util.List;
 public interface ProMapper {
     int insertOne(ProVO vo);
     int uploadOne(ProVO vo);
+    int uploadStatus(ProVO vo);
+    int deleteOne(long proId);
     int selectAllNumber(String proType);
     ProVO selectOne(long proId);
-
     List<ProListVO> selectList(ProListSizeVO pageSize);
+
+
+
+
 
 }

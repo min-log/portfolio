@@ -9,6 +9,8 @@
 <c:import url="../inc/headerScript.jsp"/>
 <c:import url="../inc/header.jsp"/>
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/sub.css" />
+<link rel="stylesheet" href="${contextPath}/resource/css/pages/sub_media.css">
+
 <div class="subpage">
   <div class="subpage_header">
     <h2 class="tit">admin login</h2>

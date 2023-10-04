@@ -30,8 +30,14 @@ public class CoWorkController {
 
 
     @GetMapping("/form")
-    public String coWork(){
+    public String coWork(Model model, HttpServletRequest request){
         log.info("co work page ------------------");
+
+        Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request); // redirect 에러메시지
+        if(flashMap!=null) {
+            model.addAttribute("msg",flashMap.get("msg"));
+        }
+
         return "co_work";
     }
 
@@ -40,13 +46,15 @@ public class CoWorkController {
     public String coWorkRegister(@Valid CoWorkDTO dto, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         log.info("co work register --------------------");
         if (bindingResult.hasErrors()){
-            log.info("저장 실패");
             List<ObjectError> list = bindingResult.getAllErrors();
+            String errMsg="";
             for( ObjectError error : list ) {
-                System.out.println(error);
+                System.out.println(error.getDefaultMessage());
+                errMsg += error.getDefaultMessage() + ", ";
             }
+            redirectAttributes.addFlashAttribute("msg",errMsg);
 
-            return "co_work";
+            return "redirect:/coWork/form";
         }
         log.info("dto : {}", dto);
         coWorkService.register(dto);

@@ -7,6 +7,7 @@ import com.project.minlog.dto.ProListResponseDTO;
 import com.project.minlog.mapper.ProMapper;
 import com.project.minlog.mapper.ProStackMapper;
 import com.project.minlog.mapper.ProTypeMapper;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -90,6 +91,20 @@ public class ProServiceImpl implements ProService {
     }
 
     @Override
+    public boolean uploadStatus(long id, boolean status) {
+        int i = proMapper.uploadStatus(ProVO.builder().proId(id).proStatus(status).build());
+        if(i == 1) return true;
+        return false;
+    }
+
+    @Override
+    public boolean delete(long id) {
+        int i = proMapper.deleteOne(id);
+        if(i == 1) return true;
+        return false;
+    }
+
+    @Override
     public ProDTO selectOne(long proId) {
         log.info("게시판 내용");
         ProVO vo = proMapper.selectOne(proId);
@@ -126,12 +141,13 @@ public class ProServiceImpl implements ProService {
 
     @Transactional
     @Override
-    public ProListResponseDTO selectList(ProType proType, int start) {
+    public ProListResponseDTO selectList(ProType proType, int start, int size) {
         log.info("# 게시판 리스트 가져오기");
-        int size = 6; // 6개씩 출력
+        int sizeSet = 6; // 6개씩 출력
+        sizeSet = size;
         int allSize = selectListNumber(ProType.BackEnd);
         if(start == allSize) return null;
-        int end = start + size;
+        int end = start + sizeSet;
         if(end > allSize){
             end = allSize;
         }
@@ -140,7 +156,7 @@ public class ProServiceImpl implements ProService {
         log.info("start : "+ start);
         log.info("end : "+ end);
 
-        List<ProListVO> proListVOS = proMapper.selectList(ProListSizeVO.builder().proType(String.valueOf(proType)).pageStart(start).pageEnd(size).build());
+        List<ProListVO> proListVOS = proMapper.selectList(ProListSizeVO.builder().proType(String.valueOf(proType)).pageStart(start).pageEnd(sizeSet).build());
         List<ProListDTO> proListDTOS = proListVOS.stream().map(item -> {
             ProListDTO listItem = modelMapper.map(item, ProListDTO.class);
             // 날짜

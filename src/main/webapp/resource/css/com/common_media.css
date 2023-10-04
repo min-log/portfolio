@@ -8,10 +8,11 @@ common media screen tab and mobile
 	/* footer*/
 	.footer .f_inner {width:100%;padding: 0 38px;}
 
-
-	
-
-
-
 }
+@media screen and (max-width:740px) {
+	#header .logo {width:80px;}
+	.menu_wrap ul li a {font-size:30px}
+}
+
+
 

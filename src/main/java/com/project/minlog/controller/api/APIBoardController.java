@@ -129,10 +129,32 @@ public class APIBoardController {
         for(ProType item : ProType.values()){
             if(sizeDTO.getProType().equals(String.valueOf(item))) type = item;
         }
-        ProListResponseDTO proListResponseDTO = proService.selectList(type, sizeDTO.getPageStart());
+        ProListResponseDTO proListResponseDTO = proService.selectList(type, sizeDTO.getPageStart(),6);
 
 
         return ResponseEntity.status(HttpStatus.OK).body(proListResponseDTO);
     }
+
+
+
+
+
+    @GetMapping("/boardShowNone/{boardId}")
+    public ResponseEntity<Boolean> boardShowNone(@PathVariable(value = "boardId") long id){
+        log.info("숨김처리: {}",id);
+        boolean result = proService.uploadStatus(id, true);
+        return ResponseEntity.ok(result);
+    }
+
+
+
+    @GetMapping("/boardRemove/{boardId}")
+    public ResponseEntity<Boolean> boardRemove(@PathVariable(value = "boardId") long id){
+        log.info("삭제처리: {}",id);
+        boolean result = proService.delete(id);
+        return ResponseEntity.ok(result);
+    }
+
+
 
 }

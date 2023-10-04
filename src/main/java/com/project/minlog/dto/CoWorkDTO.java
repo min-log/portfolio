@@ -30,7 +30,7 @@ public class CoWorkDTO {
     @NotNull(message = "직위를 입력해주세요.")
     private String coPosition;
     @NotNull(message = "내용을 입력해주세요.")
-    @Size(min = 100,max = 200, message = "100자 이상 200자 이하 입력해주세요")
+    @Size(min = 100,max = 200, message = "내용을 100자 이상 200자 이하 입력해주세요")
     private String coContent;
     @NotNull(message = "비밀번호를 입력해주세요.")
     @Min(value = 4 , message = "4자리 이상 비밀번호를 입력해주세요.")

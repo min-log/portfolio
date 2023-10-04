@@ -9,6 +9,8 @@
 <c:import url="./inc/headerScript.jsp"/>
 <c:import url="./inc/header.jsp"/>
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/sub.css" />
+<link rel="stylesheet" href="${contextPath}/resource/css/pages/sub_media.css">
+
 <div class="subpage">
     <div class="subpage_header text_center">
         <h2 class="tit">${pro.proTitle}</h2>
@@ -50,11 +52,38 @@
     <c:if test="${sessionScope.admin ne null}">
         <p class="btn-wrap text_center mb50 mt50">
             <a href="/user/boardWrite/${pro.proId}" class="btn btn- " style="width:auto">수정</a>
-            <a href="/user/boardShowNone/${pro.proId}" class="btn btn- " style="width:auto">숨김</a>
-            <a href="/user/boardRemove/${pro.proId}" class="btn btn- " style="width:auto">삭제</a>
+            <a href="javascript:boardShowNone()" class="btn btn-" style="width:auto">숨김</a>
+            <a href="javascript:boardRemove()" class="btn btn- " style="width:auto">삭제</a>
         </p>
+        <script>
+            function boardShowNone(){
+                $.ajax({
+                    type:'get',
+                    url:'/apiBoard/boardShowNone/' + ${pro.proId},
+                    success:function(data){
+                        alert("숨김처리가 성공했습니다.");
+                        window.location = document.referrer;
+                    },
+                    errors:function (data) {
+                        alert("숨김처리가 실패했습니다.");
+                    }
+                });
+            }
+            function boardRemove(){
+                $.ajax({
+                    type:'get',
+                    url:'/apiBoard/boardRemove/' + ${pro.proId},
+                    success:function(data){
+                        alert("삭제가 성공했습니다.");
+                        window.location = document.referrer;
+                    },
+                    errors:function (data) {
+                        alert("삭제가 실패했습니다.");
+                    }
+                });
+            }
+        </script>
     </c:if>
-
     <div id="proThumImg" class="mt50">
         <img src="../../resource/images/common/project_pc.png" alt="">
         <div class="pro_img">

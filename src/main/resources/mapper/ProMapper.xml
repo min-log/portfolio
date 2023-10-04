@@ -20,21 +20,30 @@
                 pro_status = #{proStatus}
         where pro_id = #{proId}
     </update>
+    <update id="uploadStatus" parameterType="com.project.minlog.domain.ProVO" useGeneratedKeys="true"  keyColumn="pro_id" keyProperty="proId">
+        update pro
+        set pro_status = #{proStatus}
+        where pro_id = #{proId}
+    </update>
+    <delete id="deleteOne">
+        delete from pro where pro_id = #{proId}
+    </delete>
 
     <select id="selectOne" resultType="com.project.minlog.domain.ProVO">
-        select pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content,pro_info
+        select pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content,pro_info,pro_status
         from pro
         where pro_id = #{proId}
     </select>
 
     <select id="selectList" parameterType="com.project.minlog.domain.ProListSizeVO" resultType="com.project.minlog.domain.ProListVO">
-        SELECT pro.pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content, pro_info, pro_value
+        SELECT pro.pro_id, pro_title, create_date, date_start, date_end, pro_link, pro_git, pro_img, pro_content, pro_info, pro_value,pro_status
         from pro
                  JOIN (select pro_id, pro_value
                        from pro_type
                        where pro_value = #{proType}
         ) type
                       ON pro.pro_id = type.pro_id
+        where pro_status = false
         ORDER BY date_start DESC
         limit  #{pageStart},#{pageEnd};
     </select>
@@ -46,5 +55,6 @@
                        where pro_value = #{proType}
         ) type
       ON pro.pro_id = type.pro_id
+      where pro_status = false
     </select>
 </mapper>

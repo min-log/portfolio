@@ -2,3 +2,11 @@
 /*==========================================================================
 subpage media screen tab & mobile 
 ==========================================================================*/
+
+@media screen and (max-width:740px) {
+    .scroll {display: none;}
+    #proList li {width:100%;margin-right: 0;}
+    #proList li .pro_img {height:55vw;}
+    .subpage_header .tit {font-size:30px}
+
+}

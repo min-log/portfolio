@@ -7,6 +7,7 @@
 <c:import url="inc/headerScript.jsp"/>
 <c:import url="inc/header.jsp"/>
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/sub.css" />
+<link rel="stylesheet" href="${contextPath}/resource/css/pages/sub_media.css">
 
 <section class="subpage">
   <div class="subpage_header">
@@ -34,7 +35,7 @@
           <td>
             <select name="coCompany" id="coCompany" data-txt="회사">
               <option>회사/기타 선택해주세요.</option>
-              <option>CMA</option>
+              <option>멀티캠퍼스</option>
               <option>CMA</option>
               <option>오상테크놀로지</option>
               <option>스칼라티움</option>
@@ -42,7 +43,7 @@
           </td>
         </tr>
         <tr>
-          <th><label for="coDepartment" >부서</label></th>
+          <th><label for="coDepartment" >부서 / 팀명</label></th>
           <td>
             <input name="coDepartment" id="coDepartment" type="text" data-txt="부서" placeholder="부서를 적어주세요. ex) 개발, 디자인" value="${dto.coDepartment}"/>
           </td>
@@ -88,10 +89,10 @@
       <div class="btn-wrap mt10">
       <c:choose>
           <c:when test="${dto  != null}">
-            <button type="button" onclick="coWorkForm()" class="btn btn-green">수정하기 <em class="xi-send ml5"></em></button>
+            <button type="button" onclick="coWorkForm()" class="btn btn-green">수정하기</button>
           </c:when>
           <c:otherwise>
-            <button type="button" onclick="coWorkForm()" class="btn btn-green">보내기 <em class="xi-send ml5"></em></button>
+            <button type="button" onclick="coWorkForm()" class="btn btn-green btn-active">보내기 <em class="xi-send ml5"></em></button>
           </c:otherwise>
       </c:choose>
       </div>
@@ -116,12 +117,11 @@
       });
 
       if(is_empty) {
-
-        alert(is_txt + ' : 내용을 모두 입력해주세요.');
+        document.getElementById("ModalMsg").classList.remove("fade");
+        document.querySelector(".modal-msg").innerHTML = "내용을 모두 입력해주세요.";
         return false;
       }
       $("#coForm").submit();
-
 
 
 

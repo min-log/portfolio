@@ -12,9 +12,11 @@ public interface ProService {
     long register(ProDTO dto);
     long upload(ProDTO dto);
 
+    boolean uploadStatus(long id,boolean status);
+    boolean delete(long id);
 
     ProDTO selectOne(long proId);
 
     int selectListNumber(ProType proType);
-    ProListResponseDTO selectList(ProType proType, int start);
+    ProListResponseDTO selectList(ProType proType, int start,int size);
 }

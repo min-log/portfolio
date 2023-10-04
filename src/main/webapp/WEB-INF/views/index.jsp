@@ -139,15 +139,16 @@
         <img src="resource/images/common/modul_pc.png" alt="">
       </p>
       <ul class="project_wrap">
+        <c:forEach items="${proBack.proList}" var="proItem">
         <li>
           <p class="img">
-            <img src="" alt="">
+            <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
           </p>
-          <h3>Travel Road</h3>
-          <p>개인 프로젝트</p>
-          <p>작업 기간</p>
-          <p>사용 기술 </p>
+          <h3>${proItem.proTitle}</h3>
+          <p>${proItem.proDateStart} - ${proItem.proDateEnd}</p>
+          <p>${proItem.proStack}</p>
         </li>
+        </c:forEach>
       </ul>
 
 
@@ -160,7 +161,7 @@
     <section class="main_prosect_list section">
       <div class="project_wrap">
         <h2 class="sec_tit on">
-          <span class="">Project</span><br/>
+          <span class="">RECENT</span><br/>
           <span class="round">FRONTEND</span><br/>
           <span>List 06
             <a href="/board/list/FrontEnd" class="btn_more">+ More</a>
@@ -171,93 +172,28 @@
         </p>
         <div class="prosect_info">
           <div class="modul_tablet">
-            <p class="img" style='background-image:url("https://assets.codepen.io/756881/amys-1.jpg")'></p>
+            <p class="img" style=''></p>
           </div>
           <div class="modul_phone">
-            <p class="img" style='background-image:url("https://assets.codepen.io/756881/amys-1.jpg")'></p>
+            <p class="img" style=''></p>
           </div>
         </div>
         <ul  class=" wheel">
-
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-1.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-2.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-3.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-4.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-5.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-6.jpg" />
-          </li>
-
-
-
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-1.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-2.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-3.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-4.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-5.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-6.jpg" />
-          </li>
-
-
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-1.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-2.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-3.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-4.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-5.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-6.jpg" />
-          </li>
-
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-1.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-2.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-3.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-4.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-5.jpg" />
-          </li>
-          <li class="wheel__card">
-            <img src="https://assets.codepen.io/756881/amys-6.jpg" />
-          </li>
-
+            <c:forEach items="${proFront.proList}" var="proItem" varStatus="status">
+              <li class="wheel__card" id="wheelPro${status.count}">
+                <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+              </li>
+            </c:forEach>
+            <c:forEach items="${proFront.proList}" var="proItem">
+              <li class="wheel__card">
+                <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+              </li>
+            </c:forEach>
+            <c:forEach items="${proFront.proList}" var="proItem">
+              <li class="wheel__card">
+                <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+              </li>
+            </c:forEach>
         </ul>
       </div>
     </section>
@@ -281,18 +217,22 @@
       <!--Profile-->
       <div class="profile_con">
         <ul>
+            <li>
+                <p class="date">2022.12.20 - 2023.05.16(800H) </p>
+                <h3>클라우드 네이티브 애플리케이션(CNA)개발 전문가양성과정</h3>
+                <p class="position">
+                    한국소프트웨어기술진흥협회
+                </p>
+                <p class="subtxt">국가인적자원개발컨소시엄 과정을 수료</p>
+            </li>
           <li>
-            <p class="date">2022</p>
-            <h3>개발</h3>
-            <p class="position"></p>
+            <p class="date">2022.12.20 - 2023.05.16(800H) </p>
+            <h3>클라우드 네이티브 애플리케이션(CNA)개발 전문가양성과정</h3>
+            <p class="position">
+                한국소프트웨어기술진흥협회
+            </p>
+              <p class="subtxt">국가인적자원개발컨소시엄 과정을 수료</p>
           </li>
-          <li>
-            <p class="date">2018~2022</p>
-            <h3>오상테크놀로지</h3>
-            <p class="position">UI개발팀 (대리)</p>
-            <p class="subtxt">신규 홈페이지 구축 및 유지보수</p>
-          </li>
-
         </ul>
       </div>
       <p class="profile_img"><img src="" alt=""></p>
@@ -301,6 +241,12 @@
       <em class="line line_move"></em>
       <div class="profile_con">
         <ul>
+            <li>
+                <p class="date">2018.09 ~ 2022.10</p>
+                <h3>오상테크놀로지</h3>
+                <p class="position">UI개발팀 (대리)</p>
+                <p class="subtxt">신규 홈페이지 구축 및 유지보수</p>
+            </li>
           <li>
             <p class="date">2017</p>
             <h3>그린아트컴퓨터학원</h3>
@@ -363,6 +309,10 @@
           </li>
         </c:forEach>
       </ul>
+      <div class="arrow-wrap">
+        <button class="prevArrow arrow"><em class="icon_arrow"></em><span>이전</span></button>
+        <button class="nextArrow arrow"><em class="icon_arrow"></em><span>다음</span></button>
+      </div>
     </section>
     <section class="main_contact_wrap section section-10">
       <h2 class="sec_tit">inquiry</h2>
@@ -432,15 +382,20 @@
 <script src="${contextPath}/resource/js/pages/main.js"></script>
 <script type="text/javascript">
 
+
   textBoxContLimit(500);
 
   $('.co_work').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    //vertical: true,
+    touchMove: true,
+    swiper:true,
     autoplay: true,
-    verticalSwiping: true,
-    autoplaySpeed: 2000,
+    //vertical: true,
+    //verticalSwiping: true,
+    //autoplaySpeed: 2000,
+    prevArrow : $('.main_co_work_wrap .arrow-wrap .prevArrow'),
+    nextArrow : $('.main_co_work_wrap .arrow-wrap .nextArrow'),
   });
 </script>
 <script type="text/javascript">
@@ -513,20 +468,36 @@
     const inquiryTel = $('#inquiryTel_1').val()+"-"+$('#inquiryTel_2').val()+"-"+$('#inquiryTel_3').val();
     const inquiryEmail = $('#inquiryEmail').val();
     const inquiryName = $('#inquiryName').val();
+    let inquiryMsg;
     if (inquiryTitle === ""){
-      alert("타이틀을 입력해주세요.");
+      //alert("타이틀을 입력해주세요.");
+      inquiryMsg ="타이틀을 입력해주세요.";
+      document.getElementById("ModalMsg").classList.remove("fade");
+      document.querySelector(".modal-msg").innerHTML = inquiryMsg;
       return false;
     }else if(inquiryContent === ""){
-      alert("내용을 입력해주세요.");
+      //alert("내용을 입력해주세요.");
+      inquiryMsg ="내용을 입력해주세요.";
+      document.getElementById("ModalMsg").classList.remove("fade");
+      document.querySelector(".modal-msg").innerHTML = inquiryMsg;
       return false;
     }else if(inquiryName === ""){
-      alert("이름을 입력해주세요.");
+      //alert("이름을 입력해주세요.");
+      inquiryMsg ="이름을 입력해주세요.";
+      document.getElementById("ModalMsg").classList.remove("fade");
+      document.querySelector(".modal-msg").innerHTML = inquiryMsg;
       return false;
     }else if(inquiryEmail === ""){
-      alert("이메일을 입력해주세요.");
+      //alert("이메일을 입력해주세요.");
+      inquiryMsg ="이메일을 입력해주세요.";
+      document.getElementById("ModalMsg").classList.remove("fade");
+      document.querySelector(".modal-msg").innerHTML = inquiryMsg;
       return false;
     }else if($("#inquiryTel_1").val() === "" || $("#inquiryTel_2").val() === "" || $("#inquiryTel_3").val() === ""){
-      alert("연락처를 올바르게 입력해주세요.");
+      //alert("연락처를 올바르게 입력해주세요.");
+      inquiryMsg ="연락처를 올바르게 입력해주세요.";
+      document.getElementById("ModalMsg").classList.remove("fade");
+      document.querySelector(".modal-msg").innerHTML = inquiryMsg;
       return false;
     }
 

@@ -40,9 +40,9 @@
 				</li>
 			</ul>
 			<div class="bottom" style="--i:1.4s;">
-				<a href="">Blog </a>
-				<a href="">Git </a>
-				<a href="">카카오톡</a>
+				<a href="https://jimin-log.tistory.com/" target="_blank">Blog </a>
+				<a href="https://github.com/min-log" target="_blank">Git </a>
+				<a href="" target="_blank">카카오톡</a>
 				<c:choose>
 					<c:when test="${sessionScope.admin eq null}">
 						<a href="/admin">관리자 로그인</a>

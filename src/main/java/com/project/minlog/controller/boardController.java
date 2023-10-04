@@ -4,10 +4,12 @@ import com.project.minlog.domain.ProStackBack;
 import com.project.minlog.domain.ProStackDB;
 import com.project.minlog.domain.ProStackFront;
 import com.project.minlog.domain.ProType;
+import com.project.minlog.dto.AdminDTO;
 import com.project.minlog.dto.ProDTO;
 import com.project.minlog.dto.ProListDTO;
 import com.project.minlog.dto.ProListResponseDTO;
 import com.project.minlog.service.ProService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -64,7 +66,8 @@ public class boardController {
         }
 
         int start = 0;
-        ProListResponseDTO proListResponseDTO = proService.selectList(boardPath, start);
+        ProListResponseDTO proListResponseDTO = proService.selectList(boardPath, start,6);
+
         model.addAttribute("proPage",proListResponseDTO);
         return "boardList";
     }

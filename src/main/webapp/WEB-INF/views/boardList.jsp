@@ -9,6 +9,8 @@
 <c:import url="./inc/headerScript.jsp"/>
 <c:import url="./inc/header.jsp"/>
 <link rel="stylesheet" href="${contextPath}/resource/css/pages/sub.css" />
+<link rel="stylesheet" href="${contextPath}/resource/css/pages/sub_media.css">
+
 <div class="subpage">
     <div class="page_full">
         <div class="subpage_header text_center">
@@ -89,13 +91,13 @@
     let scrollBoolean = false;
 
     $(document).scroll(function() {
-        console.log(scrollBoolean);
+        //console.log(scrollBoolean);
         if (pageAll != pageEnd) {
             var WindowH = $(window).innerHeight(); // 윈도우  높이
             let proListPageing = $(".footer").offset().top;
             let scrollPoint = $(window).scrollTop() + WindowH; // 현제 스크롤 위치 // 현제 스크롤 높이 + 전체 컨텐츠
             if (proListPageing + 100 >= scrollPoint && scrollPoint >= proListPageing) {
-                console.log("걸려따");
+                //console.log("리스트 로딩...");
                 if(scrollBoolean == false){
                     $("#lodding").show();
                     setTimeout(function () {
@@ -123,10 +125,10 @@
                 dataType: 'json',
                 contentType: 'application/json',
                 success:function (data) {
-                    console.log(data);
+                    //console.log(data);
                     pageEnd = data.proEnd;
                     pageStart = data.proStart;
-                    console.log(pageStart +" /"+ pageEnd);
+                    // console.log(pageStart +" /"+ pageEnd);
                     data.proList.forEach(item=>{
                         let content = document.createElement("li");
                             content.innerHTML += "<a class='pro_img' href='/board/view/" + item.proId + "' >"

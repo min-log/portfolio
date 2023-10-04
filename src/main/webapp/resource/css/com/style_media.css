@@ -3,3 +3,8 @@
 /* ==========================================================================
 Base styles: media screen tab & mobile 
 ========================================================================== */
+
+@media screen and (max-width:740px) {
+
+    html, body, button, input, select, table, textarea {font-size:14px}
+}

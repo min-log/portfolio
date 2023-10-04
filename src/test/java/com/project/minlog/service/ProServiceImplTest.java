@@ -15,6 +15,6 @@ class ProServiceImplTest {
     private ProService proService;
     @Test
     void selectList() {
-        proService.selectList(ProType.BackEnd,0);
+        proService.selectList(ProType.BackEnd,0,6);
     }
 }
