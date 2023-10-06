@@ -14,7 +14,8 @@
     <h2 class="tit">Co-work</h2>
     <p class="tit_sub_txt">나와 함께 했던 사람들의 이야기</p>
   </div>
-  <div class="contact_wrap">
+  <div class="inner">
+    <div class="contact_wrap">
     <form id="coForm" method="post" action="/coWork/register">
       <input type="hidden" value="${dto.coId}" />
       <table>
@@ -22,7 +23,7 @@
           <p class="ally-hidden">전하고 싶은 이야기</p>
         </caption>
         <colgroup>
-          <col style="width:20%;min-width:90px;">
+          <col style="width:30%;min-width:90px;max-width:100px">
           <col style="width:auto">
         </colgroup>
         <tbody>
@@ -98,7 +99,7 @@
       </div>
     </form>
   </div>
-
+  </div>
 
   <script type="text/javascript">
     textBoxContLimit(200);

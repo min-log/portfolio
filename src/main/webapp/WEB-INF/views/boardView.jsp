@@ -52,8 +52,8 @@
     <c:if test="${sessionScope.admin ne null}">
         <p class="btn-wrap text_center mb50 mt50">
             <a href="/user/boardWrite/${pro.proId}" class="btn btn- " style="width:auto">수정</a>
-            <a href="javascript:boardShowNone()" class="btn btn-" style="width:auto">숨김</a>
-            <a href="javascript:boardRemove()" class="btn btn- " style="width:auto">삭제</a>
+            <a href="javascript:boardShowNone()" class="btn btn- ml10" style="width:auto">숨김</a>
+            <a href="javascript:boardRemove()" class="btn btn- ml10" style="width:auto">삭제</a>
         </p>
         <script>
             function boardShowNone(){

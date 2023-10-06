@@ -16,7 +16,8 @@
         <h2 class="tit">게시글 작성</h2>
         <p class="tit_sub_txt">포트폴리오 내용작성</p>
     </div>
-    <div class="contact_wrap">
+    <div class="inner">
+        <div class="contact_wrap">
         <form:form action="/admin/boardRegister" method="post"  modelAttribute="pro" id="boardFrom">
             <form:input path="proId" name="proId" id="proId" type="text" value="${pro.proId}" hidden="ture"/>
             <table>
@@ -332,6 +333,7 @@
                 <button class="btn btn-gray" type="reset" >다시 작성</button>
             </div>
         </form:form>
+    </div>
     </div>
 </div>
 <c:import url="../inc/footer.jsp"/>

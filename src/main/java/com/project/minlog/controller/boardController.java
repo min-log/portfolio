@@ -60,6 +60,7 @@ public class boardController {
                 stack.add("언론보도");
                 stack.add("이벤트 기획");
                 stack.add("행사모집 · 운영");
+                stack.add("홍보물 디자인");
                 model.addAttribute("titSub",stack);
                 break;
             }

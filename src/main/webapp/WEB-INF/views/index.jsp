@@ -67,6 +67,13 @@
                 <span class="icon-stack">${stack}</span>
               </c:forEach>
             </p>
+            <p>
+              JAVA 기초를 공부하고 객체 지향적인 코드개발 능력을 훈련하고 있습니다.
+              <br />
+              REST API 활용, Security Oauth를 사용한 구글,네이버,카카오 로그인을 구현한 경험이 있습니다.
+              <br />
+              다양한 프로그래밍 언어를 공부하려고 하며, 정보처리기사 실기를 준비 중입니다.
+            </p>
             <h4>Front End : UI(User Interface) / UX(User Experience)</h4>
             <p class="icon-stack-wrap">
               <c:forEach items="${stackFront}" var="stack">
@@ -218,15 +225,15 @@
       <div class="profile_con">
         <ul>
             <li>
-                <p class="date">2022.12.20 - 2023.05.16(800H) </p>
-                <h3>클라우드 네이티브 애플리케이션(CNA)개발 전문가양성과정</h3>
+                <p class="date">2022.06.05 - 2023.10.19</p>
+                <h3>백엔드 개발자 취업캠프(Java)</h3>
                 <p class="position">
-                    한국소프트웨어기술진흥협회
+                    멀티잇
                 </p>
-                <p class="subtxt">국가인적자원개발컨소시엄 과정을 수료</p>
+                <p class="subtxt">14회차 과정 수료</p>
             </li>
           <li>
-            <p class="date">2022.12.20 - 2023.05.16(800H) </p>
+            <p class="date">2022.12.20 - 2023.05.16</p>
             <h3>클라우드 네이티브 애플리케이션(CNA)개발 전문가양성과정</h3>
             <p class="position">
                 한국소프트웨어기술진흥협회
@@ -242,18 +249,19 @@
       <div class="profile_con">
         <ul>
             <li>
-                <p class="date">2018.09 ~ 2022.10</p>
+                <p class="date">2018.09.03 ~ 2022.10.31</p>
                 <h3>오상테크놀로지</h3>
                 <p class="position">UI개발팀 (대리)</p>
                 <p class="subtxt">신규 홈페이지 구축 및 유지보수</p>
             </li>
           <li>
-            <p class="date">2017</p>
-            <h3>그린아트컴퓨터학원</h3>
-            <p class="position">0000과정 이수</p>
+            <p class="date">2018.02.20 - 2018.07.31</p>
+            <h3>웹퍼블리셔 교육</h3>
+            <p class="position">그린아트컴퓨터학원</p>
+            <p class="subtxt">디지털 앱,웹디자인 양성과정 수료</p>
           </li>
           <li>
-            <p class="date">2016~2017</p>
+            <p class="date">2016.01~2017.11</p>
             <h3>(주)무궁</h3>
             <p class="position">마케팅팀 (사원)</p>
             <p class="subtxt">웨딩홀사업부 6개, 드레스사업부 2개 지점<br />온라인 및 오프라인 홍보<br />행사 관리 및 지원</p>
@@ -280,6 +288,10 @@
         <a href="${contextPath}/coWork/form" class="btn btn-green btn-active mg_auto">메시지 남기기 <em class="xi-send ml5"></em></a>
       </div>
       <p class="mt40"></p>
+      <div class="arrow-wrap">
+        <button class="prevArrow arrow"><em class="icon_arrow"></em><span>이전</span></button>
+        <button class="nextArrow arrow"><em class="icon_arrow"></em><span>다음</span></button>
+      </div>
       <ul class="co_work">
         <c:forEach var="item" items="${list}" varStatus="status" >
           <li class="item">
@@ -309,10 +321,7 @@
           </li>
         </c:forEach>
       </ul>
-      <div class="arrow-wrap">
-        <button class="prevArrow arrow"><em class="icon_arrow"></em><span>이전</span></button>
-        <button class="nextArrow arrow"><em class="icon_arrow"></em><span>다음</span></button>
-      </div>
+
     </section>
     <section class="main_contact_wrap section section-10">
       <h2 class="sec_tit">inquiry</h2>
@@ -324,7 +333,7 @@
               <p class="ally-hidden">문의 내용 입력 테이블</p>
             </caption>
             <colgroup>
-              <col style="width:20%;min-width:90px;">
+              <col style="width:22%;">
               <col style="width:auto">
             </colgroup>
             <tbody>
@@ -386,16 +395,26 @@
   textBoxContLimit(500);
 
   $('.co_work').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 2,
+    centerMode: true,
+    variableWidth: true,
+    //slidesToScroll: 2,
     touchMove: true,
     swiper:true,
     autoplay: true,
     //vertical: true,
     //verticalSwiping: true,
-    //autoplaySpeed: 2000,
+    autoplaySpeed: 6000,
     prevArrow : $('.main_co_work_wrap .arrow-wrap .prevArrow'),
     nextArrow : $('.main_co_work_wrap .arrow-wrap .nextArrow'),
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow:1
+        }
+      }
+    ]
   });
 </script>
 <script type="text/javascript">

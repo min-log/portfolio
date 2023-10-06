@@ -9,10 +9,91 @@ common media screen tab and mobile
 	.footer .f_inner {width:100%;padding: 0 38px;}
 
 }
-@media screen and (max-width:740px) {
+@media screen and (max-width:749px) {
 	#header .logo {width:80px;}
 	.menu_wrap ul li a {font-size:30px}
+	.scroll {display:none}
 }
 
 
 
+@media screen and (max-width:520px) {/* 720기준 변경 */
+
+
+	/* header */
+
+
+	#header {top:0;right:9.62vw;padding:7.31vw 0;width:0.19vw;}
+	#header .logo {width:15.38vw;}
+	.btn_menu {width:7.69vw;height:7.69vw;}
+	.btn_menu:after {width:2.69vw;height:0.38vw;}
+	.btn_menu:before {width:0.38vw;height:2.69vw;}
+	.menu_wrap ul li,
+	.menu_wrap .bottom {margin-left:-1.92vw;}
+	.menu_wrap ul li a {font-size:6.77vw}
+
+	.menu_wrap .bottom {width:100%;margin-top:5.77vw;}
+	.menu_wrap .bottom a + a {margin-left:1.92vw;}
+
+	.footer [class*="xi-"]{width:5.77vw;font-size:5.77vw;height:5.77vw;line-height:5.77vw;}
+	.footer .f_inner {width:100%;padding: 0 7.31vw;}
+	.footer .info_con {padding:7.31vw 0;}
+	.footer [class*="info_"] li + li {margin-left: 3.85vw;}
+	.footer [class*="info_"] li a {line-height:5.77vw;font-size:2.69vw;}
+	.footer [class*="info_"] li a [class*="xi-"] {margin-right:1.92vw;}
+	.footer .info_contact {padding-bottom:7.31vw;}
+
+
+	.inner {padding:5.77vw;max-width:288.46vw;}
+	.contact_wrap {padding:5vw;margin:19.23vw auto 0;}
+	.contact_wrap table {margin-top:-3vw;}
+	.contact_wrap table tr th,
+	.contact_wrap table tr td {padding:3vw;}
+	.contact_wrap table tr th label {line-height:9.62vw;}
+	.contact_wrap table tr input[type=password],
+	.contact_wrap table tr input[type=text],
+	.contact_wrap table tr input[type=email],
+	.contact_wrap table tr textarea,
+	.contact_wrap table tr select {padding:1.92vw;}
+	.contact_wrap table tr textarea {height:38.46vw;}
+	.btn-active:hover {text-indent:5.77vw;}
+	.btn-active:hover [class*="xi-"]{transform: translate(11.54vw,-4.04vw) scale(0) rotate(-45deg);}
+
+
+
+	.modal .modal-header {padding:1.92vw 3.85vw;font-size:3.85vw;}
+	.modal .modal-header .modal-close svg {width: 4.81vw;height: 4.81vw;}
+	.modal .modal-content {padding:3.85vw;}
+	label {line-height:3.85vw;}
+	input[type=radio] + label:before,
+	input[type=checkbox] + label:before {width:3.85vw;height:3.85vw;}
+	.checkbox_wrap span {padding:0.96vw 0;}
+	.icon-stack {margin:0.96vw;padding:0.38vw 1.92vw;font-size:2.69vw;}
+
+	#loddingModal img {width:19.23vw;margin-left:7.69vw;}
+	.lds-ellipsis {
+		width: 9.62vw;
+		height: 9.62vw;
+	}
+	.lds-ellipsis div {
+
+		top: 6.35vw;
+		width: 1.92vw;
+		height: 1.92vw;
+	}
+	.lds-ellipsis div:nth-child(1) {
+		left: 1.54vw;
+	}
+	.lds-ellipsis div:nth-child(2) {
+		left: 1.54vw;
+	}
+	.lds-ellipsis div:nth-child(3) {
+		left: 6.15vw;
+	}
+	.lds-ellipsis div:nth-child(4) {
+		left: 10.77vw;
+	}
+
+
+
+}

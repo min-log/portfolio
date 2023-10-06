@@ -16,8 +16,8 @@
     <h2 class="tit">admin login</h2>
     <p class="tit_sub_txt">관리자 페이지 입니다.</p>
   </div>
-
-  <div class="contact_wrap">
+  <div class="inner">
+      <div class="contact_wrap">
     <form action="/admin/login" method="post">
       <table>
         <colgroup>
@@ -35,12 +35,13 @@
           </tr>
         </tbody>
       </table>
-      <div class="mt30 text_center">
+      <div class="mt30 text_center btn-wrap">
         <button type="submit" class="btn btn-green ">로그인</button>
         <a href="/admin/joinFrom" class="btn btn-gray ml10">회원가입</a>
       </div>
 
     </form>
+  </div>
   </div>
 </div>
 

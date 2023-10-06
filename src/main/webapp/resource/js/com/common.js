@@ -1,3 +1,7 @@
+$(window).on('load', function () {
+	$("#loddingModal").hide();
+})
+
 class Scrooth {
 	constructor({element = window, strength=10, acceleration = 1.2,deceleration = 0.975}={}) {
 		this.element = element;
@@ -44,7 +48,7 @@ const scroll = new Scrooth({
 	element: window,
 	strength: 25,
 	acceleration: 1,
-	deceleration: 0.930,
+	deceleration: 0.925,
 });
 /*========================================================
 header

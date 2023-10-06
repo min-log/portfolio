@@ -97,11 +97,10 @@
             let proListPageing = $(".footer").offset().top;
             let scrollPoint = $(window).scrollTop() + WindowH; // 현제 스크롤 위치 // 현제 스크롤 높이 + 전체 컨텐츠
             if (proListPageing + 100 >= scrollPoint && scrollPoint >= proListPageing) {
-                //console.log("리스트 로딩...");
                 if(scrollBoolean == false){
-                    $("#lodding").show();
+                    $("#lodding").show()
                     setTimeout(function () {
-                        $("#lodding").hide();
+                       $("#lodding").hide();
                         pageingGet();
                     },1000);
                 }

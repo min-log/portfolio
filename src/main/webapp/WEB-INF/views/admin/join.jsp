@@ -16,7 +16,8 @@
     <h2 class="tit">회원가입</h2>
     <p class="tit_sub_txt">관리자 회원가입</p>
   </div>
-  <div class="contact_wrap">
+  <div class="inner">
+    <div class="contact_wrap">
     <form:form action="/admin/join" method="post" id="joinFrom" modelAttribute="adminDTO">
         <input type="hidden" id="emailCheckValue" value="false">
         <table>
@@ -73,6 +74,7 @@
           <button class="btn btn-green" id="userCheckBtn" type="button" onclick="joinForm()">회원가입</button>
         </div>
     </form:form>
+  </div>
   </div>
 </div>
 

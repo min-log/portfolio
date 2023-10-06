@@ -8,3 +8,53 @@ Base styles: media screen tab & mobile
 
     html, body, button, input, select, table, textarea {font-size:14px}
 }
+
+
+@media screen and (max-width:520px) {/* 520기준 변경 */
+
+    :root {
+        --padding-init: 0 7.31vw;
+    }
+    /*html, body, button, input, select, table, textarea {font-size:2.69vw}*/
+    html,body, button, input, select, table, textarea {font-size: 3.6vw;letter-spacing:-0.10vw;}
+    select {font-family:"Noto Sans KR", "Arial", Arial,Dotum; font-size: 2.69vw;}
+    input[type="date"],
+    input[type=email],input[type=text],input[type=password], select {height:9.62vw;line-height:5.77vw;padding:1.92vw;}
+    textarea {padding:1.92vw;line-height:5.77vw;}
+    /* margin + padding */
+    .mg_auto {margin:0 auto !important;}
+    .mt0 {margin-top:0.00vw !important;}   .mb0 {margin-bottom:0 !important;}
+    .mt5 {margin-top:0.96vw !important;}   .mb5 {margin-bottom:0.96vw !important;}
+    .mt10 {margin-top:1.92vw !important;}	.mb10 {margin-bottom:1.92vw !important;}	.mtm10 {margin-top:-1.92vw !important;}
+    .mt20 {margin-top:3.85vw !important;}	.mb20 {margin-bottom:3.85vw !important;}	.mtm20 {margin-top:-3.85vw !important;}
+    .mt30 {margin-top:5.77vw !important;}	.mb30 {margin-bottom:5.77vw !important;}	.mtm30 {margin-top:-5.77vw !important;}
+    .mt40 {margin-top:7.69vw !important;}	.mb40 {margin-bottom:7.69vw !important;}	.mtm40 {margin-top:-7.69vw !important;}
+    .mt50 {margin-top:9.62vw !important;}	.mb50 {margin-bottom:9.62vw !important;}	.mtm50 {margin-top:-9.62vw !important;}
+    .ml0 {margin-left:0 !important;}
+    .ml5 {margin-left:0.96vw !important;}	    .mr5 {margin-right:0.96vw !important;}
+    .ml10 {margin-left:1.92vw !important;}	.mr10 {margin-right:1.92vw !important;}
+    .ml20 {margin-left:3.85vw !important;}	.mr20 {margin-right:3.85vw !important;}
+    .ml30 {margin-left:5.77vw !important;}	.mr30 {margin-right:5.77vw !important;}
+    .ml40 {margin-left:7.69vw !important;}	.mr40 {margin-right:7.69vw !important;}
+    .ml50 {margin-left:9.62vw !important;}	.mr50 {margin-right:9.62vw !important;}
+    .pt0 {padding-top:0.00vw !important;}      .pb0 {padding-bottom:0 !important;}
+    .pt5 {padding-top:0.96vw !important;}      .pb5 {padding-bottom:0.96vw !important;}
+    .pt10 {padding-top:1.92vw !important;}	.pb10 {padding-bottom:1.92vw !important;}	/*.ptm10 {padding-top:-1.92vw !important;}*/
+    .pt20 {padding-top:3.85vw !important;}	.pb20 {padding-bottom:3.85vw !important;}	/*.ptm20 {padding-top:-3.85vw !important;}*/
+    .pt30 {padding-top:5.77vw !important;}	.pb30 {padding-bottom:5.77vw !important;}	/*.ptm30 {padding-top:-5.77vw !important;}*/
+    .pt40 {padding-top:7.69vw !important;}	.pb40 {padding-bottom:7.69vw !important;}	/*.ptm40 {padding-top:-7.69vw !important;}*/
+    .pt50 {padding-top:9.62vw !important;}	.pb50 {padding-bottom:9.62vw !important;}	/*.ptm50 {padding-top:-9.62vw !important;}*/
+    .pr0 {padding-right:0.00vw !important;}
+    .pl5 {padding-left:0.96vw !important;}	    .pr5 {padding-right:0.96vw !important;}
+    .pl10 {padding-left:1.92vw !important;}	.pr10 {padding-right:1.92vw !important;}
+    .pl20 {padding-left:3.85vw !important;}	.pr20 {padding-right:3.85vw !important;}
+    .pl30 {padding-left:5.77vw !important;}	.pr30 {padding-right:5.77vw !important;}
+    .pl40 {padding-left:7.69vw !important;}	.pr40 {padding-right:7.69vw !important;}
+    .pl50 {padding-left:9.62vw !important;}	.pr50 {padding-right:9.62vw !important;}
+    .btn[class*="btn-"]{min-width:19.23vw;padding:3.85vw;min-height:9.62vw;padding:1.92vw 1.92vw;line-height:5.77vw;}
+    .btn-sm {padding: 1.92vw !important;line-height: 3.85vw !important;}
+
+
+
+
+}
