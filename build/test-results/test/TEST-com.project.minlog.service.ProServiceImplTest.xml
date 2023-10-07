@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.minlog.service.ProServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-27T00:53:28" hostname="ENVY" time="2.972">
+  <properties/>
+  <testcase name="selectList()" classname="com.project.minlog.service.ProServiceImplTest" time="2.972"/>
+  <system-out><![CDATA[09:53:15.858 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.project.minlog.service.ProServiceImplTest]: ProServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:53:16.247 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.project.minlog.MinlogApplication for test class com.project.minlog.service.ProServiceImplTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.2)
+
+2023-09-27T09:53:18.087+09:00  INFO 15508 --- [    Test worker] c.p.minlog.service.ProServiceImplTest    : Starting ProServiceImplTest using Java 17.0.7 with PID 15508 (started by HP in C:\Portfolio\minlog)
+2023-09-27T09:53:18.091+09:00  INFO 15508 --- [    Test worker] c.p.minlog.service.ProServiceImplTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T09:53:21.752+09:00  INFO 15508 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-27T09:53:21.839+09:00  INFO 15508 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 0 JDBC repository interfaces.
+2023-09-27T09:53:23.305+09:00  INFO 15508 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-27T09:53:23.435+09:00  INFO 15508 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-09-27T09:53:26.891+09:00  INFO 15508 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-27T09:53:27.583+09:00  INFO 15508 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T09:53:27.889+09:00  INFO 15508 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.MariaDbConnection@4492b393
+2023-09-27T09:53:27.895+09:00  INFO 15508 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T09:53:28.734+09:00  INFO 15508 --- [    Test worker] c.p.minlog.service.ProServiceImplTest    : Started ProServiceImplTest in 11.875 seconds (process running for 16.597)
+2023-09-27T09:53:31.576+09:00  INFO 15508 --- [    Test worker] c.project.minlog.service.ProServiceImpl  : # 게시판 리스트 가져오기
+2023-09-27T09:53:31.712+09:00  INFO 15508 --- [    Test worker] c.project.minlog.service.ProServiceImpl  : ProListVO(proId=4, proTitle=테스트 3, proImg=null, proType=null, proStack=null, dateStart=2023-09-19T00:00, dateEnd=2023-09-29T00:00)
+2023-09-27T09:53:31.713+09:00  INFO 15508 --- [    Test worker] c.project.minlog.service.ProServiceImpl  : ProListVO(proId=8, proTitle=테스트 7, proImg=null, proType=null, proStack=null, dateStart=2023-09-17T00:00, dateEnd=2023-10-06T00:00)
+2023-09-27T09:53:31.713+09:00  INFO 15508 --- [    Test worker] c.project.minlog.service.ProServiceImpl  : ProListVO(proId=3, proTitle=테스트 3, proImg=null, proType=null, proStack=null, dateStart=2023-09-13T00:00, dateEnd=2023-09-29T00:00)
+2023-09-27T09:53:31.713+09:00  INFO 15508 --- [    Test worker] c.project.minlog.service.ProServiceImpl  : ProListVO(proId=11, proTitle=테스트 11, proImg=null, proType=null, proStack=null, dateStart=2023-09-11T00:00, dateEnd=2023-09-23T00:00)
+2023-09-27T09:53:31.714+09:00  INFO 15508 --- [    Test worker] c.project.minlog.service.ProServiceImpl  : ProListVO(proId=7, proTitle=테스트 6, proImg=null, proType=null, proStack=null, dateStart=2023-09-11T00:00, dateEnd=2023-09-29T00:00)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

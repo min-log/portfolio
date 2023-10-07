@@ -1,0 +1,33 @@
+
+server:
+  port: 7070
+
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  servlet:
+    multipart:
+      location: c:\\upload
+      maxFileSize: 200MB
+      maxRequestSize: 100MB
+
+  config:
+    import: classpath:application-email.yml
+    profiles:
+      include:
+        - email
+
+# mybatis config
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+

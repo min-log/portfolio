@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.minlog.mapper.InquiryMapper">
+    <insert id="insertOne" parameterType="com.project.minlog.domain.InquiryVO">
+        insert into inquiry(inquiry_title, inquiry_content, inquiry_tel, inquiry_email, inquiry_name)
+         values (#{inquiryTitle},#{inquiryContent},#{inquiryTel},#{inquiryEmail},#{inquiryName})
+    </insert>
+</mapper>
