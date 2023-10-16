@@ -26,7 +26,9 @@ subpage media screen tab & mobile
     .view-wrap li {line-height:5.77vw;font-size:3.46vw;}
     .view-wrap li + li {margin-top:0.38vw;}
     .view-wrap i:before {margin-right:1.92vw;}
-    #proView {margin:-30vw auto 0;padding:35vw 0.00vw 0;max-width:192.31vw;}
+    #proView {margin:-30vw auto 0;
+        /*padding:35vw 0.00vw 0;*/
+        max-width:192.31vw;}
 
 
 }

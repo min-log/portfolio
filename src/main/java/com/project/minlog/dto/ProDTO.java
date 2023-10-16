@@ -39,7 +39,6 @@ public class ProDTO {
     @NotBlank(message = "종료날짜")
     private String proDateEnd;
 
-    @Size(min = 100,message = "컨텐츠 내용")
     private String proContent;
     private String proInfo;
 

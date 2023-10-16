@@ -100,7 +100,8 @@
         <li>
           <h3 class="tit">UI Development <em class="wave_line"></em></h3>
           <div  class="con">
-            <p>HTML ,CSS,JS를 이해하며 다룹니다. 유지보수를 고려한 컴포넌트 단위 마크업 작성이 가능하며, 퍼블리싱 가이드 제작, 마크업 고도화 작업경험이 있습니다.
+            <p>HTML ,CSS,JS를 이해하며 다룹니다. <br />
+              유지보수를 고려한 컴포넌트 단위 마크업 작성이 가능하며, 퍼블리싱 가이드 제작, 마크업 고도화 작업경험이 있습니다.
             </p>
           </div>
         </li>

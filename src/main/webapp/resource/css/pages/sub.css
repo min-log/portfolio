@@ -35,14 +35,20 @@ subpage
 .view-wrap .view-info {}
 .view-wrap .view-link {display:flex;justify-content: center;align-items:center;}
 .view-wrap i:before {color: var(--color-main);margin-right:10px;}
-#proView {margin:-30vw auto 0;padding:35vw 0px 0;
+#proView {margin:-20vw auto 0;
+    /*padding:35vw 0px 0;*/
     border:2px solid #000;max-width:1000px;width:90%;box-sizing: border-box;
     background: #eeede8;
 }
 #proView .pro_img {}
 #proView .pro_content {text-align:center;}
 #proView .pro_content img {}
-
+/*설명글이 있을경우*/
+#proView .proinfo-wrap {margin:30vw 0 15vw;}
+.pro_content p:nth-child(1) > span {
+    margin:30vw 0 15vw;
+    display: inline-block;
+}
 
 .page_full .subpage_header {transition: 2s all ease-in; animation: subpageHeader 4s linear infinite;}
 @keyframes subpageHeader {

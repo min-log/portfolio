@@ -143,18 +143,18 @@ public class ProServiceImpl implements ProService {
     @Override
     public ProListResponseDTO selectList(ProType proType, int start, int size) {
         log.info("# 게시판 리스트 가져오기");
+        int end = 0;
+        int allSize = 0;
         int sizeSet = 6; // 6개씩 출력
         sizeSet = size;
-        int allSize = selectListNumber(ProType.BackEnd);
+        allSize = selectListNumber(proType);
         if(start == allSize) return null;
-        int end = start + sizeSet;
+        end = start + sizeSet;
         if(end > allSize){
             end = allSize;
         }
 
-        log.info("allSize : "+allSize);
-        log.info("start : "+ start);
-        log.info("end : "+ end);
+        // log.info("proType {} ,start {},size {},sizeSet {}",proType,start,size ,sizeSet);
 
         List<ProListVO> proListVOS = proMapper.selectList(ProListSizeVO.builder().proType(String.valueOf(proType)).pageStart(start).pageEnd(sizeSet).build());
         List<ProListDTO> proListDTOS = proListVOS.stream().map(item -> {

@@ -4,6 +4,13 @@
 /* ==========================================================================
 Base styles: opinionated defaults
 ========================================================================== */
+/*common*/
+html,body {
+	/*scroll-behavior: smooth;*/
+	-ms-overflow-style: none;scrollbar-width: none;overscroll-behavior: contain;/*새로고침 막기*/}
+html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}
+
+
 html,body {width:100%;background: var(--main-bg);}
 html,body, button, input, select, table, textarea {font-family:"NEXON Lv1 Gothic OTF", "Arial", Arial, Dotum; font-size: 16px;line-height:1.8;font-weight:normal;color: #101010;letter-spacing:-0.5px;}
 html ,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td,button, input, select, textarea {

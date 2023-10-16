@@ -12,7 +12,7 @@ spring:
     password: ${DB_PASSWORD}
   servlet:
     multipart:
-      location: c:\\upload
+      location: c:\\portfolioFile
       maxFileSize: 200MB
       maxRequestSize: 100MB
 
@@ -28,3 +28,5 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+server:
+  port: 7070

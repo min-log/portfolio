@@ -33,6 +33,7 @@ public class boardController {
         // # 리스트 페이지
         ProType path = ProType.BackEnd;
         if(boardPath == null) boardPath = path;
+        log.info("boardPath : {}",boardPath);
         List<String> stack = new ArrayList<>();
         switch (boardPath){
             case BackEnd -> {
@@ -66,9 +67,8 @@ public class boardController {
             }
         }
 
-        int start = 0;
-        ProListResponseDTO proListResponseDTO = proService.selectList(boardPath, start,6);
-
+        ProListResponseDTO proListResponseDTO = proService.selectList(boardPath, 0,6);
+        log.info("proListResponseDTO : {}",proListResponseDTO);
         model.addAttribute("proPage",proListResponseDTO);
         return "boardList";
     }

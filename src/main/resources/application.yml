@@ -1,5 +1,4 @@
 
-
 spring:
   mvc:
     view:
@@ -12,7 +11,7 @@ spring:
     password: minlog1234
   servlet:
     multipart:
-      location: c:\\upload
+      location: c:\\portfolioFile
       maxFileSize: 200MB
       maxRequestSize: 100MB
 
@@ -27,4 +26,5 @@ mybatis:
   mapper-locations: classpath:mapper/**/*.xml
   configuration:
     map-underscore-to-camel-case: true
-
+server:
+  port: 7070
