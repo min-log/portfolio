@@ -70,7 +70,7 @@ public class MainController {
             model.addAttribute("position",flashMap.get("position"));
         }
 
-        return "index";
+        return "/index";
     }
 
 
