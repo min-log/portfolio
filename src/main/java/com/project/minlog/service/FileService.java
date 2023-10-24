@@ -82,7 +82,7 @@ public class FileService {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             writer.write(content);
             writer.close();
-            return folderPath + File.separator + originalName;
+            return folderPath + "/" + originalName;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
