@@ -51,8 +51,8 @@
 					<div class="info_contact"> 
 						<h2>Contact *</h2>
 						<ul>
-							<li><a href=""><em class="xi-naver-square"></em><span>jimin-log@naver.com</span></a></li>
-							<li><a href=""><em class="xi-kakaotalk"></em><span>@jimin-lee</span></a></li>
+							<li><a href="mailto:minlog.0430@gmail.com" type="email" target="_blank"><em class="xi-gmail"></em><span>minlog.0430@gmail.com</span></a></li>
+							<li><a href="javascript:void(0)" style="cursor:inherit"><em class="xi-kakaotalk"></em><span>@minlog.0430</span></a></li>
 						</ul>
 					</div>
 				</footer>

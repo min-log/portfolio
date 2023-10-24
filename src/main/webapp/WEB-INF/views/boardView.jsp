@@ -21,14 +21,18 @@
             <li class="view-date">
                 ${pro.proDateStart} - ${pro.proDateEnd}
             </li>
+            <c:if  test="${! (pro.proGit.equals(''))}">
             <li class="view-link">
                 <i class="xi-github"></i>
                 <a href="${pro.proGit}" target="_blank">${pro.proGit}</a>
             </li>
+            </c:if>
+            <c:if  test="${! (pro.proLink.equals(''))}">
             <li class="view-link">
                 <i class="xi-link"></i>
                 <a href="${pro.proLink}" target="_blank">${pro.proLink}</a>
             </li>
+            </c:if>
         </ul>
 
         <p class="icon-stack-wrap-type mt50">
@@ -87,14 +91,18 @@
     <div id="proThumImg" class="mt50">
         <img src="../../resource/images/common/project_pc.png" alt="">
         <div class="pro_img">
+            <c:if  test="${!(pro.proImg.equals(''))}">
             <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
+            </c:if>
         </div>
     </div>
+    <c:if  test="${!(pro.proContent.equals(''))}">
     <div id="proView">
         <div class="pro_content">
             ${pro.proContent}
         </div>
     </div>
+    </c:if>
 </div>
 
 <c:import url="./inc/footer.jsp"/>

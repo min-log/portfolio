@@ -50,9 +50,9 @@
           </td>
         </tr>
         <tr>
-          <th><label for="coPosition" >직책</label></th>
+          <th><label for="coPosition" >직책 / 역할</label></th>
           <td>
-            <input name="coPosition" id="coPosition" type="text" data-txt="직책" placeholder="직책을 적어주세요. ex) 과장" value="${dto.coPosition}"/>
+            <input name="coPosition" id="coPosition" type="text" data-txt="직책" placeholder="직책 또는 맏은 역할을 적어주세요. ex) 과장, 회원가입 등 .." value="${dto.coPosition}"/>
           </td>
         </tr>
         <tr>

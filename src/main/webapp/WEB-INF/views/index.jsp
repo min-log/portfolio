@@ -91,7 +91,7 @@
 
             <h4>Hosting</h4>
             <p>
-              AWS (EC2) <br />
+              AWS (EC2) , NCP <br />
               빌더 쇼핑몰 작업 가능: 카페24 , 고도몰, 닷홈
             </p>
 
@@ -136,7 +136,7 @@
             <a href="/board/list/BackEnd" class="btn_more">+ More</a>
         </span>
       </h2>
-      <p class="img"><img src="" alt=""></p>
+      <p class="img"><img src="/resource/images/main/main_port_01.jpg" alt="포트폴리오 사이트 이미지"></p>
     </section>
 
   </div>
@@ -152,9 +152,11 @@
           <p class="img">
             <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
           </p>
-          <h3>${proItem.proTitle}</h3>
-          <p>${proItem.proDateStart} - ${proItem.proDateEnd}</p>
-          <p>${proItem.proStack}</p>
+          <a class="pro_img" href="/board/view/${proItem.proId}">
+            <h3>${proItem.proTitle}</h3>
+            <p>${proItem.proDateStart} - ${proItem.proDateEnd}</p>
+            <p>${proItem.proStack}</p>
+          </a>
         </li>
         </c:forEach>
       </ul>
@@ -166,12 +168,12 @@
   </div>
 
   <div class="section-group-2-2 section-group" >
-    <section class="main_prosect_list section">
+    <section class="main_prosect_list ">
       <div class="project_wrap">
         <h2 class="sec_tit on">
           <span class="">RECENT</span><br/>
           <span class="round">FRONTEND</span><br/>
-          <span>List 06
+          <span><em class="mo_none">List 03</em>
             <a href="/board/list/FrontEnd" class="btn_more">+ More</a>
           </span>
         </h2>
@@ -180,27 +182,35 @@
         </p>
         <div class="prosect_info">
           <div class="modul_tablet">
-            <p class="img" style=''></p>
+            <p class="img" style=''>
+              <img src="/apiBoard/getImg?url=/contentImg/6e9acc1a-f071-4b7a-bcb2-3af574330707_screencapture-kia-auton-kr-index-main-2023-10-09-00_48_23.png" alt="기아 홈페이지 PC">
+            </p>
           </div>
           <div class="modul_phone">
-            <p class="img" style=''></p>
+            <p class="img" style=''>
+              <img src="/apiBoard/getImg?url=/contentThum/kiamo.png" alt="기아 홈페이지 Mo">
+            </p>
           </div>
         </div>
-        <ul  class=" wheel">
+        <ul  id="proList">
             <c:forEach items="${proFront.proList}" var="proItem" varStatus="status">
-              <li class="wheel__card" id="wheelPro${status.count}">
-                <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+              <li>
+                <a class="pro_img" href="/board/view/${proItem.proId}">
+                  <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+                </a>
+                <p class="icon-stack-wrap-type">
+                  <c:forEach var="type" items="${proItem.proType}">
+                            <span class="icon-stack">
+                                ${type}
+                            </span>
+                  </c:forEach>
+                </p>
+                <p class="pro_tit">${proItem.proTitle}</p>
+                <p class="pro_date">
+                    ${proItem.proDateStart} - ${proItem.proDateEnd}
+                </p>
               </li>
-            </c:forEach>
-            <c:forEach items="${proFront.proList}" var="proItem">
-              <li class="wheel__card">
-                <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
-              </li>
-            </c:forEach>
-            <c:forEach items="${proFront.proList}" var="proItem">
-              <li class="wheel__card">
-                <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
-              </li>
+
             </c:forEach>
         </ul>
       </div>
@@ -227,11 +237,11 @@
         <ul>
             <li>
                 <p class="date">2022.06.05 - 2023.10.19</p>
-                <h3>백엔드 개발자 취업캠프(Java)</h3>
+                <h3>백엔드 개발자 취업캠프(Java) </h3>
                 <p class="position">
-                    멀티잇
+                    멀티잇 / 14회차 과정 수료
                 </p>
-                <p class="subtxt">14회차 과정 수료</p>
+                <p class="subtxt">팀 프로젝트 우수상</p>
             </li>
           <li>
             <p class="date">2022.12.20 - 2023.05.16</p>
@@ -273,7 +283,7 @@
             <p class="position">경영학과</p>
           </li>
         </ul>
-        <p class="profile_img"><img src="" alt=""></p>
+        <p class="profile_img"><img src="/resource/images/main/main_port_02.jpg" alt="코드 이미지"></p>
       </div>
 
     </section>

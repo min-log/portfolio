@@ -2,9 +2,19 @@
 /*==========================================================================
 main media screen tab & mobile 
 ==========================================================================*/
+
 @media screen and (max-width:1200px) {
 	.co_work li.item {width:60vw;min-height:350px}
+	.sec_subtxt {display: none;}
+	.main_prosect_list .prosect_info {margin:0 auto;float: inherit}
+	.main_prosect_list #proList {
+		display: none;
+	}
+	em.mo_none {display: none;}
+
 }
+
+@media screen and (max-width:1100px) {}
 @media screen and (max-width:749px) {
 	.main_prosect_list,
 	.main_project_back,
@@ -145,7 +155,7 @@ main media screen tab & mobile
 	.phone_con select,
 	.phone_con input {width:calc(33.33% - 2.6vw) !important;}
 	.phone_con span {width:3.85vw !important;line-height:9.62vw;}
-	.section-group-2-2 .project_wrap {padding-left:7.69vw;}
+	.section-group-2-2 .project_wrap {padding:7.69vw;}
 	.section-group-3 {margin-top:115.38vw}
 	.section-group-4,
 	.main_contact_wrap {margin-top:38.46vw;}

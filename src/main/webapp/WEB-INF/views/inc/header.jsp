@@ -44,9 +44,10 @@
 				</li>
 			</ul>
 			<div class="bottom" style="--i:1.4s;">
+				<a href="javascript:void(0)">카카오톡 ID : minlog.0430</a>
+				<a href="mailto:minlog.0430@gmail.com" type="email" target="_blank">Email </a>
 				<a href="https://jimin-log.tistory.com/" target="_blank">Blog </a>
 				<a href="https://github.com/min-log" target="_blank">Git </a>
-				<a href="" target="_blank">카카오톡</a>
 				<c:choose>
 					<c:when test="${sessionScope.admin eq null}">
 						<a href="/admin">관리자 로그인</a>

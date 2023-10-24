@@ -10,7 +10,7 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-			<title>test</title>
+			<title>minlog</title>
 			<link rel="stylesheet" href="${contextPath}/resource/css/com/slick.css">
 			<link rel="stylesheet" href="${contextPath}/resource/css/com/reset.css">
 			<!--icon-->			
@@ -23,8 +23,9 @@
 			<!-- style meida -->
 			<link rel="stylesheet" href="${contextPath}/resource/css/com/style_media.css">
 			<link rel="stylesheet" href="${contextPath}/resource/css/com/common_media.css">
-
+			<link  rel="icon"  href="${contextPath}/resource/images/logo.ico">
 
 			<script src="${contextPath}/resource/js/jquery/jquery-3.6.0.min.js"></script>
 			<script src="${contextPath}/resource/js/com/common.js"></script>
+
 		</head>

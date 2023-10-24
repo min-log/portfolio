@@ -246,69 +246,69 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       }
 
-      if($group.hasClass('section-group-2-2')){
-
-       //wheel position
-       let $radius = $sec03wheel.offsetWidth / 2;
-       let $center = $sec03wheel.offsetWidth / 2;
-       let $total = $sec03images.length;
-       let $totalNum = $total / 18 ;
-       let slice = (2 * Math.PI) / $total;
-
-       // group and section height
-       let $group2Height= $windowHeight * $totalNum;
-      // $group2.height($group2Height+  $windowHeight + "px"); //section 2 개
-       $sec03.height($group2Height + "px");
-
-       $sec03images.forEach((item, i) => {
-         let angle = i * slice;
-         let x = $center + $radius * Math.sin(angle);
-         let y = $center - $radius * Math.cos(angle);
-
-         gsap.set(item, {
-           rotation: angle + "_rad",
-           xPercent: -50,
-           yPercent: -50,
-           x: x,
-           y: y,
-           stagger:1
-         });
-       });
-       //section content fixed center
-       //section content wheel move
-       let group2Move = gsap.to($sec03wheel, {
-         rotate: () => -100,
-         duration: $totalNum,
-         scrollTrigger: {
-           trigger: $sec03,
-           start:"top top",
-           end:"bottom +=500",
-           ease:'easeOutQuart',
-           //markers:true,
-           pin:true,
-           snap: $totalNum,
-           invalidateOnRefresh: true,
-           scrub:true,
-           duration:true,
-           stagger:15
-         }
-       })
-
-       $('.wheel__card').on('click',function(){
-         let wheelImg = $(this).find('img').attr('src');
-         $('.wheel__card').removeClass('active');
-         $(this).addClass('active');
-         console.log(wheelImg)
-         setTimeout(function(){
-           $('.modul_tablet .img , .modul_phone .img').attr('style', 'background-image:url("'+ wheelImg+ '")')
-         },400);
-
-
-       });
-
-
-
-      }
+      // if($group.hasClass('section-group-2-2')){
+      //
+      //  //wheel position
+      //  let $radius = $sec03wheel.offsetWidth / 2;
+      //  let $center = $sec03wheel.offsetWidth / 2;
+      //  let $total = $sec03images.length;
+      //  let $totalNum = $total / 18 ;
+      //  let slice = (2 * Math.PI) / $total;
+      //
+      //  // group and section height
+      //  let $group2Height= $windowHeight * $totalNum;
+      // // $group2.height($group2Height+  $windowHeight + "px"); //section 2 개
+      //  $sec03.height($group2Height + "px");
+      //
+      //  $sec03images.forEach((item, i) => {
+      //    let angle = i * slice;
+      //    let x = $center + $radius * Math.sin(angle);
+      //    let y = $center - $radius * Math.cos(angle);
+      //
+      //    gsap.set(item, {
+      //      rotation: angle + "_rad",
+      //      xPercent: -50,
+      //      yPercent: -50,
+      //      x: x,
+      //      y: y,
+      //      stagger:1
+      //    });
+      //  });
+      //  //section content fixed center
+      //  //section content wheel move
+      //  let group2Move = gsap.to($sec03wheel, {
+      //    rotate: () => -100,
+      //    duration: $totalNum,
+      //    scrollTrigger: {
+      //      trigger: $sec03,
+      //      start:"top top",
+      //      end:"bottom +=500",
+      //      ease:'easeOutQuart',
+      //      //markers:true,
+      //      pin:true,
+      //      snap: $totalNum,
+      //      invalidateOnRefresh: true,
+      //      scrub:true,
+      //      duration:true,
+      //      stagger:15
+      //    }
+      //  })
+      //
+      //  $('.wheel__card').on('click',function(){
+      //    let wheelImg = $(this).find('img').attr('src');
+      //    $('.wheel__card').removeClass('active');
+      //    $(this).addClass('active');
+      //    console.log(wheelImg)
+      //    setTimeout(function(){
+      //      $('.modul_tablet .img , .modul_phone .img').attr('style', 'background-image:url("'+ wheelImg+ '")')
+      //    },400);
+      //
+      //
+      //  });
+      //
+      //
+      //
+      // }
 
 
       /*===================================================
@@ -485,37 +485,37 @@ window.addEventListener("DOMContentLoaded", (event) => {
       section group 02
       ===================================================*/
 
-      if($group.hasClass('section-group-2-2')){
-
-        //wheel position
-        let $total = $sec03images.length;
-        let $totalNum = $total / 18 ;
-
-        // group and section height
-        let $group2Height= $windowHeight * $totalNum;
-        $sec03.height($group2Height + "px");
-
-        //section content fixed center
-        //section content wheel move
-        let group2Move = gsap.to($sec03wheel, {
-         // rotate: () => -100,
-          duration: $totalNum,
-          scrollTrigger: {
-            trigger: $sec03,
-            start:"top top",
-            end:"bottom +=500",
-            ease:'easeOutQuart',
-            //markers:true,
-           // pin:true,
-            snap: $totalNum,
-            invalidateOnRefresh: true,
-            scrub:true,
-            duration:true,
-            stagger:2
-          }
-        })
-
-      }
+      // if($group.hasClass('section-group-2-2')){
+      //
+      //   //wheel position
+      //   let $total = $sec03images.length;
+      //   let $totalNum = $total / 18 ;
+      //
+      //   // group and section height
+      //   let $group2Height= $windowHeight * $totalNum;
+      //   $sec03.height($group2Height + "px");
+      //
+      //   //section content fixed center
+      //   //section content wheel move
+      //   let group2Move = gsap.to($sec03wheel, {
+      //    // rotate: () => -100,
+      //     duration: $totalNum,
+      //     scrollTrigger: {
+      //       trigger: $sec03,
+      //       start:"top top",
+      //       end:"bottom +=500",
+      //       ease:'easeOutQuart',
+      //       //markers:true,
+      //      // pin:true,
+      //       snap: $totalNum,
+      //       invalidateOnRefresh: true,
+      //       scrub:true,
+      //       duration:true,
+      //       stagger:2
+      //     }
+      //   })
+      //
+      // }
 
 
       if($group.hasClass('section-group-3')){

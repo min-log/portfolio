@@ -30,7 +30,9 @@
             <c:forEach var="proItem" items="${proPage.proList}"  varStatus="status">
                 <li>
                     <a class="pro_img" href="/board/view/${proItem.proId}">
-                        <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+                        <c:if  test="${! proItem.proImg.equals('null')}">
+                            <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+                        </c:if>
                     </a>
                     <p class="icon-stack-wrap-type">
                         <c:forEach var="type" items="${proItem.proType}">
