@@ -241,7 +241,7 @@
                 <p class="position">
                     멀티잇 / 14회차 과정 수료
                 </p>
-                <p class="subtxt">팀 프로젝트 우수상</p>
+                <p class="subtxt">프로젝트 최우수상</p>
             </li>
           <li>
             <p class="date">2022.12.20 - 2023.05.16</p>
@@ -253,7 +253,7 @@
           </li>
         </ul>
       </div>
-      <p class="profile_img"><img src="" alt=""></p>
+      <p class="profile_img"><img src="/resource/images/main/main_port_03.jpg" alt="팀프로젝트 최우수상"></p>
     </section>
     <section class="main_profile_02 section " >
       <em class="line line_move"></em>
