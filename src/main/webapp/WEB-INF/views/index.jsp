@@ -198,22 +198,24 @@
         </div>
         <ul  id="proList">
             <c:forEach items="${proFront.proList}" var="proItem" varStatus="status">
-              <li>
-                <a class="pro_img" href="/board/view/${proItem.proId}">
-                  <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
-                </a>
-                <p class="icon-stack-wrap-type">
-                  <c:forEach var="type" items="${proItem.proType}">
-                            <span class="icon-stack">
-                                ${type}
-                            </span>
-                  </c:forEach>
-                </p>
-                <p class="pro_tit">${proItem.proTitle}</p>
-                <p class="pro_date">
-                    ${proItem.proDateStart} - ${proItem.proDateEnd}
-                </p>
-              </li>
+              <c:if test="${proItem.proId != '34' && proItem.proId != '44'}">
+                <li>
+                  <a class="pro_img" href="/board/view/${proItem.proId}">
+                    <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
+                  </a>
+                  <p class="icon-stack-wrap-type">
+                    <c:forEach var="type" items="${proItem.proType}">
+                              <span class="icon-stack">
+                                  ${type}
+                              </span>
+                    </c:forEach>
+                  </p>
+                  <p class="pro_tit">${proItem.proTitle}</p>
+                  <p class="pro_date">
+                      ${proItem.proDateStart} - ${proItem.proDateEnd}
+                  </p>
+                </li>
+              </c:if>
 
             </c:forEach>
         </ul>
