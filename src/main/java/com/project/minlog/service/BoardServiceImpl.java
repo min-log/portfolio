@@ -70,6 +70,7 @@ public class BoardServiceImpl implements BoardService {
         // 컨텐츠 파일 저장
         String contentTxt = null;
         String boardImgName = null;
+        log.info("proDTO.getProImg() : {}" , proDTO.getProImg());
 
         if(! proDTO.getProContent().isEmpty()){
             contentTxt = fileService.createContentTxt(proDTO.getProTitle(), proDTO.getProContent(), "contentTxt");
@@ -86,7 +87,11 @@ public class BoardServiceImpl implements BoardService {
                 return -1;
             }
             boardImgName = contentThum.get("fileName").getAsString();
+        } else {
+            boardImgName = proDTO.getProImgValue();
         }
+
+
 
         // project 저장
         proDTO.setProImg(boardImgName);

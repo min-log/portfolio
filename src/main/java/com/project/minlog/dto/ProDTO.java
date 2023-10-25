@@ -28,6 +28,7 @@ public class ProDTO {
     private String proLink;
     private String proGit;
     private String proImg;
+    private String proImgValue;
     private boolean proStatus;
 
 

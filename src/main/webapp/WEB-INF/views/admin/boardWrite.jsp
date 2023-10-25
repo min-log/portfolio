@@ -105,6 +105,7 @@
                         <th style="vertical-align:middle">썸네일</th>
                         <td>
                             <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
+                            <input type="text" value="${pro.proImg}" id="proImgValue" hidden="hidden">
                             <form:input path="proImg" id="proImg" name="proImg" type="file" accept="image/*" multiple="multiple" />
                         </td>
                     </tr>
@@ -239,6 +240,7 @@
                             let proLink = document.getElementById("proLink").value;
                             let proGit = document.getElementById("proGit").value;
                             let proInfo = document.getElementById("proInfo").value;
+                            let proImgValue = document.getElementById("proImgValue").value;
                             let content = $('#summernote').summernote('code');
                             let proStack = null;
                             let proType = null;
@@ -272,9 +274,9 @@
                                     "proType" :proType,
                                     "proStack" : proStack,
                                     "proContent" : content,
-                                    "proInfo" :proInfo
+                                    "proInfo" :proInfo,
+                                    "proImgValue" : proImgValue
                                 };
-
                                 url =  "/apiBoard/boardUpload";
                             }
 
@@ -282,7 +284,9 @@
                             let formData = new FormData;
                             formData.append("dto", new Blob([JSON.stringify(dataFrom)] , {type: "application/json"}));
                             //formData.append("content", content); // 컨텐츠 내용 전달
-                            if(fileList != null) formData.append("proImg",fileList[0]);
+                            if(fileList != null) {
+                                formData.append("proImg",fileList[0]);
+                            }
 
                             $.ajax({
                                 type: 'post',
@@ -315,7 +319,6 @@
                                     }
                                 },
                                 error:function (data) {
-                                    console.log(data.responseJSON);
                                     let errData = data.responseJSON;
                                     let err="";
                                     errData.forEach(function (item) {
