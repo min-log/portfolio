@@ -225,7 +225,7 @@ transform: translate(-20%, -50%);}
 .main_prosect_list #proList li .icon-stack-wrap-type {position: absolute;top:0;left:0;padding:5px 5px;z-index: 10}
 .main_prosect_list #proList li .icon-stack-wrap-type .icon-stack {font-size:12px;background:#555;padding:0 5px;float: left}
 
-.main_prosect_list #proList li:nth-child(1) {display:none}
+/*.main_prosect_list #proList li:nth-child(1) {display:none}*/
 
 /*.main_prosect_list .wheel__card {position: absolute;top: 0;left: 0;width: 20vw;max-width: 300px;max-height:300px;aspect-ratio: 1 / 1;cursor: pointer;overflow: hidden;border:2px solid #000;border-radius:50%;transition:var(--trans-init);}*/
 /*.main_prosect_list .wheel__card img {transition:var(--trans-init);}*/
