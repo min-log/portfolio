@@ -37,7 +37,7 @@ subpage
 .view-wrap i:before {color: var(--color-main);margin-right:10px;}
 #proView {margin:-20vw auto 0;
     /*padding:35vw 0px 0;*/
-    border:2px solid #000;max-width:1000px;width:90%;box-sizing: border-box;
+    border:2px solid #000;max-width:1340px;width:90%;box-sizing: border-box;
     background: #eeede8;
 }
 #proView .pro_img {}

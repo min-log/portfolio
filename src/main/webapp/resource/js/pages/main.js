@@ -147,7 +147,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
               scrollTrigger: {
                 trigger: $group1,
                 start:"top top",
-                end:"bottom top",
+                end:"bottom 180% bottom",
                 pin :true,
                 ease:'easeOutQuart',
                 scrub:'0.2',
@@ -453,7 +453,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
           scrollTrigger: {
             trigger: $group1,
             start:"top top",
-            end:"bottom top",
+            end:"bottom 180% bottom",
             pin :true,
             ease:'easeOutQuart',
             scrub:'0.2',
