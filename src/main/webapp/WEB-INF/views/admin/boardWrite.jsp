@@ -105,6 +105,7 @@
                         <th style="vertical-align:middle">썸네일</th>
                         <td>
                             <img id="preview" src="/apiBoard/getImg?url=/${pro.proImg}" alt="썸네일 이미지" />
+                            <input type="text" value="${pro.proImg}" id="proImgValue" hidden="hidden">
                             <form:input path="proImg" id="proImg" name="proImg" type="file" accept="image/*" multiple="multiple" />
                         </td>
                     </tr>
@@ -239,6 +240,7 @@
                             let proLink = document.getElementById("proLink").value;
                             let proGit = document.getElementById("proGit").value;
                             let proInfo = document.getElementById("proInfo").value;
+                            let proImgValue = document.getElementById("proImgValue").value;
                             let content = $('#summernote').summernote('code');
                             let proStack = null;
                             let proType = null;
@@ -272,7 +274,8 @@
                                     "proType" :proType,
                                     "proStack" : proStack,
                                     "proContent" : content,
-                                    "proInfo" :proInfo
+                                    "proInfo" :proInfo,
+                                    "proImgValue" : proImgValue
                                 };
 
                                 url =  "/apiBoard/boardUpload";

@@ -86,6 +86,8 @@ public class BoardServiceImpl implements BoardService {
                 return -1;
             }
             boardImgName = contentThum.get("fileName").getAsString();
+        } else {
+            boardImgName = proDTO.getProImgValue();
         }
 
         // project 저장
