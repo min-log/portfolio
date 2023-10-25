@@ -421,7 +421,7 @@
     autoplay: true,
     //vertical: true,
     //verticalSwiping: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 8000,
     prevArrow : $('.main_co_work_wrap .arrow-wrap .prevArrow'),
     nextArrow : $('.main_co_work_wrap .arrow-wrap .nextArrow'),
     responsive: [
