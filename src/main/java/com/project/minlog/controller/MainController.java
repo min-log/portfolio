@@ -59,7 +59,7 @@ public class MainController {
         ProListResponseDTO proListResponseBack = proService.selectList(ProType.BackEnd,0,1);
         model.addAttribute("proBack",proListResponseBack);
         // front list
-        ProListResponseDTO proListResponseDTO = proService.selectList(ProType.FrontEnd,0,4);
+        ProListResponseDTO proListResponseDTO = proService.selectList(ProType.FrontEnd,0,5);
         model.addAttribute("proFront",proListResponseDTO);
 
 

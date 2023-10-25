@@ -198,7 +198,7 @@
         </div>
         <ul  id="proList">
             <c:forEach items="${proFront.proList}" var="proItem" varStatus="status">
-              <c:if test="${proItem.proId != '44' || proItem.proId != '34'}" >
+              <c:if test="${proItem.proId != '34' && proItem.proId != '45'}">
                 <li>
                   <a class="pro_img" href="/board/view/${proItem.proId}">
                     <img src="/apiBoard/getImg?url=/${proItem.proImg}" alt="">
