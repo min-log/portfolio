@@ -7,8 +7,9 @@ Base styles: opinionated defaults
 /*common*/
 html,body {
 	/*scroll-behavior: smooth;*/
-	-ms-overflow-style: none;scrollbar-width: none;overscroll-behavior: contain;/*새로고침 막기*/}
-html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}
+	/*-ms-overflow-style: none;scrollbar-width: none;overscroll-behavior: contain;*/
+	/*새로고침 막기*/}
+/*html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}*/
 
 
 html,body {width:100%;background: var(--main-bg);}

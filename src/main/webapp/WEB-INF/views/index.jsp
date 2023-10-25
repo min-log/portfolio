@@ -313,7 +313,7 @@
         <c:forEach var="item" items="${list}" varStatus="status" >
           <li class="item">
             <p class="co_work_company">${item.coCompany}</p>
-            <p class="tit">${item.coName} <span class="co_work_position">${item.coPosition}</span> <span class="co_work_department">${item.coDepartment}팀</span></p>
+            <p class="tit">${item.coName} <span class="co_work_position">${item.coPosition}</span> <span class="co_work_department">${item.coDepartment}</span></p>
             <div class="con">
                 ${item.coContent}
             </div>
@@ -487,13 +487,13 @@
 
 </script>
 <script type="text/javascript">
-  window.onload = function(){
-    let secPosition = "";
-    secPosition +=  '<c:out value="${position}" />';
-    if(secPosition  != ""){
-      document.getElementById("setCo").click()
-    }
-  }
+  <%--window.onload = function(){--%>
+  <%--  let secPosition = "";--%>
+  <%--  secPosition +=  '<c:out value="${position}" />';--%>
+  <%--  if(secPosition  != ""){--%>
+  <%--    document.getElementById("setCo").click()--%>
+  <%--  }--%>
+  <%--}--%>
 </script>
 
 <script type="text/javascript">
