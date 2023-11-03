@@ -242,7 +242,7 @@
       <div class="profile_con">
         <ul>
             <li>
-                <p class="date">2022.06.05 - 2023.10.19</p>
+                <p class="date">2023.06.05 - 2023.10.19</p>
                 <h3>백엔드 개발자 취업캠프(Java) </h3>
                 <p class="position">
                     멀티잇 / 14회차 과정 수료
