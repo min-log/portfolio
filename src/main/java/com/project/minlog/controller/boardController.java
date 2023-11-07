@@ -37,7 +37,7 @@ public class boardController {
         List<String> stack = new ArrayList<>();
         switch (boardPath){
             case BackEnd -> {
-                model.addAttribute("tit","Back And Site");
+                model.addAttribute("tit","BackEnd Site");
                 for (ProStackBack value : ProStackBack.values()) {
                     stack.add(String.valueOf(value));
                 }
@@ -48,7 +48,7 @@ public class boardController {
                 break;
             }
             case FrontEnd -> {
-                model.addAttribute("tit","Front And Site");
+                model.addAttribute("tit","FrontEnd Site");
                 for (ProStackFront value : ProStackFront.values()) {
                     stack.add(String.valueOf(value));
                 }
