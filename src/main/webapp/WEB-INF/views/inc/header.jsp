@@ -26,13 +26,13 @@
 			<ul>
 				<li style="--i:0.8s;">
 					<a href="/board/list/BackEnd">
-						01.Back And Site
+						01.BackEnd Site
 					</a>
 					<p></p>
 				</li>
 				<li style="--i:1.0s;">
 					<a  href="/board/list/FrontEnd">
-						02. Front And SIte
+						02. FrontEnd SIte
 					</a>
 					<p></p>
 				</li>
