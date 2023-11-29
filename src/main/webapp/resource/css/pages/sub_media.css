@@ -17,6 +17,7 @@ subpage media screen tab & mobile
     .subpage_header .tit {font-size:5.77vw;padding:0 20%;}
     .subpage_header .tit_sub_txt {font-size: 4.62vw;}
     .subpage {padding-bottom:19.23vw;}
+    .view-wrap .view-info {white-space: unset !important;padding:var(--padding-init);margin-bottom: 10px;}
 
 
 

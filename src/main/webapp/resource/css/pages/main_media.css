@@ -54,10 +54,13 @@ main media screen tab & mobile
 	.main_contact_wrap {margin-top:200px;}
 	.main_prosect_wrap .sec_sub {left: 0;position: inherit;}
 	.section-group .sec_sub{font-size: 20px;margin-top:-12px}
+
 }
 
 @media screen and (max-width:520px) {/* 520 변경 */
-
+	.sec_tit.on .btn_more b {margin-left: 1vw;padding: 0;line-height: 4vw;width: 4vw;height: 4vw;text-align: center;}
+	.main_project_back ul.project_wrap {padding:var(--padding-init)}
+	.main_project_back ul.project_wrap li div {white-space: unset !important;}
 	#container {padding-bottom:38.46vw;}
 	.quick_bar {padding-left:4.23vw;}
 	.quick_bar ul li {padding:1.35vw 0;}
