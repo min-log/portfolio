@@ -167,6 +167,7 @@ public class ProServiceImpl implements ProService {
                 return type.getProValue();
             }).collect(Collectors.toList());
             listItem.setProType(typeList);
+            listItem.setProInfo(item.getProInfo());
             return listItem;
         }).collect(Collectors.toList());
 

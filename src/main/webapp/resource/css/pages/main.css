@@ -128,7 +128,22 @@ html::-webkit-scrollbar ,body::-webkit-scrollbar {display: none;}
 transform: translate(100vw, 0);}
 .main_prosect_wrap .img {background:#ccc;width:60%;max-width:600px;height: 90%;transform: translate(-10%,-10%);z-index:-1;overflow:hidden;display: flex;justify-content: center;align-items: center;}
 .main_prosect_wrap .img img {width:100%}
-.main_prosect_wrap .sec_tit.on {text-align:left;position:absolute;bottom:0;left:calc(60% + 40px);width:100%}
+.main_prosect_wrap .info {    position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 85%;
+	padding: 20px;
+	font-size: 26px;
+	box-sizing: border-box;
+	font-weight: bold;
+	color: #f2f1e3;
+	font-style: oblique;
+	text-shadow: 2px 2px 5px black;text-align: right;}
+
+.main_prosect_wrap .sec_tit.on {text-align:left;position:absolute;bottom:26px;left:calc(60% + 40px);width:100%}
+.main_prosect_wrap .sec_sub {position: absolute; bottom: 0; left: calc(60% + 40px); }
+.section-group .sec_sub {font-size: 20px; text-align: left; width: 100%; color: #555; }
+
 .sec_tit.on span {line-height:90px;display:inline-block;border-bottom:1px solid #333;position:relative;}
 .sec_tit.on span.round {padding-left: 120px;}
 .sec_tit.on span.round:after,
@@ -136,6 +151,21 @@ transform: translate(100vw, 0);}
 .sec_tit.on span.round:before {left:40px;}
 .sec_tit.on span:last-child {border-bottom:0;}
 .sec_tit.on .btn_more {display: inline-block;font-size: 20px;height: 40px;line-height: 40px;background: var(--color-sub);padding: 0 10px;border-radius: 5px;color: #fff;transform: translate(0,-20px);}
+.sec_tit.on .btn_more b {display: inline-block;
+	height: auto;
+	padding: inherit;
+	height: inherit;
+	line-height: inherit;
+	background: #000;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	padding: 8px;
+	background: #fff;
+	color: #ff76bf;
+	margin-left: 10px;
+	font-weight: bold;}
 
 .main_project_back {margin-left:calc(100vw - 200px);z-index:5;left:0 ;bottom: 0 !important;left:0 !important;transform:translateX(60%);transition: var(--trans-init);position:relative;}
 .main_project_back .pro_img {width:80%;max-width:800px;margin:0 auto;}
@@ -284,12 +314,12 @@ section.main_profile_01.section {z-index: 1}
 #coWork {}
 .co_work {width:100%;padding:0;margin:0 auto;box-sizing:border-box;overflow:hidden;display: inline-block;}
 .co_work li.item {background:#fff;border-radius:5px;box-sizing:border-box;padding:20px 30px;margin:20px;width:25vw;
-	/*min-height:500px;*/
 	position:relative;
 	opacity: 0.4;
 	transition: 1s all;
 	transform: scale(0.8);
 }
+.co_work li.item.slick-center {opacity: 1}
 .co_work li.item .tit {font-size:16px;font-weight:bold;margin-bottom: 10px;}
 .co_work li.item .tit span {color: #555555;font-size:12px;font-weight:normal;}
 .co_work li.item .co_work_company {font-size:12px;color:#045a12;font-weight:bold;}

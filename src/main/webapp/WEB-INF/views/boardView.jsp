@@ -15,9 +15,7 @@
     <div class="subpage_header text_center">
         <h2 class="tit">${pro.proTitle}</h2>
         <ul class="view-wrap mt50">
-            <li class="view-info">
-                ${pro.proInfo}
-            </li>
+            <li class="view-info" style="white-space:pre;">${pro.proInfo}</li>
             <li class="view-date">
                 ${pro.proDateStart} - ${pro.proDateEnd}
             </li>

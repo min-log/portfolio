@@ -15,6 +15,7 @@ public class ProListVO {
     private long proId;
     private String proTitle;
     private String proImg;
+    private String proInfo;
 
     private List<String> proType;
     private List<String> proStack;
