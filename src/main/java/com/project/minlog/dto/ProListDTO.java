@@ -18,6 +18,7 @@ import java.util.List;
 public class ProListDTO {
     private long proId;
     private String proTitle;
+    private String proInfo;
     private String proImg;
 
     private List<String> proType;

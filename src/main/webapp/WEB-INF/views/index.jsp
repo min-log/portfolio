@@ -74,8 +74,6 @@
               <br />
               다양한 프로그래밍 언어와 기술을 공부하고 업무에 적용하려고 합니다.
               <br />
-              실제로 각 프로젝트의 기술스텍을 다르게 작업하며 다양한 경험을 만들려고 하였습니다.
-              <br />
               IT 전문 지식을 갖추기 위해 정보처리기사 실기를 준비 중 입니다.
             </p>
             <h4>Front End : UI(User Interface) / UX(User Experience)</h4>
@@ -95,10 +93,9 @@
 
             <h4>Hosting</h4>
             <p>
-              AWS (EC2) , NCP <br />
+              AWS (EC2) , 네이버 클라우드(NCP) <br />
               빌더 쇼핑몰 작업 가능: 카페24 , 고도몰, 닷홈
             </p>
-
           </div>
         </li>
         <li>
@@ -132,15 +129,21 @@
   <!-- end: section-group-1 -->
   <div class="section-group-2 section-group ">
     <section class="main_prosect_wrap section">
+      <p class="sec_sub">각 프로젝트의 기술 스텍을 다르게 하여 다양한 구현</p>
       <h2 class="sec_tit on">
         <span>Recent <em class="icon_arrow"></em></span><br/>
         <span class="round">Project</span><br/>
         <span>
             BackAnd
-            <a href="/board/list/BackEnd" class="btn_more">+ More</a>
+          <a href="/board/list/BackEnd" class="btn_more">+ More <b>3</b></a>
         </span>
       </h2>
-      <p class="img"><img src="/resource/images/main/main_port_01.jpg" alt="포트폴리오 사이트 이미지"></p>
+      <div class="img">
+        <img src="/resource/images/main/main_port_01.jpg" alt="포트폴리오 사이트 이미지">
+        <p class="info">
+          GSAP 인터렉션 구현<br> Base64을 이용한 암호화<br> 네이버 클라우드(NCP) 배포운영
+        </p>
+      </div>
     </section>
 
   </div>
@@ -161,6 +164,7 @@
             <p>${proItem.proDateStart} - ${proItem.proDateEnd}</p>
             <p>${proItem.proStack}</p>
           </a>
+          <div style="white-space:pre;margin-top: 10px"><c:out value="${proItem.proInfo}"></c:out></div>
         </li>
         </c:forEach>
       </ul>
@@ -177,10 +181,11 @@
         <h2 class="sec_tit on">
           <span class="">RECENT</span><br/>
           <span class="round">FRONTEND</span><br/>
-          <span><em class="mo_none">List 03</em>
+          <span>List<em class="mo_none">03</em>
             <a href="/board/list/FrontEnd" class="btn_more">+ More</a>
           </span>
         </h2>
+        <p class="sec_sub">적응형 & 반응형 홈페이지 구현</p>
         <p class="sec_subtxt">Pick ! <br>Web Project
           <img src="resource/images/main/emoticon_hand.png" alt="">
         </p>

@@ -5,13 +5,13 @@ main media screen tab & mobile
 
 @media screen and (max-width:1200px) {
 	.co_work li.item {width:60vw;min-height:350px}
-	.sec_subtxt {display: none;}
-	.main_prosect_list .prosect_info {margin:0 auto;float: inherit}
+	.section-group .sec_sub {}
+	.main_prosect_list .prosect_info {margin:0;float: inherit}
+	.project_wrap .sec_subtxt {display: none;}
 	.main_prosect_list #proList {
 		display: none;
 	}
 	em.mo_none {display: none;}
-
 }
 
 @media screen and (max-width:1100px) {}
@@ -52,7 +52,8 @@ main media screen tab & mobile
 	.section-group-3,
 	.section-group-4,
 	.main_contact_wrap {margin-top:200px;}
-
+	.main_prosect_wrap .sec_sub {left: 0;position: inherit;}
+	.section-group .sec_sub{font-size: 20px;margin-top:-12px}
 }
 
 @media screen and (max-width:520px) {/* 520 변경 */
@@ -67,6 +68,8 @@ main media screen tab & mobile
 	.icon_round:after {width:calc(100% + 3.85vw);margin-left:-1.92vw;}
 	.sec_tit {font-size:15.38vw;}
 	.sec_subtxt {font-size:4.62vw;}
+	.main_prosect_wrap .info {font-size:4.62vw;}
+	.section-group .sec_sub {font-size:3.8vw;}
 	.modul_tablet {max-width:68.85vw;max-height:96.15vw;width:50vw;}
 	.modul_phone {max-width:34.62vw;max-height:68.85vw;width:22.8vw;height:45vw;}
 	.main_greetings_wrap .sec_tit {margin-bottom:3.85vw;}
